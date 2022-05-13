@@ -6,8 +6,10 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 
 - ♻ Easily mix DOM and 3D Canvas
 - 🎨 Fragment and Vertex Shaders (with syntax highlighting)
+- 🎛 [Leva](https://github.com/pmndrs/leva) panel for debugging
+- ♿ [R3F A11y](https://github.com/pmndrs/react-three-a11y)
+- 🏪 [Zustand](https://github.com/pmndrs/zustand) store
 - 📁 Relative paths (`@/components/`)
-- 🏪 Zustand store
 - 📴 Offline mode
 - 🍱 Bundle Analyzer
 - ☑ Typescript
@@ -18,6 +20,12 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 1. Install dependencies: `yarn`
 1. Run the development server: `yarn dev`
 1. See the site here 👀: http://localhost:3000/
+
+### Upgrading to latest
+
+1. `yarn upgrade-interactive --latest`
+
+> Please note that when you update a major version, you should check the dependency's documentation to see if there are any necessary changes to make to app or dependency API.
 
 ## How to use
 
@@ -43,3 +51,4 @@ There's a few, but we recommend [Shader languages support for VS Code](https://m
 
 - [NextJS ThreeJS/R3F Example](https://github.com/vercel/next.js/tree/canary/examples/with-three-js)
 - [create-r3f-app](https://github.com/utsuboco/create-r3f-app)
+- [Poimandres](https://github.com/pmndrs/)
