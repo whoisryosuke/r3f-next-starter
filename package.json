@@ -2,7 +2,8 @@
   "name": "react-three-next",
   "version": "2.0.0",
   "authors": [
-    "Ryosuke Hana <https://twitter.com/whoisryosuke>"
+    "Ryosuke Hana <https://twitter.com/whoisryosuke>",
+    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
   ],
   "license": "MIT",
   "private": true,

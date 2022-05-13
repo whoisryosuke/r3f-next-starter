@@ -51,6 +51,8 @@ if (process.env.EXPORT !== 'true') {
 module.exports = plugins(
   [
     // withTM,
+    // Setup Offline Support
+    // This requires the `public` folder with a `manifest.json`
     [
       withOffline,
       {
