@@ -6,10 +6,11 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 
 - ♻ Easily mix DOM and 3D Canvas
 - 🎨 Fragment and Vertex Shaders (with syntax highlighting)
+- 📁 Relative paths (`@/components/`)
 - 🏪 Zustand store
 - 📴 Offline mode
-- ☑ Typescript
 - 🍱 Bundle Analyzer
+- ☑ Typescript
 
 ## Getting Started
 
@@ -25,6 +26,8 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 When you create a new page, you don't need to wrap anything in a canvas. This automatically happens in the `_app.jsx` file.
 
 Each page should export `<DOM />` and `<R3f r3f />` components. The `partition` script in `_app.jsx` checks for these, and wraps your R3F components in the canvas.
+
+### Where is Canvas?
 
 The `<Canvas>` is located in `src\components\layout\canvas.jsx`. You can add any components here you want to share across all scenes (like a similar camera, lighting, etc).
 
