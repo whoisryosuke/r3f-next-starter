@@ -1,4 +1,5 @@
 import useStore from '@/helpers/store'
+import { A11y } from '@react-three/a11y'
 import { useFrame } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 
@@ -17,16 +18,22 @@ const BoxComponent = ({ route }) => {
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <>
-      <mesh
-        ref={mesh}
-        onClick={() => router.push(route)}
-        onPointerOver={() => setHover(true)}
-        onPointerOut={() => setHover(false)}
-        scale={hovered ? 1.1 : 1}
-      >
-        <boxBufferGeometry args={[1, 1, 1]} />
-        <meshPhysicalMaterial color={route === '/' ? 'orange' : 'hotpink'} />
-      </mesh>
+      <A11y
+        role="button"
+        description={`Navigate to next route ${route}`}
+        activationMsg="Loading next route"
+        actionCall={() => router.push(route)}>
+        <mesh
+          ref={mesh}
+          onClick={() => router.push(route)}
+          onPointerOver={() => setHover(true)}
+          onPointerOut={() => setHover(false)}
+          scale={hovered ? 1.1 : 1}
+        >
+          <boxBufferGeometry args={[1, 1, 1]} />
+          <meshPhysicalMaterial color={route === '/' ? 'orange' : 'hotpink'} />
+        </mesh>
+      </A11y>
       <directionalLight position={[5, 5, 5]} />
       <ambientLight />
     </>

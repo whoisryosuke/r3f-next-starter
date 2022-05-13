@@ -1173,6 +1173,14 @@
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.4.5.tgz#9c71e5ff866b5484a7ef3db822bf6c10e77bdd8c"
   integrity sha512-mpRIamoHwql0ogxEUh9yr4TP0xU5CWyZxVQeccGkHHF8kPMErtDXJlxyo0lj+telRF35XNihtPTWoflqtyARmg==
 
+"@react-three/a11y@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@react-three/a11y/-/a11y-2.2.4.tgz#f5c58496abcb7daff7d1da97c3f24b91fd618e31"
+  integrity sha512-EELVPNQC4JwXXAHRGQ9iA6O5S6stOk8zl+6alOdeQoYlXuVKyPGL3dCLGsaOqgudJERDFqxATDXRc/8JTNC/3Q==
+  dependencies:
+    utility-types "^3.10.0"
+    zustand "^3.2.0"
+
 "@react-three/drei@^9.8.1":
   version "9.8.1"
   resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-9.8.1.tgz#cf708d7aec15cf843d086e2321d8f2af337a2d77"
@@ -4862,7 +4870,7 @@ zstddec@^0.0.2:
   resolved "https://registry.yarnpkg.com/zstddec/-/zstddec-0.0.2.tgz#57e2f28dd1ff56b750e07d158a43f0611ad9eeb4"
   integrity sha512-DCo0oxvcvOTGP/f5FA6tz2Z6wF+FIcEApSTu0zV5sQgn9hoT5lZ9YRAKUraxt9oP7l4e8TnNdi8IZTCX6WCkwA==
 
-zustand@^3.5.13, zustand@^3.7.1:
+zustand@^3.2.0, zustand@^3.5.13, zustand@^3.7.1:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.7.2.tgz#7b44c4f4a5bfd7a8296a3957b13e1c346f42514d"
   integrity sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==
