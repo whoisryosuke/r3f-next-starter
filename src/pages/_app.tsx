@@ -1,3 +1,4 @@
+import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect } from 'react'
@@ -22,13 +23,14 @@ const Balance = ({ child }) => {
   )
 }
 
-function App({ Component, pageProps = { title: 'index' } }) {
+function App({ Component, pageProps = { title: 'index' } }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
     useStore.setState({ router })
   }, [router])
 
+  // @ts-ignore
   const child = Component(pageProps).props.children
   
   return (

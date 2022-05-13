@@ -1,4 +1,4 @@
-// custom pages/404.jsx !! Do not remove please or it will break build
+// Do not remove please or it will break build
 export default function Error() {
   return (
     <>

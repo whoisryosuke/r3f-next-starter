@@ -7,7 +7,7 @@ const Box = dynamic(() => import('@/components/canvas/Box'), {
 
 const DOM = () => {
   return (
-    // Add your own DOM elements here
+    // Step 5 - delete Instructions components
     <Instructions />
   )
 }

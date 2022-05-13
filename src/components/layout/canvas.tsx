@@ -6,16 +6,15 @@ import { useEffect, useRef } from 'react'
 const LControl = () => {
   const dom = useStore((state) => state.dom)
   const control = useRef(null)
-  console.log('rendering control')
 
   // useEffect(() => {
-    // if (control) {
-    //   dom.current.style['touch-action'] = 'none'
-    // }
+  //   if (control) {
+  //     dom.current.style['touch-action'] = 'none'
+  //   }
   // }, [dom, control])
   // @ts-ignore
-  return <OrbitControls ref={control}
-  // domElement={dom.current} 
+  return <OrbitControls ref={control} 
+    //domElement={dom.current} 
   />
 }
 const LCanvas = ({ children }) => {
@@ -23,11 +22,14 @@ const LCanvas = ({ children }) => {
 
   return (
     <Canvas
+      // Is this deprecated or typed wrong? Ignoring for now.
+      // @ts-ignore
       mode='concurrent'
       style={{
         position: 'absolute',
         top: 0,
       }}
+      // This breaks all interactions (hover, click/press, etc)
       // onCreated={(state) => state.events.connect(dom.current)}
     >
       <LControl />

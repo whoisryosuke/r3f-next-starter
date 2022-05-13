@@ -43,8 +43,7 @@ const Shader = (props) => {
       ref={meshRef}
       scale={hovered ? 1.1 : 1}
       onClick={() => {
-        console.log('box clicked')
-        router?.push(`/box`)
+        router.push(`/box`)
       }}
       onPointerOver={(e) => setHover(true)}
       onPointerOut={(e) => setHover(false)}
