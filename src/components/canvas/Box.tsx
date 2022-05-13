@@ -2,6 +2,7 @@ import useStore from '@/helpers/store'
 import { A11y } from '@react-three/a11y'
 import { useFrame } from '@react-three/fiber'
 import { useRef, useState } from 'react'
+import { useControls } from 'leva'
 
 const BoxComponent = ({ route }) => {
   const router = useStore((s) => s.router)
@@ -9,6 +10,8 @@ const BoxComponent = ({ route }) => {
   const mesh = useRef(null)
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
+  // Optional Leva debug panel for properties
+  const { scale } = useControls({ scale: 1 })
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) =>
     mesh.current
@@ -28,7 +31,8 @@ const BoxComponent = ({ route }) => {
           onClick={() => router.push(route)}
           onPointerOver={() => setHover(true)}
           onPointerOut={() => setHover(false)}
-          scale={hovered ? 1.1 : 1}
+          // When we hover, we scale to 10% more
+          scale={hovered ? scale + (scale * 0.1) : scale}
         >
           <boxBufferGeometry args={[1, 1, 1]} />
           <meshPhysicalMaterial color={route === '/' ? 'orange' : 'hotpink'} />
