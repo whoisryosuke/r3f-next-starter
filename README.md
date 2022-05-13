@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# r3f-next-starter
+
+This is a batteries included template for using React Three Fiber (R3F) with NextJS 🔋. Based on [create-r3f-app](https://github.com/utsuboco/create-r3f-app).
+
+## Features
+
+- ♻ Easily mix DOM and 3D Canvas
+- 🎨 Fragment and Vertex Shaders (with syntax highlighting)
+- 🏪 Zustand store
+- 📴 Offline mode
+- ☑ Typescript
+- 🍱 Bundle Analyzer
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repo: `git clone https://github.com/whoisryosuke/r3f-next-starter.git`
+1. Install dependencies: `yarn`
+1. Run the development server: `yarn dev`
+1. See the site here 👀: http://localhost:3000/
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## How to use
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### DOM vs R3F
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+When you create a new page, you don't need to wrap anything in a canvas. This automatically happens in the `_app.jsx` file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Each page should export `<DOM />` and `<R3f r3f />` components. The `partition` script in `_app.jsx` checks for these, and wraps your R3F components in the canvas.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The `<Canvas>` is located in `src\components\layout\canvas.jsx`. You can add any components here you want to share across all scenes (like a similar camera, lighting, etc).
 
-## Learn More
+## Tips
 
-To learn more about Next.js, take a look at the following resources:
+### Syntax Highlighting for Shaders
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+When you browse the shaders (`.frag` and `.vert`) in VSCode, you should see a popup to install a plugin for highlighting.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+There's a few, but we recommend [Shader languages support for VS Code](https://marketplace.visualstudio.com/items?itemName=slevesque.shader).
 
-## Deploy on Vercel
+## Credits
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [NextJS ThreeJS/R3F Example](https://github.com/vercel/next.js/tree/canary/examples/with-three-js)
+- [create-r3f-app](https://github.com/utsuboco/create-r3f-app)

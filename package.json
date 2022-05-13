@@ -1,20 +1,52 @@
 {
-  "name": "r3f-next-starter",
-  "version": "0.1.0",
+  "name": "react-three-next",
+  "version": "2.0.0",
+  "authors": [
+    "Ryosuke Hana <https://twitter.com/whoisryosuke>"
+  ],
+  "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
+    "lint": "yarn prettier && yarn eslint",
+    "eslint": "next lint --fix --dir src",
+    "prettier": "prettier -l \"./src/**/*.{js,jsx,md}\"",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "export": "EXPORT=true next build && EXPORT=true next export",
+    "analyze": "ANALYZE=true next build",
+    "start": "next start"
   },
   "dependencies": {
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "@react-three/drei": "^9.2.0",
+    "@react-three/fiber": "^8.0.10",
+    "babel-plugin-glsl": "^1.0.0",
+    "glsl-random": "^0.0.5",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-is": "^18.1.0",
+    "three": "^0.139.2",
+    "three-stdlib": "^2.9.1",
+    "zustand": "^3.7.2"
   },
   "devDependencies": {
-    "eslint": "8.15.0",
-    "eslint-config-next": "12.1.6"
+    "@next/bundle-analyzer": "^12.0.10",
+    "@types/node": "^17.0.33",
+    "@types/react": "^18.0.9",
+    "eslint": "^8.8.0",
+    "eslint-config-next": "^12.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "file-loader": "^6.2.0",
+    "glslify": "^7.1.1",
+    "glslify-loader": "^2.0.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-offline": "^5.0.5",
+    "prettier": "^2.6.2",
+    "raw-loader": "^4.0.2",
+    "typescript": "^4.6.4",
+    "url-loader": "^4.1.1"
   }
 }
