@@ -21,6 +21,10 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 1. Run the development server: `yarn dev`
 1. See the site here 👀: http://localhost:3000/
 
+### CodeSandbox
+
+You can also [preview and fork on CodeSandbox](https://githubbox.com/whoisryosuke/r3f-next-starter)
+
 ### Upgrading to latest
 
 1. `yarn upgrade-interactive --latest`
