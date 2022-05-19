@@ -51,6 +51,10 @@ When you browse the shaders (`.frag` and `.vert`) in VSCode, you should see a po
 
 There's a few, but we recommend [Shader languages support for VS Code](https://marketplace.visualstudio.com/items?itemName=slevesque.shader).
 
+## Typescript Guide
+
+Check out [our guide on using R3F with Typescript.](./docs/typescript.md)
+
 ## Credits
 
 - [NextJS ThreeJS/R3F Example](https://github.com/vercel/next.js/tree/canary/examples/with-three-js)
