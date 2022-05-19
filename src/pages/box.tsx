@@ -15,6 +15,8 @@ const DOM = () => {
 const R3F = ({r3f = true}) => {
   return (
     <>
+      <gridHelper />
+      <axesHelper />
       <Box route='/' />
     </>
   )

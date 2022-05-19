@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { A11yAnnouncer } from '@react-three/a11y'
-import { OrbitControls, Preload } from '@react-three/drei'
+import { OrbitControls, Preload, Stats } from '@react-three/drei'
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
 
@@ -34,6 +34,7 @@ const LCanvas = ({ children }) => {
         // This breaks all interactions (hover, click/press, etc)
         // onCreated={(state) => state.events.connect(dom.current)}
       >
+        <Stats />
         <LControl />
         <Preload all />
         {children}
