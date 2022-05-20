@@ -4,5 +4,5 @@ export default function Error() {
     <>
       <h1>500 - Something went wrong</h1>
     </>
-  )
+  );
 }

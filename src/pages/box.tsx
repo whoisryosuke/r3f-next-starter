@@ -1,26 +1,26 @@
-import Instructions from '@/components/dom/Instructions'
-import dynamic from 'next/dynamic'
+import Instructions from "@/components/dom/Instructions";
+import dynamic from "next/dynamic";
 
-const Box = dynamic(() => import('@/components/canvas/Box'), {
+const Box = dynamic(() => import("@/components/canvas/Box"), {
   ssr: false,
-})
+});
 
 const DOM = () => {
   return (
     // Step 5 - delete Instructions components
     <Instructions />
-  )
-}
+  );
+};
 
-const R3F = ({r3f = true}) => {
+const R3F = ({ r3f = true }) => {
   return (
     <>
       <gridHelper />
       <axesHelper />
-      <Box route='/' />
+      <Box route="/" />
     </>
-  )
-}
+  );
+};
 
 const Page = () => {
   return (
@@ -28,15 +28,15 @@ const Page = () => {
       <DOM />
       <R3F r3f />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
 
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Box',
+      title: "Box",
     },
-  }
+  };
 }

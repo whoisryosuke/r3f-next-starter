@@ -1,5 +1,5 @@
-import create from 'zustand'
-import { devtools, persist } from "zustand/middleware"
+import create from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
 export interface AppState {
   router: any;
@@ -13,7 +13,6 @@ export const useStore = create<AppState>()(
       dom: null,
     }))
   )
-)
+);
 
-
-export default useStore
+export default useStore;
