@@ -12,6 +12,7 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 - 📁 Relative paths (`@/components/`)
 - 📴 Offline mode
 - 🍱 Bundle Analyzer
+- 👕 ESLint and Prettier
 - ☑ Typescript
 
 ## Getting Started
@@ -24,6 +25,12 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 ### CodeSandbox
 
 You can also [preview and fork on CodeSandbox](https://githubbox.com/whoisryosuke/r3f-next-starter)
+
+### Lint and Code Formatting
+
+If you use VSCode, Prettier should run each time you save a compatible file.
+
+`yarn lint` runs ESLint and Prettier, automatically formats files and rewrites them. Make sure to stage your code before running just in case.
 
 ### Upgrading to latest
 
@@ -42,6 +49,12 @@ Each page should export `<DOM />` and `<R3f r3f />` components. The `partition` 
 ### Where is Canvas?
 
 The `<Canvas>` is located in `src\components\layout\canvas.jsx`. You can add any components here you want to share across all scenes (like a similar camera, lighting, etc).
+
+### Importing R3F components
+
+The rule is: you have to dynamically import any React component that uses ThreeJS/R3F components if it's the **top-level one**. Once you dynamically import that React component -- it can contain other ThreeJS/R3F component without dynamic imports.
+
+See the `/pages/` and `/components/canvas/` for examples.
 
 ## Tips
 
