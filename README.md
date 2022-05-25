@@ -56,6 +56,12 @@ The rule is: you have to dynamically import any React component that uses ThreeJ
 
 See the `/pages/` and `/components/canvas/` for examples.
 
+## Snippets
+
+This project features snippets for creating R3F components.
+
+- `r3fc` - Create R3F mesh
+
 ## Tips
 
 ### Syntax Highlighting for Shaders

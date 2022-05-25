@@ -1,0 +1,20 @@
+{
+  "R3F - Mesh Component": {
+    "prefix": "r3fc",
+    "body": [
+      "const ${1:BoxMesh} = () => {",
+      "  return (",
+      "    <>",
+      "    <mesh>",
+      "        <boxBufferGeometry args={[1, 1, 1]} />",
+      "        <meshPhysicalMaterial color={'blue'} />",
+      "    </mesh>",
+      "    </>",
+      "  )",
+      "}",
+      "export default ${1:BoxMesh}",
+      ""
+    ],
+    "description": "R3F - Mesh Component"
+  }
+}
