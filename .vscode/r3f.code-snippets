@@ -2,17 +2,36 @@
   "R3F - Mesh Component": {
     "prefix": "r3fc",
     "body": [
-      "const ${1:BoxMesh} = () => {",
+      "const ${1:BoxMesh} = ({ ...props }) => {",
       "  return (",
-      "    <>",
-      "    <mesh>",
+      "    <mesh {...props}>",
       "        <boxBufferGeometry args={[1, 1, 1]} />",
       "        <meshPhysicalMaterial color={'blue'} />",
       "    </mesh>",
-      "    </>",
       "  )",
       "}",
       "export default ${1:BoxMesh}",
+      ""
+    ],
+    "description": "R3F - Mesh Component"
+  },
+  "R3F - Mesh Component (Typescript)": {
+    "prefix": "tsr3fc",
+    "body": [
+      "import { Mesh } from \"three\"",
+      "",
+      "type Props = Mesh;",
+      "",
+      "const ${1:BoxMesh} = ({ ...props }: Props) => {",
+      "  return (",
+      "    <mesh {...props}>",
+      "        <boxBufferGeometry args={[1, 1, 1]} />",
+      "        <meshPhysicalMaterial color={'blue'} />",
+      "    </mesh>",
+      "  )",
+      "}",
+      "export default ${1:BoxMesh}",
+      "",
       ""
     ],
     "description": "R3F - Mesh Component"
