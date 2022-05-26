@@ -20,7 +20,7 @@
     "body": [
       "import { Mesh } from \"three\"",
       "",
-      "type Props = Mesh;",
+      "type Props = Partial<Mesh> & {};",
       "",
       "const ${1:BoxMesh} = ({ ...props }: Props) => {",
       "  return (",
@@ -31,9 +31,46 @@
       "  )",
       "}",
       "export default ${1:BoxMesh}",
-      "",
       ""
     ],
-    "description": "R3F - Mesh Component"
+    "description": "R3F - Mesh Component (Typescript)"
+  },
+  "R3F - Group Component": {
+    "prefix": "r3fg",
+    "body": [
+      "const ${1:BoxMesh} = ({ ...props }) => {",
+      "  return (",
+      "      <group {...props}>",
+      "        <mesh>",
+      "            <planeBufferGeometry args={[1, 1]} />",
+      "            <meshPhysicalMaterial color={'blue'} />",
+      "        </mesh>",
+      "      </group>",
+      "  )",
+      "}",
+      "export default ${1:BoxMesh}"
+    ],
+    "description": "R3F - Group Component"
+  },
+  "R3F - Group Component (Typescript)": {
+    "prefix": "tsr3fg",
+    "body": [
+      "import { GroupProps } from \"@react-three/fiber\";",
+      "",
+      "type Props = Partial<GroupProps> & {};",
+      "",
+      "const ${1:BoxMesh} = ({ ...props }: Props) => {",
+      "  return (",
+      "      <group {...props}>",
+      "        <mesh>",
+      "            <planeBufferGeometry args={[1, 1]} />",
+      "            <meshPhysicalMaterial color={'blue'} />",
+      "        </mesh>",
+      "      </group>",
+      "  )",
+      "}",
+      "export default ${1:BoxMesh}"
+    ],
+    "description": "R3F - Group Component (Typescript)"
   }
 }
