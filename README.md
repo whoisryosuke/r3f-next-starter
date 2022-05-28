@@ -6,6 +6,7 @@ This is a batteries included template for using React Three Fiber (R3F) with Nex
 
 - ♻ Easily mix DOM and 3D Canvas
 - 🎨 Fragment and Vertex Shaders (with syntax highlighting)
+- 🎬 [React Spring](https://github.com/pmndrs/react-spring) for animation
 - 🎛 [Leva](https://github.com/pmndrs/leva) panel for debugging
 - ♿ [R3F A11y](https://github.com/pmndrs/react-three-a11y)
 - 🏪 [Zustand](https://github.com/pmndrs/zustand) store
