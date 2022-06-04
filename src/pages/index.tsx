@@ -1,43 +1,53 @@
+import useStore from "@/helpers/store";
 import dynamic from "next/dynamic";
-// import Shader from '@/components/canvas/Shader/Shader'
+import { useRouter } from "next/router";
+// import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
-// Dynamic import is used to prevent a payload when the website start that will include threejs r3f etc..
-// WARNING ! errors might get obfuscated by using dynamic import.
-// If something goes wrong go back to a static import to show the error.
+// Prefer dynamic import for production builds
+// But if you have issues and need to debug in local development
+// comment these out and import above instead
 // https://github.com/pmndrs/react-three-next/issues/49
-const Shader = dynamic(() => import("@/components/canvas/Shader/Shader"), {
-  ssr: false,
-});
+const Shader = dynamic(
+  () => import("@/components/canvas/ShaderExample/ShaderExample"),
+  {
+    ssr: false,
+  }
+);
 
-// dom components goes here
+// DOM elements here
 const DOM = () => {
   return <></>;
 };
 
-// canvas components goes here
-const R3F = ({ r3f = true }) => {
+// Canvas/R3F components here
+const R3F = () => {
+  // Example of using the router to change pages
+  // It can also be inside R3F component (see `two.tsx` and `Box.tsx`)
+  const { router } = useStore();
+  const handleOnClick = () => {
+    router.push("/two");
+  };
+
   return (
     <>
-      <Shader />
+      <Shader onClick={handleOnClick} />
     </>
   );
 };
 
-const Page = () => {
+export default function Page() {
   return (
     <>
       <DOM />
-      <R3F r3f />
+      <R3F />
     </>
   );
-};
-
-export default Page;
+}
 
 export async function getStaticProps() {
   return {
     props: {
-      title: "Index",
+      title: "Welcome!",
     },
   };
 }

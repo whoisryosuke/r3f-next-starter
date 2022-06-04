@@ -1,12 +1,10 @@
 import * as THREE from "three";
-import { useFrame, extend } from "@react-three/fiber";
+import { useFrame, extend, MeshProps } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import useStore from "@/helpers/store";
 import { shaderMaterial } from "@react-three/drei";
-import { Mesh } from "three";
 
-import vertex from "./glsl/shader.vert";
-import fragment from "./glsl/shader.frag";
+import vertex from "./shaders/shader.vert";
+import fragment from "./shaders/shader.frag";
 
 const ColorShiftMaterial = shaderMaterial(
   {
@@ -24,10 +22,13 @@ ColorShiftMaterial.key = THREE.MathUtils.generateUUID();
 
 extend({ ColorShiftMaterial });
 
-const Shader = (props: Mesh) => {
+type ShaderProps = Partial<MeshProps> & {
+  onClick: () => void;
+};
+
+const ShaderExample = (props: ShaderProps) => {
   const meshRef = useRef(null);
   const [hovered, setHover] = useState(false);
-  const router = useStore((state) => state.router);
 
   useFrame((state, delta) => {
     if (meshRef.current) {
@@ -43,9 +44,6 @@ const Shader = (props: Mesh) => {
     <mesh
       ref={meshRef}
       scale={hovered ? 1.1 : 1}
-      onClick={() => {
-        router.push(`/box`);
-      }}
       onPointerOver={(e) => setHover(true)}
       onPointerOut={(e) => setHover(false)}
       {...props}
@@ -57,4 +55,4 @@ const Shader = (props: Mesh) => {
   );
 };
 
-export default Shader;
+export default ShaderExample;

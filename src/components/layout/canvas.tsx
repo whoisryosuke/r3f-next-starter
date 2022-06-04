@@ -1,29 +1,13 @@
+import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { A11yAnnouncer } from "@react-three/a11y";
 import { OrbitControls, Preload, Stats } from "@react-three/drei";
-import useStore from "@/helpers/store";
-import { useEffect, useRef } from "react";
 
-const LControl = () => {
-  const dom = useStore((state) => state.dom);
+const Controls = () => {
   const control = useRef(null);
-
-  // useEffect(() => {
-  //   if (control) {
-  //     dom.current.style['touch-action'] = 'none'
-  //   }
-  // }, [dom, control])
-  // @ts-ignore
-  return (
-    <OrbitControls
-      ref={control}
-      //domElement={dom.current}
-    />
-  );
+  return <OrbitControls ref={control} />;
 };
-const LCanvas = ({ children }) => {
-  const dom = useStore((state) => state.dom);
-
+const CanvasWrapper = ({ children }) => {
   return (
     <>
       <Canvas
@@ -34,11 +18,9 @@ const LCanvas = ({ children }) => {
           position: "absolute",
           top: 0,
         }}
-        // This breaks all interactions (hover, click/press, etc)
-        // onCreated={(state) => state.events.connect(dom.current)}
       >
         <Stats />
-        <LControl />
+        <Controls />
         <Preload all />
         {children}
       </Canvas>
@@ -47,4 +29,4 @@ const LCanvas = ({ children }) => {
   );
 };
 
-export default LCanvas;
+export default CanvasWrapper;

@@ -1,89 +1,43 @@
-const plugins = require('next-compose-plugins')
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+const plugins = require("next-compose-plugins");
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+const withOffline = require("next-offline");
 
-const withOffline = require('next-offline')
-// Used to be required in older versions - not sure it's needed
-// const withTM = require('next-transpile-modules')(['three'])
-
+// The NextJS config defined separately
+// Gets passed to next-offline
 const nextConfig = {
   webpack(config, { isServer }) {
-
-    // audio support
+    // Allow importing of shader files (e.g. `.glsl` -- filenames below)
+    // @see: https://github.com/glslify/glslify-loader
     config.module.rules.push({
-      test: /\.(ogg|mp3|wav|mpe?g)$/i,
-      exclude: config.exclude,
-      use: [
-        {
-          loader: require.resolve('url-loader'),
-          options: {
-            limit: config.inlineImageLimit,
-            fallback: require.resolve('file-loader'),
-            publicPath: `${config.assetPrefix}/_next/static/images/`,
-            outputPath: `${isServer ? '../' : ''}static/images/`,
-            name: '[name]-[hash].[ext]',
-            esModule: config.esModule || false,
-          },
-        },
-      ],
-    })
-
-    // shader support
-    config.module.rules.push({
-      test: /\.(glsl|vs|fs|vert|frag)$/,
+      test: /\.(glsl|vs|fs|vert|frag|ps)$/,
       exclude: /node_modules/,
-      use: ['raw-loader', 'glslify-loader'],
-    })
+      use: ["raw-loader", "glslify-loader"],
+    });
 
-    return config
+    return config;
   },
-}
 
-// manage i18n
-if (process.env.EXPORT !== 'true') {
-  nextConfig.i18n = {
-    locales: ['en-US'],
-    defaultLocale: 'en-US',
-  }
-}
+  // Internationalized Routing
+  // @see: https://nextjs.org/docs/advanced-features/i18n-routing
+  i18n: {
+    locales: ["en-US"],
+    defaultLocale: "en-US",
+  },
+};
 
 module.exports = plugins(
   [
-    // withTM,
     // Setup Offline Support
     // This requires the `public` folder with a `manifest.json`
     [
       withOffline,
       {
-        workboxOpts: {
-          swDest: process.env.NEXT_EXPORT
-            ? 'service-worker.js'
-            : 'static/service-worker.js',
-          runtimeCaching: [
-            {
-              urlPattern: /^https?.*/,
-              handler: 'NetworkFirst',
-              options: {
-                cacheName: 'offlineCache',
-                expiration: {
-                  maxEntries: 200,
-                },
-              },
-            },
-          ],
-        },
-        async rewrites() {
-          return [
-            {
-              source: '/service-worker.js',
-              destination: '/_next/static/service-worker.js',
-            },
-          ]
-        },
+        // Optional offline config
       },
     ],
     withBundleAnalyzer,
   ],
   nextConfig
-)
+);
