@@ -11,16 +11,34 @@ You can browse [the official ThreeJS types here](https://github.com/DefinitelyTy
 Most of the common ThreeJS elements (like `<mesh>`) have classes you can reference for their properties as React props.
 
 ```tsx
-type Props = Pick<Mesh, 'position' | 'scale' | 'rotation'>;
+import { MeshProps } from "@react-three/fiber";
+type Props = Pick<MeshProps, "position" | "scale" | "rotation">;
 const YourComponent = (props: Props) => {
-    return <mesh {...props} />
+  return <mesh {...props} />;
+};
 ```
 
-You can often get away with just using the Mesh class as a base for props:
+You can also create your own component with custom props. The Partial basically says to make all MeshProps properties optional:
+
+```tsx
+import { MeshProps } from "@react-three/fiber";
+
+type Props = Partial<MeshProps> & {
+  pageTitle: string;
+};
+
+const YourComponent = ({ pageTitle, ...props }: Props) => {
+  console.log("pageTitle", pageTitle);
+  return <mesh {...props} />;
+};
+```
+
+You can often get away with just using the Mesh class as a base for props - but you'll find this gives you issues if you try extending from it:
 
 ```tsx
 const YourComponent = (props: Mesh) => {
-    return <mesh {...props} />
+  return <mesh {...props} />;
+};
 ```
 
 ### @react-three/cannon
@@ -28,11 +46,12 @@ const YourComponent = (props: Mesh) => {
 When you use [@react-three/cannon](https://www.npmjs.com/package/@react-three/cannon), you can import their props from the package:
 
 ```tsx
-import { BoxProps } from "@react-three/cannon"
+import { BoxProps } from "@react-three/cannon";
 
 const YourComponent = (props: BoxProps) => {
-    const [ref, api] = useBox(() => ({ mass: 1 }))
-    return <mesh ref={ref} {...props} />
+  const [ref, api] = useBox(() => ({ mass: 1 }));
+  return <mesh ref={ref} {...props} />;
+};
 ```
 
 ## Refs
