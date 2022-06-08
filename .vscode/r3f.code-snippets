@@ -18,7 +18,7 @@
   "R3F - Mesh Component (Typescript)": {
     "prefix": "tsr3fc",
     "body": [
-      "import { Mesh } from \"three\"",
+      "import { MeshProps } from \"@react-three/fiber\"",
       "",
       "type Props = Partial<Mesh> & {};",
       "",
