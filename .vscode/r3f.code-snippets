@@ -72,5 +72,49 @@
       "export default ${1:BoxMesh}"
     ],
     "description": "R3F - Group Component (Typescript)"
+  },
+  "R3F - Mesh with ref": {
+    "prefix": "tsr3fmr",
+    "body": [
+      "import { forwardRef } from \"react\";",
+      "",
+      "const ${1:BoxMesh} = forwardRef(({ ...props }, ref) => {",
+      "  return (",
+      "    <mesh ref={ref} {...props}>",
+      "      <boxBufferGeometry args={[1, 1, 1]} />",
+      "      <meshPhysicalMaterial color={\"blue\"} />",
+      "    </mesh>",
+      "  );",
+      "});",
+      "",
+      "${1:BoxMesh}.displayName = \"${1:BoxMesh}\";",
+      "export default ${1:BoxMesh};",
+      ""
+    ],
+    "description": "Mesh with ref (TS)"
+  },
+  "R3F - Mesh with ref (Typescript)": {
+    "prefix": "tsr3fmr",
+    "body": [
+      "import { MeshProps } from \"@react-three/fiber\";",
+      "import { forwardRef } from \"react\";",
+      "import { Mesh } from \"three\";",
+      "",
+      "type Props = Partial<MeshProps> & {};",
+      "",
+      "const ${1:BoxMesh} = forwardRef<Mesh, Props>(({ ...props }, ref) => {",
+      "  return (",
+      "    <mesh ref={ref} {...props}>",
+      "      <boxBufferGeometry args={[1, 1, 1]} />",
+      "      <meshPhysicalMaterial color={\"blue\"} />",
+      "    </mesh>",
+      "  );",
+      "});",
+      "",
+      "${1:BoxMesh}.displayName = \"${1:BoxMesh}\";",
+      "export default ${1:BoxMesh};",
+      ""
+    ],
+    "description": "Mesh with ref (TS)"
   }
 }
