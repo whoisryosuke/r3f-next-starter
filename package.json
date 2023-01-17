@@ -1,57 +1,61 @@
 {
-  "name": "r3f-next-starter",
-  "version": "1.0.0",
-  "authors": [
-    "Ryosuke Hana <https://twitter.com/whoisryosuke>",
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
-  ],
-  "license": "MIT",
-  "private": true,
-  "engines": {
-    "node": ">=14"
-  },
-  "scripts": {
-    "lint": "yarn prettier && yarn eslint",
-    "eslint": "next lint --fix --dir src",
-    "prettier": "prettier -l \"./src/**/*.{js,jsx,ts,tsx,md}\" --write",
-    "dev": "next dev",
-    "build": "next build",
-    "export": "EXPORT=true next build && EXPORT=true next export",
-    "analyze": "ANALYZE=true next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@react-spring/three": "^9.4.5",
-    "@react-three/a11y": "^3.0.0",
-    "@react-three/drei": "^9.11.3",
-    "@react-three/fiber": "^8.0.22",
-    "babel-plugin-glsl": "^1.0.0",
-    "glsl-random": "^0.0.5",
-    "leva": "^0.9.27",
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-is": "^18.1.0",
-    "three": "^0.141.0",
-    "three-stdlib": "^2.10.2",
-    "zustand": "^4.0.0-rc.1"
-  },
-  "devDependencies": {
-    "@next/bundle-analyzer": "^12.0.10",
-    "@types/node": "^17.0.39",
-    "@types/react": "^18.0.10",
-    "@types/three": "^0.141.0",
-    "eslint": "^8.17.0",
-    "eslint-config-next": "^12.0.10",
-    "eslint-config-prettier": "^8.3.0",
-    "file-loader": "^6.2.0",
-    "glslify": "^7.1.1",
-    "glslify-loader": "^2.0.0",
-    "next-compose-plugins": "^2.2.1",
-    "next-offline": "^5.0.5",
-    "prettier": "^2.6.2",
-    "raw-loader": "^4.0.2",
-    "typescript": "^4.7.3",
-    "url-loader": "^4.1.1"
-  }
+	"name": "r3f-next-starter",
+	"version": "1.0.0",
+	"authors": [
+		"Ryosuke Hana <https://twitter.com/whoisryosuke>",
+		"Renaud ROHLINGER <https://twitter.com/onirenaud>"
+	],
+	"license": "MIT",
+	"private": true,
+	"engines": {
+		"node": ">=14"
+	},
+	"scripts": {
+		"lint": "yarn prettier && yarn eslint",
+		"eslint": "next lint --fix --dir src",
+		"prettier": "prettier -l \"./src/**/*.{js,jsx,ts,tsx,md}\" --write",
+		"dev": "next dev",
+		"build": "next build",
+		"export": "EXPORT=true next build && EXPORT=true next export",
+		"analyze": "ANALYZE=true next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@react-spring/three": "^9.4.5",
+		"@react-three/a11y": "^3.0.0",
+		"@react-three/drei": "^9.52.6",
+		"@react-three/fiber": "^8.0.22",
+		"@react-three/postprocessing": "^2.7.0",
+		"babel-plugin-glsl": "^1.0.0",
+		"glsl-blend": "^1.0.3",
+		"glsl-dither": "^1.0.1",
+		"glsl-fast-gaussian-blur": "^1.0.2",
+		"glsl-random": "^0.0.5",
+		"leva": "^0.9.27",
+		"next": "^12.1.6",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0",
+		"react-is": "^18.1.0",
+		"three": "^0.141.0",
+		"three-stdlib": "^2.10.2",
+		"zustand": "^4.0.0-rc.1"
+	},
+	"devDependencies": {
+		"@next/bundle-analyzer": "^12.0.10",
+		"@types/node": "^17.0.39",
+		"@types/react": "^18.0.10",
+		"@types/three": "^0.141.0",
+		"eslint": "^8.17.0",
+		"eslint-config-next": "^12.0.10",
+		"eslint-config-prettier": "^8.3.0",
+		"file-loader": "^6.2.0",
+		"glslify": "^7.1.1",
+		"glslify-loader": "^2.0.0",
+		"next-compose-plugins": "^2.2.1",
+		"next-offline": "^5.0.5",
+		"prettier": "^2.6.2",
+		"raw-loader": "^4.0.2",
+		"typescript": "^4.7.3",
+		"url-loader": "^4.1.1"
+	}
 }
