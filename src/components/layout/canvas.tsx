@@ -1,15 +1,18 @@
 /** @format */
 
-import { useRef, useState } from "react"
+import { Suspense, useRef, useState } from "react"
 import { Canvas } from "@react-three/fiber"
 import { A11yAnnouncer } from "@react-three/a11y"
 import {
+	AccumulativeShadows,
 	Effects,
 	Environment,
 	Lightformer,
 	OrbitControls,
 	PerspectiveCamera,
 	Preload,
+	RandomizedLight,
+	SoftShadows,
 	Stats,
 } from "@react-three/drei"
 import Model from "../canvas/Perfume"
@@ -23,41 +26,20 @@ import {
 	BrightnessContrast,
 	ToneMapping,
 } from "@react-three/postprocessing"
+import Text from "../canvas/Text"
+import Loader from "../canvas/Loader"
+import Admi from "../canvas/Scene"
+import { useControls } from "leva"
 
 const Controls = () => {
 	const control = useRef(null)
 	return <OrbitControls ref={control} />
 }
 const CanvasWrapper = ({ children }) => {
-	const [mCoord, setMCoord] = useState({
-		x: 0,
-		y: 0,
-	})
-
-	const [isMouse, setIsMouse] = useState(false)
-
 	const canvas = useRef(null)
-	// console.log(canvas.current?.clientWidth)
-
-	const handlePointerMove = (e: any) => {
-		if (isMouse == true && canvas.current) {
-			let w = canvas.current?.clientWidth
-			let h = canvas.current?.clientHeight
-			let x = e.pageX
-			let y = e.pageY
-
-			x = (x - w / 2) / w
-			y = (y - h / 2) / h
-
-			setMCoord({
-				x: x,
-				y: y,
-			})
-		}
-	}
 
 	return (
-		<>
+		<Suspense fallback={null}>
 			<Canvas
 				// Is this deprecated or typed wrong? Ignoring for now.
 				ref={canvas}
@@ -75,21 +57,18 @@ const CanvasWrapper = ({ children }) => {
 					stencil: false,
 					depth: false,
 				}}
-				// @ts-ignore
-				onPointerOver={() => setIsMouse(true)}
-				// @ts-ignore
-				onPointerMove={handlePointerMove}
-				// @ts-ignore
-				onPointerLeave={() => setIsMouse(false)}
 			>
 				<color
 					attach="background"
-					args={["#283846"]}
+					// args={["#283846"]}
+					args={["#000"]}
 				/>
 				<Stats />
-				<Model mCoords={mCoord} />
+				{/* <Model /> */}
+				<Admi />
+				{/* <Text /> */}
 				<EffectComposer
-					multisampling={10}
+					multisampling={5}
 					disableNormalPass={true}
 				>
 					<Bloom
@@ -114,7 +93,7 @@ const CanvasWrapper = ({ children }) => {
 				{children}
 			</Canvas>
 			<A11yAnnouncer />
-		</>
+		</Suspense>
 	)
 }
 

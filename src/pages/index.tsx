@@ -1,6 +1,9 @@
 /** @format */
 
 // import Model from "@/components/canvas/Perfume"
+import Loader from "@/components/canvas/Loader"
+import Text from "@/components/canvas/Text"
+import Navbar from "@/components/dom/Navbar"
 import useStore from "@/helpers/store"
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
@@ -21,7 +24,8 @@ const Model = dynamic(
 const DOM = () => {
 	return (
 		<>
-			<h1>Hello world</h1>
+			<Loader />
+			<Navbar />
 		</>
 	)
 }

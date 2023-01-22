@@ -10,6 +10,8 @@ import React, {
 	useMemo,
 	useRef,
 	useLayoutEffect,
+	useEffect,
+	useState,
 } from "react"
 import {
 	useGLTF,
@@ -20,6 +22,7 @@ import {
 	Caustics,
 	MeshTransmissionMaterial,
 	CubeCamera,
+	useProgress,
 } from "@react-three/drei"
 import {
 	useFrame,
@@ -38,6 +41,8 @@ import {
 import BackfaceMaterial from "./BackfaceMaterial"
 // @ts-ignore
 import RefractionMaterial from "./RefractionMaterial/RefractionMaterial"
+import { easing } from "maath"
+import { motion } from "framer-motion-3d"
 
 type GLTFResult = GLTF & {
 	nodes: {
@@ -58,10 +63,9 @@ type GLTFResult = GLTF & {
 	}
 }
 
-export default function Model(
-	mCoords: any,
-	{ ...props }: JSX.IntrinsicElements["group"]
-) {
+export default function Model({
+	...props
+}: JSX.IntrinsicElements["group"]) {
 	const group = useRef<THREE.Group>()
 
 	const globalEnvMap: any = useLoader(
@@ -73,6 +77,15 @@ export default function Model(
 		TextureLoader,
 		"/roughnessMap.jpg"
 	)
+
+	const { active } = useProgress()
+
+	const [initialAnimation, setInitialAnimation] =
+		useState(false)
+
+	const [Hovered, setIsHovered] = useState(false)
+
+	const isHovered = useMemo(() => Hovered, [Hovered])
 
 	const gltf: any = useGLTF("/perfume.glb")
 
@@ -107,107 +120,81 @@ export default function Model(
 
 	materials["LightMat-5"].emissiveIntensity = 5
 
-	// refraction code
-
-	useMemo(() => nodes.Bottle.geometry.center(), [])
-
-	const { size, gl, scene, camera, clock } = useThree()
-	const model = useRef(null)
-	const ratio = gl.getPixelRatio()
-	const env = useRef(null)
+	const model = useRef()
 	const perfume = useRef(null)
 
-	console.log(mCoords)
+	nodes.Bottle.geometry.center()
 
-	const [
-		envFbo,
-		backfaceFbo,
-		backfaceMaterial,
-		refractionMaterial,
-	] = useMemo(() => {
-		const envFbo = new WebGLRenderTarget(
-			size.width * ratio,
-			size.height * ratio
-		)
-		const backfaceFbo = new WebGLRenderTarget(
-			size.width * ratio,
-			size.height * ratio
-		)
-		const backfaceMaterial = new BackfaceMaterial()
-		const refractionMaterial = new RefractionMaterial({})
-		// @ts-ignore
-		refractionMaterial.envMap = envFbo.texture
-		// @ts-ignore
-		refractionMaterial.backfaceMap = backfaceFbo.texture
-		// @ts-ignore
-		refractionMaterial.resolution = [
-			size.width * ratio,
-			size.height * ratio,
-		]
-		console.log(globalEnvMap)
-		// @ts-ignore
-		refractionMaterial.globalEnv = globalEnvMap
-		// @ts-ignore
-		refractionMaterial.ior = 1.5
-		// @ts-ignore
-		refractionMaterial.a = 0.02
-		// @ts-ignore
-		refractionMaterial.fresnelPower = 4.7
-		//@ts-ignore
+	const easeOutQuint = (x: number): number => {
+		if (x < 0) {
+			return Math.pow(1 + x, 10) - 1
+		}
+		return 1 - Math.pow(1 - x, 10)
+	}
 
-		// console.log(refractionMaterial)
+	const { clock } = useThree()
+	// console.log(time)
 
-		return [
-			envFbo,
-			backfaceFbo,
-			backfaceMaterial,
-			refractionMaterial,
-		]
-	}, [size, ratio])
+	function easeInOutQuint(x: number): number {
+		return x < 0.5
+			? 16 * x * x * x * x * x
+			: 1 - Math.pow(-2 * x + 2, 5) / 2
+	}
 
-	useFrame(() => {
-		// if (perfume.current != undefined) {
-		// 	let currentRot = perfume.current?.rotatation
-		// 	// console.log(perfume.current)
-		// 	perfume.current?.rotation.set(
-		// 		Math.PI * mCoords.y,
-		// 		Math.PI * mCoords.x,
-		// 		0
+	useEffect(() => {
+		if (active == true) {
+			return
+		}
+		const timeout = setTimeout(() => {
+			setInitialAnimation(true)
+			console.log("animation set to true")
+		}, 4000)
+
+		return () => {
+			setInitialAnimation(false)
+			clearTimeout(timeout)
+		}
+	}, [active])
+
+	useFrame((state, delta) => {
+		// if (initialAnimation == true) {
+		// 	// @ts-ignore
+		// 	easing.dampE(
+		// 		perfume.current.position,
+		// 		[0, -0.6, 0],
+		// 		easeInOutQuint(clock.getElapsedTime()),
+		// 		delta
 		// 	)
 		// }
-		// camera.layers.set(0)
-		// gl.render(scene, camera)
+
+		// @ts-ignore
+		easing.dampE(
+			perfume.current.rotation,
+			[
+				isHovered
+					? Math.PI * easeOutQuint(state.pointer.y) * 0.03
+					: Math.PI * easeOutQuint(state.pointer.y) * 0.02,
+				isHovered
+					? Math.PI * easeOutQuint(state.pointer.x) * 0.05
+					: Math.PI * easeOutQuint(state.pointer.x) * 0.04,
+				0,
+			],
+			0.2,
+			delta
+		)
+
+		// @ts-ignore
+		easing.dampE(
+			perfume.current.position,
+			[
+				Math.PI * easeOutQuint(state.pointer.y) * 0.02,
+				-0.6,
+				isHovered ? 0.8 : 0,
+			],
+			0.2,
+			delta
+		)
 	})
-
-	// useFrame(() => {
-	// 	const t = clock.getElapsedTime()
-
-	// 	// perfume.current?.rotation.set(
-	// 	// 	0,
-	// 	// 	0 + Math.PI * t * 0.01,
-	// 	// 	0
-	// 	// )
-
-	// 	// gl.autoClear = false
-	// 	// camera.layers.set(0)
-	// 	// gl.setRenderTarget(envFbo)
-	// 	// gl.clearColor()
-	// 	// gl.render(scene, camera)
-	// 	// gl.clearDepth()
-	// 	// camera.layers.set(1)
-	// 	// model.current.material = backfaceMaterial
-	// 	// gl.setRenderTarget(backfaceFbo)
-	// 	// gl.clearDepth()
-	// 	// gl.render(scene, camera)
-	// 	// camera.layers.set(0)
-	// 	// gl.setRenderTarget(null)
-	// 	// gl.render(scene, camera)
-	// 	// gl.clearDepth()
-	// 	camera.layers.set(1)
-	// 	// model.current.material = refractionMaterial
-	// 	// model.current.material.attach = "material"
-	// 	gl.render(scene, camera)
-	// }, 1)
 
 	return (
 		<group
@@ -233,64 +220,35 @@ export default function Model(
 							makeDefault={true}
 							far={1000}
 							near={0.1}
-							fov={18.9}
+							fov={20}
+							zoom={1}
 							rotation={[-Math.PI / 2, 0, 0]}
 						/>
 					</group>
-					{/* @ts-ignore */}
-
 					<group
 						ref={perfume}
-						position={[0, -0.6, 0]}
-						layers={0}
-						onAfterRender={() =>
-							console.log("rendering mesh")
-						}
+						onPointerOver={() => setIsHovered(true)}
+						onPointerLeave={() => setIsHovered(false)}
+						position={[0, 0.6, 3]}
 					>
 						<mesh
 							ref={model}
-							// layers={0}
 							castShadow
 							receiveShadow
 							position={[0, 0.3, -0.25]}
 							geometry={nodes.Bottle.geometry}
 							// material={materials["Glass.002"]}
 						>
-							<meshPhysicalMaterial
-								attach="material"
-								{...bottleConfig}
-							/>
+							<meshPhysicalMaterial {...bottleConfig} />
 						</mesh>
 						<mesh
-							// layers={0}
 							castShadow
 							receiveShadow
 							geometry={nodes.Head.geometry}
 							material={materials.Head}
 						/>
-						{/* <mesh
-							layers={1}
-							castShadow
-							receiveShadow
-							geometry={nodes.Liquid.geometry}
-							// material={materials.Liquid}
-						>
-							{liquidConfig.meshPhysicalMaterial ? (
-								<meshPhysicalMaterial
-									attach="material"
-									{...liquidConfig}
-								/>
-							) : (
-								<MeshTransmissionMaterial
-									attach="material"
-									// @ts-ignore
-									background={new THREE.Color(liquid.bg)}
-									{...liquidConfig}
-								/>
-							)}
-						</mesh> */}
+
 						<mesh
-							// layers={1}
 							castShadow
 							receiveShadow
 							geometry={nodes.SprayPipe.geometry}

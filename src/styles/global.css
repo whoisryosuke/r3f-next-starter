@@ -1,0 +1,24 @@
+/** @format */
+
+.loader-text::before {
+	/* This will create the layer
+           over original text*/
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/* Setting different color than
+              that of original text  */
+	color: green;
+	overflow: hidden;
+
+	/* Setting width to 0*/
+	width: 0%;
+	transition: 1s;
+}
+
+.loader-text:hover::before {
+	/* Setting width to 100 on hover*/
+	width: 100%;
+}
