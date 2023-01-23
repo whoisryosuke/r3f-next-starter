@@ -17,10 +17,28 @@
 #endif
 
 uniform vec2 resolution;
+uniform float progress;
 
 varying vec3 worldNormal;
 varying vec3 viewDirection;
 
+float rand(float n){return fract(sin(n) * 43758.5453123);}
+float rand(vec2 n) { 
+	return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+
+float noise(float p){
+	float fl = floor(p);
+  float fc = fract(p);
+	return mix(rand(fl), rand(fl + 1.0), fc);
+}
+	
+float noise(vec2 n) {
+	const vec2 d = vec2(0.0, 1.0);
+  vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+	return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+}
 
 
 
@@ -76,6 +94,14 @@ void main() {
 
   diffuseColor.a *= outerAlpha * innerAlpha;
 #endif
+
+float x = floor(vCharUv.x*100.);
+float y = floor(vCharUv.y*100.);
+float nois = noise(vec2(x,y));
+float p0= progress;
+p0 = smoothstep(p0,p0-0.5,vCharUv.x );
 	
-	gl_FragColor =  vec4(1.3, 3.2, 1.4, 1.0);
+	gl_FragColor =  vec4(vec3(nois)*p0, 1.);
+	
+	// gl_FragColor =  vec4(1.3, 3.2, 1.4, 1.0);
 }

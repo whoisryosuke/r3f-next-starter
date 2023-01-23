@@ -1,6 +1,11 @@
 /** @format */
-
-import { Suspense, useRef, useState } from "react"
+import * as THREE from "three"
+import {
+	Suspense,
+	useEffect,
+	useRef,
+	useState,
+} from "react"
 import { Canvas } from "@react-three/fiber"
 import { A11yAnnouncer } from "@react-three/a11y"
 import {
@@ -30,6 +35,7 @@ import Text from "../canvas/Text"
 import Loader from "../canvas/Loader"
 import Admi from "../canvas/Scene"
 import { useControls } from "leva"
+import { Material } from "three/src/Three"
 
 const Controls = () => {
 	const control = useRef(null)
@@ -37,6 +43,10 @@ const Controls = () => {
 }
 const CanvasWrapper = ({ children }) => {
 	const canvas = useRef(null)
+
+	useEffect(() => {
+		console.log(canvas)
+	}, [canvas])
 
 	return (
 		<Suspense fallback={null}>
@@ -52,11 +62,29 @@ const CanvasWrapper = ({ children }) => {
 				}}
 				gl={{
 					powerPreference: "high-performance",
-					alpha: false,
-					antialias: false,
-					stencil: false,
-					depth: false,
+					alpha: true,
+					antialias: true,
+					stencil: true,
+					depth: true,
+					outputEncoding: THREE.sRGBEncoding,
+					toneMapping: THREE.ACESFilmicToneMapping,
+					// renderBufferDirect(
+					// 	camera,
+					// 	scene,
+					// 	geometry,
+					// 	material,
+					// 	object,
+					// 	geometryGroup
+					// ) {
+					// 	material.needsUpdate = true
+					// },
 				}}
+				// gl={canvas => {
+				// 	const renderer = new THREE.WebGLRenderer({
+				// 		canvas,
+				// 	})
+				// 	console.log(renderer.renderBufferDirect)
+				// }}
 			>
 				<color
 					attach="background"
@@ -64,19 +92,19 @@ const CanvasWrapper = ({ children }) => {
 					args={["#000"]}
 				/>
 				<Stats />
-				{/* <Model /> */}
-				<Admi />
-				{/* <Text /> */}
+				<Model />
+				{/* <Admi /> */}
+				<Text />
 				<EffectComposer
 					multisampling={5}
-					disableNormalPass={true}
+					disableNormalPass={false}
 				>
-					<Bloom
+					{/* <Bloom
 						luminanceThreshold={0.05}
 						luminanceSmoothing={0.9}
 						height={200}
 						opacity={0.2}
-					/>
+					/> */}
 					<DepthOfField
 						focusDistance={0.007}
 						focalLength={0.02}
