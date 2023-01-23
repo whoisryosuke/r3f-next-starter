@@ -25,6 +25,7 @@ import font from "../../Novara-msdf.json"
 import { useControls } from "leva"
 import { shaderMaterial } from "@react-three/drei"
 import { extend } from "react-three-fiber"
+import { easing } from "maath"
 
 const Text = () => {
 	// This reference will give us direct access to the mesh
@@ -36,13 +37,20 @@ const Text = () => {
 	// )
 
 	const shaderControls = useControls("shader controls", {
-		progress: { value: 0.5, min: 0, max: 1, step: 0.01 },
+		progress: { value: 0.5, min: 0, max: 3.5, step: 0.01 },
 	})
 
 	const fontTex = useLoader(
 		TextureLoader,
 		"/Novara-msdf/Novara.png"
 	)
+
+	const easeOutQuint = (x: number): number => {
+		if (x < 0) {
+			return Math.pow(1 + x, 10) - 1
+		}
+		return 1 - Math.pow(1 - x, 10)
+	}
 
 	const geometry = new TextGeometry({
 		font: font,
@@ -78,19 +86,41 @@ const Text = () => {
 	// 	}
 	// }, [shaderControls.progress])
 
-	// useFrame(state => {
-	// 	// if (text.current !== undefined) {
-	// 	// 	text.current.rotation.x =
-	// 	// 		text.current.rotation.y += 0.01
-	// 	// }
-	// 	if (mRef.current) {
-	// 		mRef.current.uniformsNeedUpdate = true
-	// 		mRef.current.uniforms.progress =
-	// 			state.clock.getElapsedTime() * 0.00001
-	// 	}
+	const lerp = (
+		value1: number,
+		value2: number,
+		amount: number
+	) => {
+		amount = amount < 0 ? 0 : amount
+		amount = amount > 1 ? 1 : amount
+		return value1 + (value2 - value1) * amount
+	}
 
-	// 	// console.log(text.current.material.uniforms)
-	// })
+	useFrame((state, delta) => {
+		// if (text.current !== undefined) {
+		// 	text.current.rotation.x =
+		// 		text.current.rotation.y += 0.01
+		// }
+		// if (mRef.current) {
+		// 	mRef.current.uniformsNeedUpdate = true
+		if (mRef.current.uniforms.progress.value < 1.1) {
+			if (state.clock.getElapsedTime() < 3) {
+				return
+			}
+			// mRef.current.uniforms.progress.value += easeOutQuint(
+			// 	delta * 0.1
+			// )
+			mRef.current.uniforms.progress.value += lerp(
+				0,
+				1.1,
+				delta * 0.1
+			)
+		}
+
+		// }
+		// text.current.geometry.scale = 0.5
+		// console.log(text.current.material.uniforms)
+	})
 
 	const text = useRef()
 	const mRef = useRef(null)
@@ -134,14 +164,18 @@ const Text = () => {
 									progress: {
 										value: shaderControls.progress,
 									},
-									uThreshold: { value: 0.5 },
+									uThreshold: { value: 0.47 },
 									uAtlas: { value: fontTex },
+									stroke: { value: true },
+									uStrokeInnerWidth: { value: 0.0 },
+									uStrokeOuterWidth: { value: 0.3 },
 								},
 								vertexShader: vertex,
 								fragmentShader: fragment,
 								defines: {
 									USE_MSDF_GEOMETRY: "1.0",
 									USE_THRESHOLD: "1.0",
+									USE_STROKE: "1.0",
 								},
 								transparent: true,
 							},

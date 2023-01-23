@@ -11,7 +11,7 @@
     uniform float uStrokeOuterWidth;
     uniform float uStrokeInnerWidth;
   #else 
-    float uStrokeOuterWidth = 0.0;
+    float uStrokeOuterWidth = 1.0;
     float uStrokeInnerWidth = 1.0;
   #endif
 #endif
@@ -40,7 +40,9 @@ float noise(vec2 n) {
 	return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
 }
 
-
+float map(float value, float min1, float max1, float min2, float max2) {
+  return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
+}
 
 void main() {
 	// screen coordinates
@@ -70,9 +72,9 @@ void main() {
 
 
   // Outset
-  float signedDistOutset = signedDist + uStrokeOuterWidth * 0.5;
+  float signedDistOutset = signedDist + uStrokeOuterWidth ;
   // Inset
-  float signedDistInset = signedDist - uStrokeInnerWidth * 0.5;
+  float signedDistInset = signedDist - uStrokeInnerWidth ;
 
 
   #ifdef USE_THRESHOLD
@@ -95,13 +97,28 @@ void main() {
   diffuseColor.a *= outerAlpha * innerAlpha;
 #endif
 
-float x = floor(vCharUv.x*100.);
-float y = floor(vCharUv.y*100.);
-float nois = noise(vec2(x,y));
+
+float x = floor(vCharUv.x*1000.);
+float y = floor(vCharUv.y*1000.);
+float pattern = noise(vec2(x,y));
+
+float w = 0.9;
 float p0= progress;
-p0 = smoothstep(p0,p0-0.5,vCharUv.x );
+p0= map(p0, 0.,1., -w, 1.);
+p0 = smoothstep(p0,p0-w,vCharUv.x );
+float mix0 = 2.*p0-pattern;
+mix0 = clamp(mix0, 0., 1.);
+
+vec4 l1 = vec4(vec3(1.,0.95,0.43), 0.0);
+vec4 l2 = vec4(vec3(1.,0.7,0.3), 0.0);
+
+vec4 layer1 = mix(vec4(1.), l1, 1.-mix0);
+vec4 layer2 = mix(layer1, l2, 1.-mix0);
+
+
+
 	
-	gl_FragColor =  vec4(vec3(nois)*p0, 1.);
+	// gl_FragColor =  vec4(vec3(p0_), diffuseColor.b);
 	
-	// gl_FragColor =  vec4(1.3, 3.2, 1.4, 1.0);
+	gl_FragColor = layer2;
 }
