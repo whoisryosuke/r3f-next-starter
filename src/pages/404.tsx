@@ -2,14 +2,11 @@
 
 import { Box, Heading, Image, Link, Text } from "@chakra-ui/react";
 // import Image from "next/image";
-import svg404 from "../../public/404500png/404.svg";
-import yousufAbeerlogo from "../../public/yousufAbeerLogo.svg";
-import pagenotfound from "../../public/404500png/pagenotfound.svg";
+
 import { useStore } from "zustand";
 
 // DOM elements here
 const DOM = () => {
-  const mainPage = () => {};
   return (
     <>
       <Box
@@ -36,7 +33,10 @@ const DOM = () => {
             flexDir: "column",
             justifyContent: "center",
             alignItems: "center",
-            gap: 10,
+            gap: {
+              lg: 10,
+              base: 5,
+            },
             margin: "auto",
             color: "black",
             // WebkitTextStroke: "0.22px gold ",
