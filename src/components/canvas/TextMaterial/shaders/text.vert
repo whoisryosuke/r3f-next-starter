@@ -14,7 +14,7 @@ void main() {
   vCharUv = charUv;
   #endif
 	texCoord=in_texCoord;
-	vec4 worldPosition = modelMatrix * vec4( position, 1.0);
+	vec4 worldPosition = modelMatrix * vec4(position, 1.0);
 	worldNormal = normalize( modelViewMatrix * vec4(normal, 0.)).xyz;
 	viewDirection = normalize(worldPosition.xyz - cameraPosition);;
 
