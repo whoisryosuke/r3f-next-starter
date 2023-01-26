@@ -23,9 +23,10 @@ import fragment from "./TextMaterial/shaders/text.frag"
 // @ts-ignore
 import font from "../../Novara-msdf.json"
 import { useControls } from "leva"
-import { shaderMaterial } from "@react-three/drei"
+import { Html, shaderMaterial } from "@react-three/drei"
 import { extend } from "react-three-fiber"
 import { easing } from "maath"
+import { Flex, Box, useFlexSize } from "@react-three/flex"
 
 const Text = () => {
 	// This reference will give us direct access to the mesh
@@ -36,9 +37,9 @@ const Text = () => {
 	// 	"/Novara-msdf/Novara-msdf.fnt"
 	// )
 
-	const shaderControls = useControls("shader controls", {
-		progress: { value: 0.5, min: 0, max: 3.5, step: 0.01 },
-	})
+	// const shaderControls = useControls("shader controls", {
+	// 	progress: { value: 0.5, min: 0, max: 3.5, step: 0.01 },
+	// })
 
 	const fontTex = useLoader(
 		TextureLoader,
@@ -55,7 +56,7 @@ const Text = () => {
 	const geometry = new TextGeometry({
 		font: font,
 		text: "scent-sational\n luxury          for\n royalty.",
-		size: 50,
+		size: 5,
 		lineHeight: 1.2,
 		letterSpacing: 0.07,
 		lineCharCount: true,
@@ -64,7 +65,7 @@ const Text = () => {
 
 	const TextShader = new THREE.ShaderMaterial({
 		uniforms: {
-			progress: { value: shaderControls.progress },
+			progress: { value: 0.0 },
 			uAtlas: { value: fontTex },
 		},
 		defines: {
@@ -113,7 +114,7 @@ const Text = () => {
 			mRef.current.uniforms.progress.value += lerp(
 				0,
 				1.1,
-				delta * 0.1
+				delta * 0.3
 			)
 		}
 
@@ -131,59 +132,78 @@ const Text = () => {
 	// 		console.log(mRef.current)
 	// 	}
 	// }, [mRef])
-	console.log(mRef.current)
+	console.log(text.current?.geometry.boundingBox.max.x)
 
-	console.log(shaderControls.progress)
+	// console.log(shaderControls.progress)
 
 	return (
 		<>
 			<Suspense fallback={<></>}>
-				<mesh
-					ref={text}
-					geometry={geometry}
-					// rotation={[0, Math.PI / 2, 0]}
-					position={[-3, 0.8, 3]}
-					scale={[0.01, 0.01, 0.01]}
-					// material={TextShader}
-					// material-uniforms-progress={
-					// 	shaderControls.progress
-					// }
-					// material-uniformsNeedUpdate-value={true}
-					// material-uniforms-progress-value={
-					// 	shaderControls.progress
-					// }
-					// material-needsUpdate={true}
+				<Flex
+					width={"10"}
+					height={"10"}
+					align={"center"}
+					justify={"center"}
 				>
-					<shaderMaterial
-						ref={mRef}
-						uniformsNeedUpdate={true}
-						attach="material"
-						args={[
-							{
-								uniforms: {
-									progress: {
-										value: shaderControls.progress,
+					<Box centerAnchor>
+						<Html>
+							<div
+								style={{
+									width: "350px",
+									// height: "100%",
+									// background: "white",
+									color: "white",
+									fontSize: "24px",
+									position: "fixed",
+									left:
+										-text.current?.geometry.boundingBox.max
+											.x * 0.3,
+									top: -40,
+									fontFamily: "Gilroy",
+									fontWeight: "4001",
+									letterSpacing: 1.3,
+								}}
+							>
+								because smelling like a million bucks just
+								isn&apos;t good enough
+							</div>
+						</Html>
+						<mesh
+							ref={text}
+							geometry={geometry}
+							position={[-2.5, 1.0, 3]}
+							scale={[0.1, 0.1, 0.1]}
+						>
+							<shaderMaterial
+								ref={mRef}
+								uniformsNeedUpdate={true}
+								attach="material"
+								args={[
+									{
+										uniforms: {
+											progress: {
+												value: 0.0,
+											},
+											uThreshold: { value: 0.47 },
+											uAtlas: { value: fontTex },
+											stroke: { value: true },
+											uStrokeInnerWidth: { value: 0.0 },
+											uStrokeOuterWidth: { value: 0.3 },
+										},
+										vertexShader: vertex,
+										fragmentShader: fragment,
+										defines: {
+											USE_MSDF_GEOMETRY: "1.0",
+											USE_THRESHOLD: "1.0",
+											USE_STROKE: "1.0",
+										},
+										transparent: true,
 									},
-									uThreshold: { value: 0.47 },
-									uAtlas: { value: fontTex },
-									stroke: { value: true },
-									uStrokeInnerWidth: { value: 0.0 },
-									uStrokeOuterWidth: { value: 0.3 },
-								},
-								vertexShader: vertex,
-								fragmentShader: fragment,
-								defines: {
-									USE_MSDF_GEOMETRY: "1.0",
-									USE_THRESHOLD: "1.0",
-									USE_STROKE: "1.0",
-								},
-								transparent: true,
-							},
-						]}
-						// uniforms={{ progress: shaderControls.progress }}
-					/>
-					{/* <textShader /> */}
-				</mesh>
+								]}
+							/>
+						</mesh>
+					</Box>
+				</Flex>
 			</Suspense>
 		</>
 	)

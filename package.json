@@ -27,6 +27,7 @@
 		"@react-spring/three": "^9.4.5",
 		"@react-three/a11y": "^3.0.0",
 		"@react-three/drei": "^9.52.6",
+		"@react-three/flex": "^1.0.1",
 		"@react-three/postprocessing": "^2.7.0",
 		"babel-plugin-glsl": "^1.0.0",
 		"framer-motion": "^8.5.0",
