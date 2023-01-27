@@ -8,7 +8,9 @@ import useStore from "@/helpers/store";
 import dynamic from "next/dynamic";
 import Scene1 from "../components/dom/Scene1";
 import Scene2 from "../components/dom/Scene2";
+import Truely from "../components/dom/Truely/Truely";
 import { useRouter } from "next/router";
+import { Flex } from "@chakra-ui/react";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -23,10 +25,11 @@ const Model = dynamic(() => import("@/components/canvas/Perfume"), {
 const DOM = () => {
   return (
     <>
-      <Loader />
-      <Navbar />
-      {/* <Scene1 /> */}
-      {/* <Scene2 /> */}
+      {/* <Loader />
+      <Navbar /> */}
+      <Scene1 />
+      <Scene2 />
+      <Truely />
     </>
   );
 };
