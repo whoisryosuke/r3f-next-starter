@@ -5,48 +5,29 @@ import React, { useRef, useEffect } from "react";
 import Perfume1 from "./Perfume1";
 import Perfume2 from "./Perfume2";
 import Perfume3 from "./Perfume3";
-
+import TwoPerfumeImages from "./TwoPerfumeImages";
 const Truely = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const mobileControls = useAnimation();
+  const [refmobile, mobileinView] = useInView();
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  // const controls = useAnimation();
+  // const [ref, inView] = useInView();
+
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
+    if (mobileinView) {
+      mobileControls.start("visible");
     }
-  }, [controls, inView]);
-  const variant1 = {
+  }, [mobileControls, mobileinView]);
+
+  const mobileheadingVariant = {
     start: {
-      y: -100,
+      lineHeight: "5rem",
       opacity: 0,
     },
     visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-  const variant2 = {
-    start: {
-      y: 100,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-  const headingVariant = {
-    start: {
-      lineHeight: "7vw",
-      opacity: 0,
-    },
-    visible: {
-      lineHeight: "4vw",
+      lineHeight: "2rem",
       opacity: 1,
       transition: {
         duration: 0.6,
@@ -55,6 +36,23 @@ const Truely = () => {
       },
     },
   };
+
+  const titleVarients = {
+    start: {
+      lineHeight: "7vw",
+      opacity: 0,
+    },
+    visible: {
+      lineHeight: "4rem",
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        type: "tween",
+        ease: [0.45, 0, 0.55, 1],
+      },
+    },
+  };
+
   return (
     <Box
       sx={{
@@ -67,78 +65,59 @@ const Truely = () => {
         flexDir: "column",
         alignItems: "center",
         overflowY: "clip",
-        // position: "relative",
+        position: "relative",
       }}
     >
       <Box
         w="100vw"
         h="100vh"
-        marginLeft="5rem"
+        marginLeft={{ lg: "5rem ", base: "2rem" }}
         paddingTop="3rem"
         maxW="1800px"
-        // margin="auto"
+        margin="auto"
         // border="1px solid white"
         position="relative"
       >
-        <Heading
-          as={motion.div}
-          ref={ref}
-          variants={headingVariant}
-          initial="start"
-          animate={controls}
-          fontFamily="novara"
-          fontSize={{ lg: "3.3vw", base: "4vw" }}
-          letterSpacing="5px"
-          maxW={{ lg: "1400px", base: "300px" }}
-          fontWeight="400"
-        >
-          a truly timeless eau de parfum became one of the most beloved
-          perfumes.
-        </Heading>
-
+        {/* desktop heading */}
         <Box>
-          <Perfume1 />
-          <Perfume2 />
-          <Perfume3 />
-        </Box>
+          <Text
+            as={motion.p}
+            viewport={{ once: true }}
+            variants={titleVarients}
+            initial="start"
+            whileInView="visible"
+            fontFamily="novara"
+            fontSize={{ lg: "4rem", base: "2rem" }}
+            maxW="1400px"
+            fontWeight="400"
+            display={{ lg: "block", base: "none" }}
+          >
+            a truly timeless eau de parfum became one of the most beloved
+            perfumes.
+          </Text>
+          <Text
+            ref={refmobile}
+            as={motion.p}
+            variants={mobileheadingVariant}
+            initial="start"
+            animate={mobileControls}
+            fontFamily="novara"
+            fontSize={{ lg: "4rem", base: "2rem" }}
+            maxW="1400px"
+            fontWeight="400"
+            display={{ lg: "none", base: "inline-block" }}
+          >
+            a truly timeless eau de parfum became one of the most beloved
+            perfumes.
+          </Text>
 
-        <Box
-          as={motion.div}
-          ref={ref}
-          variants={variant1}
-          initial="start"
-          animate={controls}
-          sx={{
-            position: "absolute",
-            top: 0,
-            right: 100,
-            boxSize: "200px",
-            display: {
-              lg: "inline-block",
-              base: "none",
-            },
-          }}
-        >
-          <Image src="/images/perfume5.png" />
-        </Box>
-        <Box
-          as={motion.div}
-          ref={ref}
-          variants={variant2}
-          initial="start"
-          animate={controls}
-          sx={{
-            position: "absolute",
-            bottom: -7,
-            left: 0,
-            boxSize: "200px",
-            display: {
-              lg: "inline-block",
-              base: "none",
-            },
-          }}
-        >
-          <Image src="/images/perfume4.png" />
+          <Box>
+            <Perfume1 />
+            <Perfume2 />
+            <Perfume3 />
+
+            <TwoPerfumeImages />
+          </Box>
         </Box>
       </Box>
     </Box>

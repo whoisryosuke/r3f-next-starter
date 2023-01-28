@@ -36,29 +36,38 @@ const Perfume3 = () => {
       gap={{ lg: "10", base: "0" }}
       position="absolute"
       // marginTop={{ lg: "5rem", base: "10rem" }}
-      bottom={{ lg: "0vw", base: "350px" }}
-      right={{ lg: "100", base: "-10" }}
+      bottom={{ lg: "2", base: "40vw" }}
+      right={{ lg: "100", base: "50" }}
     >
-      <Box>
-        <Image maxW="26vw" src="/images/perfume3.png" />
+      <Box
+        display="flex"
+        justifyContent="flex-end"
+        marginRight={{ lg: 0, base: "2rem" }}
+      >
+        <Image
+          maxW={{ lg: "26vw", base: "250px" }}
+          h={{ lg: "inherit", base: "110px" }}
+          src="/images/perfume3.png"
+        />
       </Box>
-      <Box>
+      <Box display={{ lg: "block", base: "flex" }}>
         <Heading
           fontFamily="novara"
-          fontSize="3.3vw"
+          fontSize={{ lg: "4rem", base: "1.3rem" }}
           fontWeight="500"
-          maxW="600px"
+          maxW={{ lg: "600px", base: "80px" }}
           marginTop="20px"
         >
           Eau de parfum spray
         </Heading>
         <Text
-          maxW="600px"
+          maxW={{ lg: "400px", base: "200px" }}
+          alignSelf="flex-end"
+          fontWeight="300"
           fontFamily="gilroy"
-          fontWeight="lighter"
-          fontSize="0.93vw"
-          lineHeight="1vw"
-          letterSpacing="1px"
+          fontSize={{ lg: "18px ", base: "16px" }}
+          lineHeight={{ lg: "18px", base: "17px" }}
+          letterSpacing={{ lg: "2px", base: "6%" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.

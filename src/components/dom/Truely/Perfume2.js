@@ -53,9 +53,9 @@ const Perfume2 = () => {
         <Text
           maxW="15.5vw"
           fontFamily="gilroy"
-          fontSize="0.93vw"
-          lineHeight="1vw"
-          letterSpacing="1px"
+          fontSize={{ lg: "20px ", base: "16px" }}
+          lineHeight={{ lg: "18px", base: "17px" }}
+          letterSpacing={{ lg: "2px", base: "6%" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.
