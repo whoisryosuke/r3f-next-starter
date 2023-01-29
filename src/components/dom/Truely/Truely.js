@@ -64,19 +64,20 @@ const Truely = () => {
         display: "flex",
         flexDir: "column",
         alignItems: "center",
+        justifyContent: "center",
         overflowY: "clip",
         position: "relative",
       }}
     >
       <Box
+        // maxW="00px"
         w="100vw"
         h="100vh"
         marginLeft={{ lg: "5rem ", base: "2rem" }}
         paddingTop="3rem"
-        maxW="1800px"
-        margin="auto"
-        // border="1px solid white"
+        maxW="2000px"
         position="relative"
+        // border="1px solid white"
       >
         {/* desktop heading */}
         <Box>

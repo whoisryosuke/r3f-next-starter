@@ -45,7 +45,7 @@ const Perfume2 = () => {
         <Heading
           fontFamily="novara"
           fontSize="3.3vw"
-          fontWeight="500"
+          fontWeight={{ base: "500", md: "800", lg: "400" }}
           maxW="14vw"
         >
           Eau de parfum spray
@@ -54,6 +54,7 @@ const Perfume2 = () => {
           maxW="15.5vw"
           fontFamily="gilroy"
           fontSize={{ lg: "20px ", base: "16px" }}
+          // fontSize={{ base: "24px", md: "40px", lg: "506px" }}
           lineHeight={{ lg: "18px", base: "17px" }}
           letterSpacing={{ lg: "2px", base: "6%" }}
         >

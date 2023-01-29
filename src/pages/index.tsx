@@ -10,8 +10,9 @@ import Scene1 from "../components/dom/Scene1";
 import Scene2 from "../components/dom/Scene2";
 import Truely from "../components/dom/Truely/Truely";
 import GetinTouch from "../components/dom/GetinTouch";
+import Footer from "../components/dom/Footer";
 import { useRouter } from "next/router";
-import { Flex } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -28,10 +29,12 @@ const DOM = () => {
     <>
       {/* <Loader />
       <Navbar /> */}
-      {/* <Scene1 />
+
+      <Scene1 />
       <Scene2 />
-      <Truely /> */}
+      <Truely />
       <GetinTouch />
+      <Footer />
     </>
   );
 };
