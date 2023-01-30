@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import Scene1 from "../components/dom/Scene1";
 import Scene2 from "../components/dom/Scene2";
 import Truely from "../components/dom/Truely/Truely";
+import Fragrances from "../components/dom/Fragrances";
 import GetinTouch from "../components/dom/GetinTouch";
 import Footer from "../components/dom/Footer";
 import { useRouter } from "next/router";
@@ -28,13 +29,14 @@ const DOM = () => {
   return (
     <>
       {/* <Loader />
-      <Navbar /> */}
+      <Navbar />
 
       <Scene1 />
       <Scene2 />
       <Truely />
       <GetinTouch />
-      <Footer />
+      <Footer /> */}
+      <Fragrances />
     </>
   );
 };

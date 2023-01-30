@@ -19,7 +19,7 @@ const Footer = () => {
           flexWrap="wrap"
           flexDir={{ lg: "row", base: "column" }}
           justifyContent="space-between"
-          gap={{ lg: "5rem", base: "2.5rem" }}
+          // gap={{ lg: "0rem", base: "2.5rem" }}
           marginTop={{ lg: "5rem", base: "4rem" }}
         >
           <Box>

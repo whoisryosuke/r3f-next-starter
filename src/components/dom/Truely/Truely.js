@@ -83,7 +83,7 @@ const Truely = () => {
         <Box>
           <Text
             as={motion.p}
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
             variants={titleVarients}
             initial="start"
             whileInView="visible"
