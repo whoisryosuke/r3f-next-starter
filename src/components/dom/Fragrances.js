@@ -8,8 +8,15 @@ import {
 } from "scroller-motion";
 
 const OnePerfume = ({ children }) => {
+  const [hover, setHover] = useState(false);
+  const textHover = (event) => {
+    setHover(true);
+    console.log(hover);
+  };
   return (
     <Box
+      as={motion.div}
+      whileHover={textHover}
       background="linear-gradient(to right, black 50%, white 50%)"
       backgroundSize="200% 100%"
       backgroundPosition="right"
@@ -82,7 +89,7 @@ const Fragrances = () => {
       console.log(e.target.scrollTop / scrollDemo.current.clientHeight);
       scrollTop.current = e.target.scrollTop;
 
-      console.log(scrollTop.current);
+      // console.log(scrollDemo.current.clientHeight);
     };
 
     scrollDemo.current.addEventListener("scroll", updateScrollPos);
@@ -102,6 +109,7 @@ const Fragrances = () => {
       easeInOutQuad(0.17)
     );
   });
+  // console.log(horizontalScroll.current.clientWidth);
 
   return (
     <Box w="100vw" h="100vh">
@@ -113,7 +121,7 @@ const Fragrances = () => {
       </Box>
 
       <ScrollerMotion ref={scrollerMotion}>
-        <Box display="flex" justifyContent="space-between">
+        <Box display="flex">
           <Box
             height="600px"
             overflow="auto"
@@ -140,10 +148,10 @@ const Fragrances = () => {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            w="58%"
-            // border="1px solid black"
+            w="50%"
+            border="2px solid black"
             gap="10"
-            overflow="scroll"
+            overflowX="scroll"
             sx={{
               "::-webkit-scrollbar": {
                 display: "none",
@@ -151,19 +159,59 @@ const Fragrances = () => {
             }}
             ref={horizontalScroll}
           >
-            <Image borderRadius="40%" h="500px" src="/images/unsplash1.png" />
-            <Image borderRadius="40%" h="500px" src="/images/unsplash1.png" />
-            <Image borderRadius="40%" h="500px" src="/images/unsplash1.png" />
-            <Image borderRadius="40%" h="500px" src="/images/unsplash1.png" />
-            <Image borderRadius="40%" h="500px" src="/images/unsplash1.png" />
-            <Image borderRadius="40%" h="500px" src="/images/unsplash1.png" />
+            <Image
+              borderRadius="100%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="1img"
+              justifyContent="center"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="2img"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="3img"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="4img"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="5img"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="6img"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="7img"
+            />
+            <Image
+              borderRadius="40%"
+              h="500px"
+              src="/images/unsplash1.png"
+              alt="8img"
+            />
           </Box>
         </Box>
       </ScrollerMotion>
-
-      <Box className="output"></Box>
     </Box>
   );
 };
-
 export default Fragrances;

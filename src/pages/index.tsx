@@ -10,10 +10,14 @@ import Scene1 from "../components/dom/Scene1";
 import Scene2 from "../components/dom/Scene2";
 import Truely from "../components/dom/Truely/Truely";
 import Fragrances from "../components/dom/Fragrances";
+import FragrancesZed from "../components/dom/FragrancesZed";
 import GetinTouch from "../components/dom/GetinTouch";
 import Footer from "../components/dom/Footer";
 import { useRouter } from "next/router";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
+import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
+// import ProductDetail from "./product/[id]";
+
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -35,8 +39,10 @@ const DOM = () => {
       <Scene2 />
       <Truely />
       <GetinTouch />
-      <Footer /> */}
-      <Fragrances />
+      <Footer />
+      <Fragrances /> */}
+      <FragrancesZed />
+      {/* <ProductDetailComponent /> */}
     </>
   );
 };
