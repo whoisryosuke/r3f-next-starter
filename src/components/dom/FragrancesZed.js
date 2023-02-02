@@ -162,6 +162,7 @@ const FragrancesZed = (props) => {
           as={motion.div}
           height="600px"
           overflow="auto"
+          display={{ lg: "inline-block", base: "none" }}
           overscrollBehaviorY="none"
           sx={{
             "::-webkit-scrollbar": {
@@ -181,6 +182,7 @@ const FragrancesZed = (props) => {
                 _hover={{
                   backgroundPosition: "left",
                   color: "white",
+                  border: "0px",
                 }}
                 transition="all 0.5s ease-out"
                 display="flex"
