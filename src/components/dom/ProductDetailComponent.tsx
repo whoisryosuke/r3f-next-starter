@@ -52,15 +52,12 @@ const ProductDetailComponent = ({ productData }) => {
           marginTop={{ lg: "2rem", base: "10px" }}
           marginBottom={{ lg: "2rem", base: "10px" }}
         >
-          <Stack spacing={5} direction="row" px={{ lg: "0", base: "1rem" }}>
-            <Radio colorScheme="gray" value="1">
-              50 ml/1.7 oz
-            </Radio>
-            <Radio colorScheme="green" value="2">
-              100 ml/3.38 oz
-            </Radio>
+          <Stack direction="row">
+            <Radio value="1">50 ml/1.7 oz</Radio>
+            <Radio value="2">100 ml/3.38 oz</Radio>
           </Stack>
         </RadioGroup>
+
         <Heading fontFamily="gilroy" px={{ lg: "0", base: "1rem" }}>
           Available notes
         </Heading>

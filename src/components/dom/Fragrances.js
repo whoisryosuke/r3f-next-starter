@@ -69,13 +69,13 @@ const Fragrances = () => {
   const scrollerMotion = useRef();
   const scrollY = useMotionValue(0);
 
-  useEffect(() => {
-    const unsubscribe = scrollerMotion.current.scrollY.onChange((v) =>
-      scrollY.set(v)
-    );
+  // useEffect(() => {
+  //   const unsubscribe = scrollerMotion.current.scrollY.onChange((v) =>
+  //     scrollY.set(v)
+  //   );
 
-    return () => unsubscribe();
-  }, [scrollY]);
+  //   return () => unsubscribe();
+  // }, [scrollY]);
 
   const easeInOutQuad = (x) => {
     return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
@@ -120,97 +120,97 @@ const Fragrances = () => {
         </Heading>
       </Box>
 
-      <ScrollerMotion ref={scrollerMotion}>
-        <Box display="flex">
-          <Box
-            height="600px"
-            overflow="auto"
-            overscrollBehaviorY="none"
-            sx={{
-              "::-webkit-scrollbar": {
-                display: "none",
-              },
-            }}
-            id="scrollDemo"
-            ref={scrollDemo}
-          >
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-            <OnePerfume>Engage L'amante Aqua</OnePerfume>
-          </Box>
-
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            w="50%"
-            border="2px solid black"
-            gap="10"
-            overflowX="scroll"
-            sx={{
-              "::-webkit-scrollbar": {
-                display: "none",
-              },
-            }}
-            ref={horizontalScroll}
-          >
-            <Image
-              borderRadius="100%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="1img"
-              justifyContent="center"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="2img"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="3img"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="4img"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="5img"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="6img"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="7img"
-            />
-            <Image
-              borderRadius="40%"
-              h="500px"
-              src="/images/unsplash1.png"
-              alt="8img"
-            />
-          </Box>
+      {/* <ScrollerMotion ref={scrollerMotion}> */}
+      <Box display="flex">
+        <Box
+          height="600px"
+          overflow="auto"
+          overscrollBehaviorY="none"
+          sx={{
+            "::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+          id="scrollDemo"
+          ref={scrollDemo}
+        >
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
+          <OnePerfume>Engage L'amante Aqua</OnePerfume>
         </Box>
-      </ScrollerMotion>
+
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          w="50%"
+          border="2px solid black"
+          gap="10"
+          overflowX="scroll"
+          sx={{
+            "::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+          ref={horizontalScroll}
+        >
+          <Image
+            borderRadius="100%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="1img"
+            justifyContent="center"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="2img"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="3img"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="4img"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="5img"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="6img"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="7img"
+          />
+          <Image
+            borderRadius="40%"
+            h="500px"
+            src="/images/unsplash1.png"
+            alt="8img"
+          />
+        </Box>
+      </Box>
+      {/* </ScrollerMotion> */}
     </Box>
   );
 };

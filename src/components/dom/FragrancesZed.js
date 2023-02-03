@@ -5,13 +5,6 @@ import {
   Heading,
   Image,
   Link,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -23,52 +16,6 @@ import {
   useScrollerMotion,
   ScrollerMotionRef,
 } from "scroller-motion";
-
-const OnePerfume = ({ children }, props) => {
-  const handleSizeClick = (newSize) => {
-    setSize(newSize);
-    onOpen();
-  };
-  return (
-    <Box
-      background="linear-gradient(to right, black 50%, white 50%)"
-      backgroundSize="200% 100%"
-      backgroundPosition="right"
-      _hover={{
-        backgroundPosition: "left",
-        color: "white",
-      }}
-      transition="all 0.5s ease-out"
-      display="flex"
-      w="100%"
-      py="1rem"
-      alignItems="center"
-      gap="2rem"
-      borderBottom="1px solid gray "
-    >
-      <Text
-        transition="all 0.2s ease-out"
-        h="6rem"
-        fontFamily="novara"
-        fontSize="4rem"
-        paddingLeft="4rem "
-      >
-        {children}
-      </Text>
-      <Box
-        w="60px"
-        h="60px"
-        display="flex"
-        justifyContent="center"
-        bg="#D9D9D9"
-        alignItems="center"
-        borderRadius="50%"
-      >
-        <Image src="/images/ArrowIcon.png" />
-      </Box>
-    </Box>
-  );
-};
 
 const FragrancesZed = (props) => {
   const perfumes = [
@@ -112,53 +59,112 @@ const FragrancesZed = (props) => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
       price: "$3000000",
     },
+    {
+      id: "5",
+      productName: "Zed",
+      src: "/images/four.jpg",
+      productDiscription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
+      price: "$3000000",
+    },
+    {
+      id: "6",
+      productName: "Zed",
+      src: "/images/four.jpg",
+      productDiscription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
+      price: "$3000000",
+    },
+    {
+      id: "7",
+      productName: "Zed",
+      src: "/images/four.jpg",
+      productDiscription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
+      price: "$3000000",
+    },
+    {
+      id: "8",
+      productName: "Zed",
+      src: "/images/four.jpg",
+      productDiscription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
+      price: "$3000000",
+    },
+    {
+      id: "9",
+      productName: "Zed",
+      src: "/images/four.jpg",
+      productDiscription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
+      price: "$3000000",
+    },
+    {
+      id: "10",
+      productName: "Zed",
+      src: "/images/four.jpg",
+      productDiscription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna, dictum id nisi quis, convallis feugiat urna. Nam bibendum felis dui, vitae imperdiet magna .",
+      price: "$3000000",
+    },
   ];
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const scrollDemo = useRef(null);
 
-  const handleSizeClick = () => {
-    onOpen();
-  };
-  const scrollUp = useRef(null);
-  const scrollTop = useRef(null);
-  const scrollLeft = useRef(null);
+  const horizontalScroll = useRef(null);
+
+  const scrollTop = useRef(0);
 
   useEffect(() => {
-    const updateScrollPos = (event) => {
-      console.log(event.target.scrollTop / scrollUp.current.clientHeight);
-      scrollTop.current = event.target.scrollTop;
-      // console.log(scrollUp.current.clientHeight);
-      // console.log(scrollUp.current.scrollTop);
+    const updateScrollPos = (e) => {
+      // console.log(e.target.scrollTop);
+      console.log(e.target.scrollTop / scrollDemo.current.clientHeight);
+      scrollTop.current = e.target.scrollTop;
+
+      // console.log(scrollDemo.current.clientHeight);
     };
 
-    scrollUp.current.addEventListener("scroll", updateScrollPos);
+    scrollDemo.current.addEventListener("scroll", updateScrollPos);
+
     return () => {
-      scrollUp.current.removeEventListener("scroll", updateScrollPos);
+      scrollDemo.current.removeEventListener("scroll", updateScrollPos);
     };
   }, []);
+  function lerp(v0, v1, t) {
+    return v0 * (1 - t) + v1 * t;
+  }
 
-  useEffect(() => {
-    const updateHorizontalScroll = (event) => {
-      console.log(event.target);
-      console.log(scrollLeft.current.scrollTop);
-    };
-    scrollLeft.current.addEventListener("scroll ", updateHorizontalScroll);
-    return () => {
-      scrollLeft.current.removeEventListener("scroll", updateHorizontalScroll);
-    };
-  }, [scrollLeft]);
+  const easeInOutQuad = (x) => {
+    return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+  };
+  useAnimationFrame((time, delta) => {
+    scrollDemo.current.scrollTop = scrollTop.current + easeInOutQuad(0.8);
+    const verticalScrollProgress =
+      scrollTop.current / scrollDemo.current.clientHeight;
+    horizontalScroll.current.scrollLeft = lerp(
+      horizontalScroll.current.scrollLeft,
+      horizontalScroll.current.clientWidth * verticalScrollProgress,
+      easeInOutQuad(0.17)
+    );
+  });
   return (
-    <Box w="100vw" h="100vh">
+    <Box w="100vw" h="100vh" display={{ lg: "block", base: "none" }}>
       <Box display="flex " justifyContent="center" gap="2rem" py="2rem">
         <Image w="200px" h="100px" src="/images/perfumeHeading.png" />
-        <Heading fontFamily="novara" fontSize="4rem" marginBottom="4rem">
+        <Heading
+          fontFamily="novara"
+          fontSize="4rem"
+          fontWeight="400"
+          marginBottom="4rem"
+        >
           the fragrance difference
         </Heading>
       </Box>
 
       <Box display="flex" justifyContent="space-around">
         <Box
-          ref={scrollUp}
+          id="scrollDemo"
+          ref={scrollDemo}
           as={motion.div}
           height="600px"
           overflow="auto"
@@ -218,10 +224,10 @@ const FragrancesZed = (props) => {
         </Box>
 
         <Grid
-          ref={scrollLeft}
+          ref={horizontalScroll}
           // maxW="100vw"
           w="20%"
-          templateColumns="repeat(8, 1fr)"
+          templateColumns="repeat(11, 1fr)"
           // justifyContent="center"
           alignItems="center"
           overflow="scroll"
@@ -239,8 +245,6 @@ const FragrancesZed = (props) => {
                 }}
                 h={"300px"}
                 w="300px"
-                // justifySelf={item[1]}
-                // opacity={item[2]}
               >
                 <Image borderRadius="200px" src={item.src} key={index} />
               </Box>
