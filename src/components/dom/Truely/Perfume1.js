@@ -33,7 +33,10 @@ const Perfume1 = () => {
       initial="start"
       animate={controls}
     >
-      <Box maxW={{ lg: "600px", base: "250px" }} marginTop="2rem">
+      <Box
+        maxW={{ lg: "31.25vw", base: "250px" }}
+        marginTop={{ lg: "4rem", base: "0" }}
+      >
         <Image src="/images/perfume1.png" />
       </Box>
       <Box
@@ -54,13 +57,13 @@ const Perfume1 = () => {
         </Heading>
 
         <Text
-          maxW={{ lg: "300px", base: "220px" }}
+          maxW={{ lg: "15.6vw", base: "220px" }}
           fontFamily="gilroy"
           fontWeight="300"
           marginTop={{ lg: "1rem", base: "0" }}
-          fontSize={{ lg: "20px ", base: "16px" }}
-          lineHeight={{ lg: "18px", base: "17px" }}
-          letterSpacing={{ lg: "2px", base: "6%" }}
+          fontSize={{ lg: "1vw ", base: "16px" }}
+          lineHeight={{ lg: "1vw", base: "17px" }}
+          letterSpacing={{ lg: "2.5px", base: "6%" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.

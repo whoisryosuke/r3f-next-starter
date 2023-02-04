@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import Scene1 from "../components/dom/Scene1";
 import Scene2 from "../components/dom/Scene2";
 import Truely from "../components/dom/Truely/Truely";
+import MobileTruely from "../components/dom/Truely/MobileTruely";
 import MobileFragrances from "../components/dom/MobileFragrances";
 import Fragrances from "../components/dom/Fragrances";
 import FragrancesZed from "../components/dom/FragrancesZed";
@@ -33,17 +34,18 @@ const Model = dynamic(() => import("@/components/canvas/Perfume"), {
 const DOM = () => {
   return (
     <>
-      {/* <Loader />
+      <Loader />
       <Navbar />
 
       <Scene1 />
       <Scene2 />
-      <GetinTouch />
       <Truely />
-      <Footer />
-      <Fragrances /> */}
+      <MobileTruely />
+      {/* <Fragrances /> */}
       <FragrancesZed />
       <MobileFragrances />
+      <GetinTouch />
+      <Footer />
       {/* <ProductDetailComponent /> */}
     </>
   );

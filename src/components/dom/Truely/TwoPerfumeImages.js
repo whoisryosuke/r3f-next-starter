@@ -48,7 +48,7 @@ const TwoPerfumeImages = () => {
         initial="start"
         animate={controls}
         sx={{
-          position: "absolute",
+          position: { lg: "absolute", base: "relative" },
           top: 0,
           right: 100,
           w: "250px",
@@ -67,9 +67,10 @@ const TwoPerfumeImages = () => {
         initial="start"
         animate={controls}
         sx={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
+          position: { lg: "absolute", base: "relative" },
+
+          bottom: { lg: 0, base: "0" },
+          left: { lg: 0, base: 10 },
           // boxSize: { lg: "200px" },
           w: { lg: "250px", base: "120px" },
           // h: "100px",
