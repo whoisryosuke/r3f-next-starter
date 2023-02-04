@@ -57,11 +57,11 @@ const Truely = () => {
     <Box
       sx={{
         w: "100vw",
-        h: "100vh",
+        h: { lg: "120vh", base: "100vh" },
         bg: "#122333",
         fontFamily: "novara",
         color: "white",
-        display: "flex",
+        display: { lg: "flex", base: "none" },
         flexDir: "column",
         alignItems: "center",
         justifyContent: "center",
@@ -72,14 +72,13 @@ const Truely = () => {
       <Box
         // maxW="00px"
         w="100vw"
-        h="100vh"
+        h="100%"
         marginLeft={{ lg: "5rem ", base: "2rem" }}
-        paddingTop="3rem"
+        paddingTop={{ lg: "3rem", base: "0.5rem" }}
         maxW="2000px"
         position="relative"
         // border="1px solid white"
       >
-        {/* desktop heading */}
         <Box>
           <Text
             as={motion.p}
@@ -88,25 +87,9 @@ const Truely = () => {
             initial="start"
             whileInView="visible"
             fontFamily="novara"
-            fontSize={{ lg: "4rem", base: "2rem" }}
+            fontSize="3.3vw"
             maxW="1400px"
             fontWeight="400"
-            display={{ lg: "block", base: "none" }}
-          >
-            a truly timeless eau de parfum became one of the most beloved
-            perfumes.
-          </Text>
-          <Text
-            ref={refmobile}
-            as={motion.p}
-            variants={mobileheadingVariant}
-            initial="start"
-            animate={mobileControls}
-            fontFamily="novara"
-            fontSize={{ lg: "4rem", base: "2rem" }}
-            maxW="1400px"
-            fontWeight="400"
-            display={{ lg: "none", base: "inline-block" }}
           >
             a truly timeless eau de parfum became one of the most beloved
             perfumes.
