@@ -8,13 +8,14 @@ import TwoPerfumeImages from "./TwoPerfumeImages";
 const MobileTruely = () => {
   return (
     <Box
-      display={{ lg: "none", base: "flex" }}
+      display={{ lg: "none", md: "flex" }}
       flexDir="column"
       w="100vw"
-      h="100vh"
+      // h="100vh"
       bg="#122333"
       fontFamily="novara"
       gap="24px"
+      position="relative"
       color="white"
     >
       <Text
@@ -22,10 +23,10 @@ const MobileTruely = () => {
         // variants={mobileheadingVariant}
         initial="start"
         // animate={mobileControls}
-        p="32px 20px"
+        p="105px 0 30px 30px"
         fontFamily="novara"
         fontSize="32px"
-        maxW="1400px"
+        maxW={{ base: "350px", md: "450px" }}
         fontWeight="400"
       >
         a truly timeless eau de parfum became one of the most beloved perfumes.

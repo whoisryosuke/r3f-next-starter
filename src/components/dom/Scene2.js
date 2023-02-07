@@ -31,8 +31,8 @@ const Scene2 = () => {
             lg: "5rem",
             base: "1rem",
           }}
-          fontSize={{ lg: "100px", base: "34px" }}
-          maxW={{ lg: "1200px", base: "300px" }}
+          fontSize={{ lg: "100px", md: "50px", base: "34px" }}
+          maxW={{ lg: "800px", md: "500px", base: "250px" }}
           fontWeight="400"
         >
           Creating the Perfect Scent, The Art of Perfumery.
@@ -40,9 +40,9 @@ const Scene2 = () => {
         <Text
           fontFamily="gilroy"
           fontSize={{ lg: "18px", base: "14px" }}
-          maxW={{ lg: "500", base: "200px" }}
+          maxW={{ lg: "500", base: "250px" }}
           marginTop="3rem"
-          lineHeight={{ lg: "2.5rem", base: "1rem" }}
+          lineHeight={{ lg: "2.5rem", base: "1.2rem" }}
         >
           From the sourcing of the finest ingredients to the art of blending and
           perfumery, we pour our hearts and souls into every bottle of our

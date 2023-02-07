@@ -43,7 +43,7 @@ const Truely = () => {
       opacity: 0,
     },
     visible: {
-      lineHeight: "4rem",
+      lineHeight: "5rem",
       opacity: 1,
       transition: {
         duration: 0.8,
@@ -73,7 +73,7 @@ const Truely = () => {
         // maxW="00px"
         w="100vw"
         h="100%"
-        marginLeft={{ lg: "5rem ", base: "2rem" }}
+        marginLeft={{ lg: "7rem ", base: "2rem" }}
         paddingTop={{ lg: "3rem", base: "0.5rem" }}
         maxW="2000px"
         position="relative"
@@ -87,8 +87,8 @@ const Truely = () => {
             initial="start"
             whileInView="visible"
             fontFamily="novara"
-            fontSize="3.3vw"
-            maxW="1400px"
+            fontSize={{ lg: "3.3vw", xl: "4rem" }}
+            maxW={{ lg: "1400px", md: "400" }}
             fontWeight="400"
           >
             a truly timeless eau de parfum became one of the most beloved

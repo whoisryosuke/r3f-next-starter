@@ -31,12 +31,12 @@ const Perfume2 = () => {
       variants={parentVariant}
       initial="start"
       animate={controls}
-      display={{ lg: "flex", base: "none" }}
+      display={{ xl: "flex", lg: "none" }}
       gap="10"
       marginTop="5rem"
       position="absolute"
-      right="300"
-      top="200px"
+      right="20%"
+      top="20%"
     >
       <Box>
         <Image maxH="20.22vw" src="/images/perfume2.png" />
@@ -44,8 +44,8 @@ const Perfume2 = () => {
       <Box>
         <Heading
           fontFamily="novara"
-          fontSize="3.3vw"
-          fontWeight={{ base: "500", md: "800", lg: "400" }}
+          fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
+          fontWeight={{ base: "500", md: "1000px", lg: "600px" }}
           maxW="14vw"
         >
           Eau de parfum spray
@@ -53,7 +53,7 @@ const Perfume2 = () => {
         <Text
           maxW="15.5vw"
           fontFamily="gilroy"
-          fontSize={{ lg: "1vw ", base: "16px" }}
+          fontSize={{ lg: "0.8vw ", base: "16px" }}
           lineHeight={{ lg: "1vw", base: "17px" }}
           letterSpacing={{ lg: "2.5px", base: "6%" }}
         >

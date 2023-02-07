@@ -5,14 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 
 const TwoPerfumeImages = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
   const variant1 = {
     start: {
       y: -100,
@@ -28,7 +20,7 @@ const TwoPerfumeImages = () => {
   };
   const variant2 = {
     start: {
-      y: 100,
+      y: 50,
       opacity: 0,
     },
     visible: {
@@ -43,40 +35,36 @@ const TwoPerfumeImages = () => {
     <Box>
       <Box
         as={motion.div}
-        ref={ref}
         variants={variant1}
         initial="start"
-        animate={controls}
+        whileInView={"visible"}
+        viewport={{ once: true }}
         sx={{
-          position: { lg: "absolute", base: "relative" },
+          position: { lg: "absolute", base: "absolute" },
           top: 0,
-          right: 100,
-          w: "250px",
-          display: {
-            lg: "inline-block",
-            base: "none",
-          },
+          right: { lg: 100, base: 0 },
+          w: { lg: "250px", base: "120px" },
         }}
       >
         <Image src="/images/perfume5.png" />
       </Box>
       <Box
         as={motion.div}
-        ref={ref}
         variants={variant2}
         initial="start"
-        animate={controls}
+        // animate={controls}
+        whileInView={"visible"}
+        viewport={{ once: true }}
         sx={{
           position: { lg: "absolute", base: "relative" },
 
           bottom: { lg: 0, base: "0" },
-          left: { lg: 0, base: 10 },
+          left: { lg: 0, base: 0 },
           // boxSize: { lg: "200px" },
           w: { lg: "250px", base: "120px" },
           // h: "100px",
           display: {
             lg: "inline-block",
-            // base: "none",
           },
         }}
       >

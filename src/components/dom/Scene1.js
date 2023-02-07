@@ -29,18 +29,19 @@ const Scene1 = () => {
             lg: "5rem",
             base: "1rem",
           }}
-          fontSize={{ lg: "100px", base: "34px" }}
-          maxW={{ lg: "800px", base: "300px" }}
-          fontWeight="400"
+          fontSize={{ lg: "100px", md: "50px", base: "34px" }}
+          maxW={{ lg: "800px", md: "500px", base: "250px" }}
+          fontWeight="300"
         >
           Unveil the Scent of Success, Our Story.
         </Heading>
         <Text
           fontFamily="gilroy"
           fontSize={{ lg: "18px", base: "14px" }}
-          maxW={{ lg: "500", base: "200px" }}
+          maxW={{ lg: "500", base: "250px" }}
           marginTop="3rem"
-          lineHeight={{ lg: "2.5rem", base: "1rem" }}
+          fontWeight="400"
+          lineHeight={{ lg: "2.5rem", base: "1.2rem" }}
         >
           the inspiration behind our signature scents to the passion that drives
           us to create the most elegant and sophisticated perfumes, "Our Story"

@@ -45,17 +45,22 @@ const Perfume3 = () => {
         marginRight={{ lg: 0, base: "2rem" }}
       >
         <Image
-          maxW={{ lg: "26vw", base: "250px" }}
+          maxW={{ lg: "600px", base: "250px" }}
+          h={{ lg: "250px", base: "inherit" }}
           src="/images/perfume3.png"
         />
       </Box>
-      <Box display={{ lg: "block", base: "flex" }} justifyContent={"flex-end"}>
+      <Box
+        display={{ lg: "block", base: "flex" }}
+        justifyContent={"flex-end"}
+        alignItems="flex-start"
+        marginTop="20px"
+      >
         <Heading
           fontFamily="novara"
-          fontSize={{ lg: "3.3vw", base: "1.5rem" }}
+          fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
           fontWeight="500"
-          maxW={{ lg: "600px", base: "100px" }}
-          marginTop="20px"
+          maxW={{ lg: "600px", base: "150px" }}
         >
           Eau de parfum spray
         </Heading>
@@ -64,9 +69,10 @@ const Perfume3 = () => {
           alignSelf="flex-end"
           fontWeight="300"
           fontFamily="gilroy"
-          fontSize={{ lg: "1vw ", base: "16px" }}
+          fontSize={{ lg: "0.8vw", base: "14px" }}
           lineHeight={{ lg: "1vw", base: "17px" }}
           letterSpacing={{ lg: "2.5px", base: "6%" }}
+          h={{ base: "150px", lg: "inherit" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.
