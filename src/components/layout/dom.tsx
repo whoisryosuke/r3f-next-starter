@@ -11,11 +11,12 @@ const Dom = ({ children }) => {
     <div
       className="dom"
       style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
+        // scrollbarWidth: "none",
+        // position: "absolute",
+        // top: 0,
+        // left: 0,
         zIndex: 10,
-        overflow: "hidden",
+        // overflow: "hidden",
       }}
       ref={ref}
     >
