@@ -6,7 +6,7 @@ import Perfume1 from "./Perfume1";
 import Perfume2 from "./Perfume2";
 import Perfume3 from "./Perfume3";
 import TwoPerfumeImages from "./TwoPerfumeImages";
-const Truely = () => {
+const Truely = (props) => {
   const mobileControls = useAnimation();
   const [refmobile, mobileinView] = useInView();
 
@@ -55,12 +55,14 @@ const Truely = () => {
 
   return (
     <Box
+      bg={props.activeBg}
+      color={props.fontColor}
       sx={{
         w: "100vw",
         h: { lg: "120vh", base: "100vh" },
-        bg: "#122333",
+
         fontFamily: "novara",
-        color: "white",
+      
         display: { lg: "flex", base: "none" },
         flexDir: "column",
         alignItems: "center",

@@ -5,18 +5,18 @@ import Perfume1 from "./Perfume1";
 import Perfume3 from "./Perfume3";
 import TwoPerfumeImages from "./TwoPerfumeImages";
 
-const MobileTruely = () => {
+const MobileTruely = (props) => {
   return (
     <Box
       display={{ lg: "none", md: "flex" }}
       flexDir="column"
       w="100vw"
       // h="100vh"
-      bg="#122333"
+      bg={props.activeBg}
       fontFamily="novara"
       gap="24px"
       position="relative"
-      color="white"
+      color={props.fontColor}
     >
       <Text
         as={motion.p}

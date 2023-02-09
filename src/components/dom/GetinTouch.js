@@ -15,32 +15,42 @@ import React from "react";
 const formControlVariant = {
   hidden: {
     opacity: 0,
-    y: "100px",
+    y: "20px",
   },
   visible: {
     opacity: 1,
     y: "0",
-    transition: {
-      // duration: 1.5,
-      // delay: 0.5,
-      staggerChildren: 0.25,
-    },
+    // transition: {
+    //   // duration: 1.5,
+    //   // delay: 0.5,
+    //   type:'tween',
+    //   staggerChildren: 0.25,
+    // },
+    // transition:{ type: "spring", stiffness: 1000000},
   },
 };
 const childVariant = {
   hidden: {
     opacity: 0,
-    x: "-100px",
+    x: "-20px",
   },
   visible: {
     opacity: 1,
     x: "0",
+    // transition: {
+    //   stype:'',
+    //   duration:'1.2',
+    //   ease: "easeInOut",
+    // },
     transition: {
+      type: "tween",
+      stiffness: 100,
       ease: "easeInOut",
+      delay: "0.3",
     },
   },
 };
-const Inputt = () => {
+const Inputt = ({fontColor}) => {
   return (
     <Input
       // as={motion.input}
@@ -50,11 +60,16 @@ const Inputt = () => {
       //   borderBottom: "2px solid white",
       // }}
       variant="unstyled"
-      borderBottom="2px solid white"
+      // borderBottom ={` 1px solid ${fontColor}`}
+      borderBottom ='2px solid '
+      borderBottomColor={fontColor}
+
+      
       borderRadius="2px"
       w={{ lg: "430px", base: "200px" }}
-      marginTop="5px"
+      marginTop={{ lg: "5px", base: "00" }}
       fontSize="1.5rem"
+      marginBottom={{ lg: "49px", base: "0.5rem" }}
     />
   );
 };
@@ -74,7 +89,7 @@ const Label = ({ children }) => {
       lineHeight="1.5rem"
       fontWeight="400"
       marginTop={{ lg: "2rem", base: "10px" }}
-      marginBottom={{ lg: "1rem", base: "10px" }}
+      marginBottom={{ lg: "0px", base: "0" }}
     >
       {children}
     </FormLabel>
@@ -95,7 +110,8 @@ const Btn = ({ children }) => {
       fontFamily="novara"
       w={{ lg: "360px", base: "200px" }}
       h={{ lg: "70px", base: "40px" }}
-      marginTop="4rem"
+      marginTop="30px"
+      marginLeft={{ base: "0", lg: "36px" }}
       fontSize="2rem"
       letterSpacing="3px"
       color="#0F0D0E"
@@ -107,39 +123,51 @@ const Btn = ({ children }) => {
 };
 const GetinTouch = (props) => {
   return (
-    <Box bg="#122333" h={{ lg: "100vh", base: "auto" }} w="100vw">
+    <Box bg={props.activeBg} h={{ lg: "auto", base: "auto" }} w="100vw">
       <Box
+      
         maxW="2000px"
-        color="white"
+        color={props.fontColor}
         p="3rem"
         display="flex"
         flexDir="column"
+        fontWeight="300"
         justifyContent="center"
         alignItems="center"
         margin="auto"
       >
-        <Heading fontFamily="novara" fontSize={{ lg: "4rem", base: "2rem" }}>
+        <Heading
+          fontFamily="novara"
+          fontWeight="300"
+          letterSpacing="1.6px"
+          fontSize={{ lg: "60px", base: "2rem" }}
+        >
           Get in touch! we’d love to hear from you
         </Heading>
         <Text
           fontFamily="gilroy"
-          fontSize={{ lg: "30px", base: "18px" }}
+          fontSize={{ lg: "32px", base: "18px" }}
           fontWeight="300"
-          marginTop={{ lg: "3rem", base: "0" }}
+          marginTop={{ lg: "22px", base: "0" }}
+          letterSpacing={{ lg: "2px", base: "inherit" }}
         >
           Fill out the quick form and we will be in touch with lightening speed.{" "}
         </Text>
-        <Box display="flex" gap={{ lg: "20rem", base: 0 }}>
+        <Box
+          display="flex"
+          minW={{ lg: "82vw", base: "inherit" }}
+          justifyContent="space-around"
+        >
           <FormControl
             as={motion.div}
             viewport={{ once: true }}
             variants={formControlVariant}
             initial="hidden"
             whileInView="visible"
-            marginTop={{ lg: "1rem", base: "2rem" }}
+            marginTop={{ lg: "48px", base: "2rem" }}
           >
             <Label>Name</Label>
-            <Inputt />
+            <Inputt fontColor={props.fontColor} />
 
             <Label>Contact number</Label>
             <Inputt />
@@ -151,8 +179,8 @@ const GetinTouch = (props) => {
             <Btn>Submit </Btn>
           </FormControl>
 
-          <Box
-            as={motion.div}
+          <Image
+            as={motion.img}
             initial={{ opacity: 0, x: "300px" }}
             whileInView={{
               opacity: 1,
@@ -160,18 +188,12 @@ const GetinTouch = (props) => {
               transition: { duration: "0.8" },
             }}
             viewport={{ once: true }}
-            maxW="700px"
-            h="350px"
-            boxSizing="border-box"
-          >
-            <Image
-              display={{ lg: "inline-block", base: "none" }}
-              marginTop="5rem"
-              w="5550px"
-              h="350px"
-              src="/images/perfume6.png"
-            />
-          </Box>
+            display={{ lg: "inline-block", base: "none" }}
+            marginTop="160px"
+            w="750px"
+            h="400px"
+            src="/images/perfume6.png"
+          />
         </Box>
       </Box>
     </Box>

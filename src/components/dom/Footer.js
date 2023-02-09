@@ -3,32 +3,45 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Box w="100vw" bg="#0B1C2C">
+    <Box
+      w="100vw"
+      bg="#0B1C2C"
+      h={{ lg: "75vh", base: "100vh" }}
+      display="flex"
+      flexDir="column"
+      justifyContent="space-between"
+    >
       <Box
         maxW="1800px"
-        // h="full"
         w="100vw"
-        padding={{ lg: "5rem 0 0 5rem", base: "2rem 0 0 2rem" }}
+        // padding={{ lg: "5rem 0 0 5rem", base: "2rem 0 0 2rem" }}
         color="white"
         margin="auto"
       >
-        <Image src="/yousufAbeerLogo.svg " h="50px" />
+        <Image
+          src="/yousufAbeerLogo.svg "
+          paddingLeft={{ lg: "0 ", base: "35px" }}
+          h={{ base: "50px", lg: "64px" }}
+        />
 
         <Flex
           margin="auto"
           flexWrap="wrap"
+          // border="1px solid white"
+          minH={{ lg: "inherit", base: "70vh" }}
+          maxW="80vw"
+          padding={{ lg: "20px 0 0 75px", base: "0" }}
           flexDir={{ lg: "row", base: "column" }}
           justifyContent="space-between"
           // gap={{ lg: "0rem", base: "2.5rem" }}
           marginTop={{ lg: "5rem", base: "4rem" }}
         >
           <Box>
-            <Heading
-              fontFamily="novara"
-              fontSize={{ lg: "2rem ", base: "1rem" }}
-            >
+            <Heading fontFamily="novara" fontWeight="300" fontSize="26px">
               Address
             </Heading>
+
+            {/* for border  */}
             <Text
               style={{
                 marginTop: "10px",
@@ -42,6 +55,7 @@ const Footer = () => {
               marginTop={{ lg: "2rem", base: "10px" }}
               fontFamily="gilroy"
               lineHeight={{ lg: "25px", base: "20px" }}
+              fontSize={{ lg: "inherit", base: "14px" }}
               letterSpacing="1px"
             >
               Excel Solitaire Building #8-2-684/B/P/12&13, Rd no:12 Banjara
@@ -49,10 +63,7 @@ const Footer = () => {
             </Text>
           </Box>
           <Box>
-            <Heading
-              fontFamily="novara"
-              fontSize={{ lg: "2rem ", base: "1rem" }}
-            >
+            <Heading fontFamily="novara" fontWeight="300" fontSize="26px">
               Phone
             </Heading>
             <Text
@@ -74,10 +85,7 @@ const Footer = () => {
             </Text>
           </Box>
           <Box>
-            <Heading
-              fontFamily="novara"
-              fontSize={{ lg: "2rem ", base: "1rem" }}
-            >
+            <Heading fontFamily="novara" fontWeight="300" fontSize="26px">
               Emial
             </Heading>
             <Text
@@ -90,7 +98,7 @@ const Footer = () => {
             />
             <Text
               maxW="190px"
-              marginTop={{ lg: "2rem", base: "10px" }}
+              marginTop={{ lg: "26px ", base: "10px" }}
               fontFamily="gilroy"
               lineHeight="25px"
               letterSpacing="1px"
@@ -99,10 +107,7 @@ const Footer = () => {
             </Text>
           </Box>
           <Box>
-            <Heading
-              fontFamily="novara"
-              fontSize={{ lg: "2rem ", base: "1rem" }}
-            >
+            <Heading fontFamily="novara" fontWeight="300" fontSize="26px">
               Follows us
             </Heading>
             <Text
@@ -130,9 +135,9 @@ const Footer = () => {
       <Flex
         w="100vw"
         flexDir={{ lg: "row", base: "column" }}
-        h={{ lg: "4rem", base: "auto" }}
+        h={{ lg: "80px", base: "auto" }}
         bg="#162A3D"
-        marginTop={{ lg: "5rem", base: "1rem" }}
+        marginTop={{ lg: "5rem", base: "0" }}
         color="#7295B7"
         alignItems="center"
         justifyContent="space-around"
