@@ -123,7 +123,7 @@ const Btn = ({ children }) => {
 };
 const GetinTouch = (props) => {
   return (
-    <Box bg={props.activeBg} h={{ lg: "auto", base: "auto" }} w="100vw">
+    <Box id='contact' bg={props.activeBg} h={{ lg: "auto", base: "auto" }} w="100vw">
       <Box
       
         maxW="2000px"

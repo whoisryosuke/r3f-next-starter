@@ -3,7 +3,7 @@ import React from "react";
 
 const Scene1 = () => {
   return (
-    <Box
+    <Box id='ourstory'
       sx={{
         w: "100vw",
         h: "100vh",

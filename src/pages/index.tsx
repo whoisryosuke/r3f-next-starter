@@ -2,6 +2,7 @@
 
 // import Model from "@/components/canvas/Perfume"
 import Loader from "@/components/canvas/Loader";
+// import { BrowserRouter, Routes, Route ,Router} from "react-router-dom";
 import Text from "@/components/canvas/Text";
 import Navbar from "@/components/dom/Navbar";
 import useStore from "@/helpers/store";
@@ -80,13 +81,19 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
+        <Brands />
+      <Truely activeBg={activeBg} fontColor={fontColor} />
+      <MobileTruely activeBg={activeBg} fontColor={fontColor} />
+      <Fragrances />
+      <FragrancesZed />
+      <MobileFragrances />
+      <GetinTouch activeBg={activeBg} fontColor={fontColor} />
+      <Footer />
+      
+     
       {/* <Truely /> */}
-      <Brands />
-      {/* <GetinTouch /> */}
-      {/* <Footer /> */}
-      {/* <Fragrances /> */}
-      {/* <FragrancesZed /> */}
-      {/* <ProductDetailComponent /> */}
+    
+   
     </>
   );
 };

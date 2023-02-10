@@ -145,7 +145,9 @@ const Brands = () => {
   ];
 
   return (
+    // <Box  borderRadius='500px' border='5px solid yellow' ></Box>
     <Center
+    id='brands'
       as={motion.div}
       ref={ref}
       animate={controls}
@@ -157,14 +159,21 @@ const Brands = () => {
       bgColor={"#FFFFFF"}
       py={{ base: "1.5rem", sm: "4.5rem" }}
       gap={"5rem"}
+      boxSizing="border-box"
+       
+      
     >
       {/* For Tablets and Desktops */}
+
       <Flex
         display={{ base: "none", sm: "flex" }}
         w={"96.75%"}
         flexDir={"column"}
-        bg={"black"}
+        bg="black"
         rounded={"2rem"}
+        borderRadius='20px'
+        h='400px'
+      
       >
         <Marquee
           pauseOnHover={true}
@@ -175,10 +184,10 @@ const Brands = () => {
           <Flex
             bg={"#000"}
             px={"2.5rem"}
+            marginTop='1.5rem'
             gap={{ base: "2.25rem", lg: "3rem" }}
             justifyContent={"center"}
             alignItems={"center"}
-            // borderRadius={"2rem"}
           >
             {brands1.map((brand) => {
               return (
@@ -188,7 +197,8 @@ const Brands = () => {
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"8.62rem"}
+                  // lineHeight={"8.62rem"}
+                  lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >
@@ -198,7 +208,12 @@ const Brands = () => {
             })}
           </Flex>
         </Marquee>
-        <Marquee pauseOnHover={true} speed={15} gradient={false}>
+        <Marquee
+          pauseOnHover={true}
+          speed={15}
+          gradient={false}
+          direction="right"
+        >
           <Flex
             bg={"#000"}
             px={"2.5rem"}
@@ -216,6 +231,7 @@ const Brands = () => {
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
                   lineHeight={"8.62rem"}
+                  // lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >
@@ -242,7 +258,8 @@ const Brands = () => {
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"8.62rem"}
+                  // lineHeight={"8.62rem"}
+                  lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >

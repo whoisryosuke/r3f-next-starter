@@ -55,6 +55,7 @@ const Truely = (props) => {
 
   return (
     <Box
+    id='truely'
       bg={props.activeBg}
       color={props.fontColor}
       sx={{
