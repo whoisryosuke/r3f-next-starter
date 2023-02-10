@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import Scene1 from "../components/dom/Scene1";
 import FirstPage from "../components/dom/FirstPage";
 import Scene2 from "../components/dom/Scene2";
+import Brands from "../components/dom/Brands";
 import Truely from "../components/dom/Truely/Truely";
 import MobileTruely from "../components/dom/Truely/MobileTruely";
 import MobileFragrances from "../components/dom/MobileFragrances";
@@ -79,13 +80,12 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
-      <Truely activeBg={activeBg} fontColor={fontColor} />
-      <MobileTruely activeBg={activeBg} fontColor={fontColor} />
-      <Fragrances />
-      <FragrancesZed />
-      <MobileFragrances />
-      <GetinTouch activeBg={activeBg} fontColor={fontColor} />
-      <Footer />
+      {/* <Truely /> */}
+      <Brands />
+      {/* <GetinTouch /> */}
+      {/* <Footer /> */}
+      {/* <Fragrances /> */}
+      {/* <FragrancesZed /> */}
       {/* <ProductDetailComponent /> */}
     </>
   );
