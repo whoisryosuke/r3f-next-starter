@@ -87,17 +87,17 @@ const DOM = () => {
       <Brands />
       {/* <Fragrances /> */}
       {/* <FragrancesZed /> */}
-       {/* <Loader />
+      {/* <Loader />
       <Navbar /> */}
       {/* <Qualities />
       <MobileQualities /> */}
       <Testimonials />
-      {/* <Mobiletestimonial /> */}
+      <Mobiletestimonial />
       <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
       <Footer />
-      </>
-  )
+    </>
+  );
 };
 
 // Canvas/R3F components here

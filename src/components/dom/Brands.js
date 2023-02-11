@@ -157,14 +157,14 @@ const Brands = () => {
       justifyContent={"center"}
       flexDir={"column"}
       bgColor={"#FFFFFF"}
-      py={{ base: "1.5rem", sm: "4.5rem" }}
+      py={{ base: "1.5rem", md: "3.5rem" }}
       gap={"5rem"}
       boxSizing="border-box"
     >
       {/* For Tablets and Desktops */}
 
       <Flex
-        display={{ base: "none", sm: "flex" }}
+        display={{ base: "none", md: "flex" }}
         w={"96.75%"}
         flexDir={"column"}
         bg="black"
@@ -182,7 +182,7 @@ const Brands = () => {
           <Flex
             bg={"#000"}
             px={"2.5rem"}
-            gap={{ base: "2.25rem", lg: "3rem" }}
+            gap={{ base: "2.25rem", md: "3rem" }}
             justifyContent={"center"}
             alignItems={"center"}
           >
@@ -190,11 +190,11 @@ const Brands = () => {
               return (
                 <Text
                   key={brand.id}
-                  fontSize={"7.5rem"}
+                  fontSize={"6rem"}
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"8.62rem"}
+                  lineHeight={"7rem"}
                   // lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
@@ -207,14 +207,14 @@ const Brands = () => {
         </Marquee>
         <Marquee
           pauseOnHover={true}
-          speed={50}
+          speed={45}
           gradient={false}
           direction="right"
         >
           <Flex
             bg={"#000"}
             px={"2.5rem"}
-            gap={{ base: "2.25rem", lg: "3rem" }}
+            gap={{ base: "2.25rem", md: "3rem" }}
             justifyContent={"center"}
             alignItems={"center"}
             // borderRadius={"2rem"}
@@ -223,11 +223,11 @@ const Brands = () => {
               return (
                 <Text
                   key={brand.id}
-                  fontSize={"7.5rem"}
+                  fontSize={"6rem"}
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"8.62rem"}
+                  lineHeight={"7rem"}
                   // lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
@@ -242,7 +242,7 @@ const Brands = () => {
           <Flex
             bg={"#000"}
             px={"2.5rem"}
-            gap={{ base: "2.25rem", lg: "3rem" }}
+            gap={{ base: "2.25rem", md: "3rem" }}
             justifyContent={"center"}
             alignItems={"center"}
             // borderRadius={"2rem"}
@@ -251,11 +251,11 @@ const Brands = () => {
               return (
                 <Text
                   key={brand.id}
-                  fontSize={"7.5rem"}
+                  fontSize={"6rem"}
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"8.62rem"}
+                  lineHeight={"7rem"}
                   // lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
@@ -269,7 +269,7 @@ const Brands = () => {
       </Flex>
       {/* For Mobiles */}
       <Flex
-        display={{ base: "flex", sm: "none" }}
+        display={{ base: "flex", md: "none" }}
         w={"97%"}
         flexDir={"column"}
         bg={"black"}
@@ -278,7 +278,7 @@ const Brands = () => {
       >
         <Marquee
           pauseOnHover={true}
-          speed={500}
+          speed={20}
           pauseOnClick={true}
           gradient={false}
         >
@@ -294,11 +294,11 @@ const Brands = () => {
               return (
                 <Text
                   key={brand.id}
-                  fontSize={"1.75rem"}
+                  fontSize={"2rem"}
                   letterSpacing={"0.25rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"2.25rem"}
+                  lineHeight={"2.50rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >
@@ -313,6 +313,7 @@ const Brands = () => {
           speed={15}
           pauseOnClick={true}
           gradient={false}
+          direction={"right"}
         >
           <Flex
             bg={"#000"}
@@ -326,11 +327,11 @@ const Brands = () => {
               return (
                 <Text
                   key={brand.id}
-                  fontSize={"1.75rem"}
+                  fontSize={"2rem"}
                   letterSpacing={"0.25rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"2.25rem"}
+                  lineHeight={"2.50rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >
@@ -342,7 +343,7 @@ const Brands = () => {
         </Marquee>
         <Marquee
           pauseOnHover={true}
-          speed={15}
+          speed={25}
           pauseOnClick={true}
           gradient={false}
         >
@@ -358,11 +359,11 @@ const Brands = () => {
               return (
                 <Text
                   key={brand.id}
-                  fontSize={"1.75rem"}
+                  fontSize={"2rem"}
                   letterSpacing={"0.25rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  lineHeight={"2.25rem"}
+                  lineHeight={"2.50rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >

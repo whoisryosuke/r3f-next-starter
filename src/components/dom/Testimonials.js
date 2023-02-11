@@ -32,6 +32,7 @@ export default function Testimonials() {
       position={"relative"}
       // paddingLeft={"80px"}
       // paddingRight={"80px"}
+      overflow={"hidden"}
     >
       {/* <Box marginTop={"100px"}>kjqrk; wher;kh</Box> */}
 
@@ -58,13 +59,14 @@ export default function Testimonials() {
           textAlign={"center"}
           letterSpacing={"0.1em"}
           height={"147px"}
-          w={"90%"}
+          w={"80%"}
           textShadow={"1px 1px white"}
         >
           <Heading
             fontFamily={"novara"}
-            fontSize={{ xl: "64px", lg: "60px", md: "55px" }}
+            fontSize={{ xl: "56px", lg: "50px", md: "55px" }}
             fontWeight={"400"}
+            w={"95%"}
             zIndex={"1000"}
             // maxW={"1000px"}
           >
@@ -72,8 +74,9 @@ export default function Testimonials() {
           </Heading>
           <Heading
             fontFamily={"novara"}
-            fontSize={{ xl: "64px", lg: "55px", md: "50px" }}
+            fontSize={{ xl: "56px", lg: "50px", md: "50px" }}
             fontWeight={"400"}
+            w={"95%"}
             zIndex={"1000"}
           >
             trust our customers
@@ -87,15 +90,16 @@ export default function Testimonials() {
           flexDir={"row"}
           alignItems={"center"}
           justifyContent={"center"}
-          gap={"20px"}
+          gap={{ md: "20px", lg: "30px", xl: "35px" }}
           width={"90%"}
-          maxW={"1200px"}
+          maxW={"1150px"}
+          position={"relative"}
         >
           <Box
             className="content"
             display={"flex"}
             flexDir={"column"}
-            gap={"20px"}
+            gap={{ md: "20px", lg: "30px", xl: "35px" }}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
@@ -105,7 +109,8 @@ export default function Testimonials() {
             className="content"
             display={"flex"}
             flexDir={"column"}
-            gap={"20px"}
+            gap={{ md: "20px", lg: "30px", xl: "35px" }}
+            pb={"250px"}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
@@ -115,7 +120,7 @@ export default function Testimonials() {
             className="content"
             display={"flex"}
             flexDir={"column"}
-            gap={"20px"}
+            gap={{ md: "20px", lg: "30px", xl: "35px" }}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;

@@ -10,14 +10,16 @@ import {
 } from "@chakra-ui/react";
 import TestimonialsComponent from "./TestimonialComponent";
 import Testimonialcontent from "./Testimonialcontent";
+import Marquee from "react-fast-marquee";
+
 export default function Mobiletestimonial() {
   return (
     <Box
       display={{ base: "flex", md: "none" }}
       flexDir={"column"}
       backgroundColor={"#203244"}
-      width={"100vw"}
-      height={"100vh"}
+      width={"full"}
+      gap={"2rem"}
     >
       <Box
         display={"flex"}
@@ -58,59 +60,68 @@ export default function Mobiletestimonial() {
         </Heading>
       </Box>
 
-      {/* <Box className="marquee" width={"100vw"}>
-        <Box
-          className="track"
-          display={"flex"}
-          flexDir={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          gap={"20px"}
+      <Box
+        display={"flex"}
+        flexDir={"column"}
+        position={"relative"}
+        gap={"10px"}
+        mb={"4.5rem"}
+      >
+        <Marquee
+          gradientWidth={"10px"}
+          gradientColor={"rgb(137, 153, 160)"}
+          speed={25}
+          pauseOnHover={true}
+          pauseOnClick={true}
+        >
+          <Box display={"flex"} flexDir={"row"} px={"5px"} gap={"10px"}>
+            {Testimonialcontent.map((item, index) => {
+              return <TestimonialsComponent key={index} {...item} />;
+            })}
+          </Box>
+        </Marquee>
+        <Marquee
+          gradientWidth={"10px"}
+          gradientColor={"rgb(137, 153, 160)"}
+          speed={15}
+          pauseOnHover={true}
+          pauseOnClick={true}
         >
           <Box
-            className="content"
-            gap={"10px"}
             display={"flex"}
+            right={"50%"}
             flexDir={"row"}
-            width={"200px"}
-            // height={"200px"}
+            px={"5px"}
+            gap={"10px"}
+            position={"relative"}
+            left={"-110px"}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
             })}
           </Box>
-          <Box className="content" display={"flex"} flexDir={"row"}>
+        </Marquee>
+        <Marquee
+          gradientWidth={"10px"}
+          gradientColor={"rgb(137, 153, 160)"}
+          speed={20}
+          pauseOnHover={true}
+          pauseOnClick={true}
+        >
+          <Box
+            display={"flex"}
+            flexDir={"row"}
+            px={"5px"}
+            gap={"10px"}
+            position={"relative"}
+            left={"-150px"}
+          >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
             })}
           </Box>
-          <Box className="content" display={"flex"} flexDir={"row"}>
-            {Testimonialcontent.map((item, index) => {
-              return <TestimonialsComponent key={index} {...item} />;
-            })}
-          </Box>
-        </Box>
-      </Box> */}
-      {/* <Box display={"flex"} flexDir={"column"}>
-        <marquee height={"200px"}>
-          <Box display={"flex"} flexDir={"row"} gap={"10px"}>
-            {Testimonialcontent.map((item, index) => {
-              return <TestimonialsComponent key={index} {...item} />;
-            })}
-          </Box>
-        </marquee> */}
-      {/* <Box display={"flex"} flexDir={"row"}>
-            {Testimonialcontent.map((item, index) => {
-              return <TestimonialsComponent key={index} {...item} />;
-            })}
-          </Box>
-          <Box display={"flex"} flexDir={"row"}>
-            {Testimonialcontent.map((item, index) => {
-              return <TestimonialsComponent key={index} {...item} />;
-            })}
-          </Box>
-        </marquee> */}
-      {/* </Box> */}
+        </Marquee>
+      </Box>
     </Box>
   );
 }

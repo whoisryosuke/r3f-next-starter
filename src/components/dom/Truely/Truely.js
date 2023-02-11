@@ -55,15 +55,15 @@ const Truely = (props) => {
 
   return (
     <Box
-    id='truely'
+      id="truely"
       bg={props.activeBg}
       color={props.fontColor}
       sx={{
-        w: "100vw",
-        h: { lg: "120vh", base: "100vh" },
+        w: "100%",
+        h: "100vh",
 
         fontFamily: "novara",
-      
+
         display: { lg: "flex", base: "none" },
         flexDir: "column",
         alignItems: "center",

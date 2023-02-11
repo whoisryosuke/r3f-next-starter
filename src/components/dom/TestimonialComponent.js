@@ -12,11 +12,14 @@ export default function TestimonialsComponent(props) {
       overflowWrap="break-word"
       display={"flex"}
       gap={{ md: "1rem", base: "10px" }}
-      maxW={{ md: "440px", base: "300px" }}
+      minW={{ base: "200px" }}
+      maxW={{ md: "440px", base: "225px" }}
       // maxW={"440px"}
       padding={{ md: "20px", base: "10px" }}
       color={"white"}
-      borderRadius={{ base: "15px" }}
+      borderRadius={{ base: "12px", md: "30px" }}
+      borderColor={"#FFF"}
+      // verticalAlign={"bottom"}
       // bg="gray"
       // border={"1px ##89A2B8"}
     >

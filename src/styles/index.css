@@ -14,10 +14,7 @@
 
 html {
   line-height: 1.15;
-<<<<<<< HEAD
   /* scrollbar-width: none; */
-=======
->>>>>>> f32470ac7f0a2c18fd6d0160c2eec272263b812f
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -397,7 +394,6 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   overflow-x: hidden;
   scrollbar-width: none;
 }
@@ -463,9 +459,7 @@ body,
   height: 8px;
   border-radius: 50%;
   background: white;
-=======
   overflow: hidden;
->>>>>>> f32470ac7f0a2c18fd6d0160c2eec272263b812f
 }
 
 /* testimonials card section back-ground color*/
@@ -477,7 +471,6 @@ body,
   );
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
-  border-radius: 30px;
   border: 1px;
 }
 
