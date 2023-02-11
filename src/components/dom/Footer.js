@@ -6,7 +6,7 @@ const Footer = () => {
     <Box
       w="100vw"
       bg="#0B1C2C"
-      h={{ lg: "75vh", base: "100vh" }}
+      // h={{ lg: "75vh", base: "100vh" }}
       display="flex"
       flexDir="column"
       justifyContent="space-between"
@@ -20,7 +20,8 @@ const Footer = () => {
       >
         <Image
           src="/yousufAbeerLogo.svg "
-          paddingLeft={{ lg: "0 ", base: "35px" }}
+          marginTop={{ lg: "75px ", base: "35px" }}
+          paddingLeft={{ lg: "100px ", base: "40px" }}
           h={{ base: "50px", lg: "64px" }}
         />
 
@@ -33,7 +34,7 @@ const Footer = () => {
           padding={{ lg: "20px 0 0 75px", base: "0" }}
           flexDir={{ lg: "row", base: "column" }}
           justifyContent="space-between"
-          // gap={{ lg: "0rem", base: "2.5rem" }}
+          gap={{ lg: "0rem", base: "2.5rem" }}
           marginTop={{ lg: "5rem", base: "4rem" }}
         >
           <Box>
@@ -44,7 +45,7 @@ const Footer = () => {
             {/* for border  */}
             <Text
               style={{
-                marginTop: "10px",
+                marginTop: "2.5px",
                 width: "50px",
                 height: "1px",
                 border: "1px solid white",
@@ -68,7 +69,7 @@ const Footer = () => {
             </Heading>
             <Text
               style={{
-                marginTop: "10px",
+                marginTop: "2.5px",
                 width: "50px",
                 height: "1px",
                 border: "1px solid white",
@@ -90,7 +91,7 @@ const Footer = () => {
             </Heading>
             <Text
               style={{
-                marginTop: "10px",
+                marginTop: "2.5px",
                 width: "50px",
                 height: "1px",
                 border: "1px solid white",
@@ -112,7 +113,7 @@ const Footer = () => {
             </Heading>
             <Text
               style={{
-                marginTop: "10px",
+                marginTop: "2.5px",
                 width: "50px",
                 height: "1px",
                 border: "1px solid white",
