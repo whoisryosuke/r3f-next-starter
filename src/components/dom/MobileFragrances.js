@@ -1,11 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { Box, Heading, Image, Link } from "@chakra-ui/react";
+import React, { useEffect, useState, useRef } from "react";
+import { Box, Button, Heading, Image, Link, Text } from "@chakra-ui/react";
+import Slider from "react-slick";
+import MagicSliderDots from "react-magic-slider-dots";
 import ReactDOM from "react-dom";
 import ReactSwipe from "react-swipe";
 import { motion } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "react-magic-slider-dots/dist/magic-dots.css";
+import SimpleImageSlider from "react-simple-image-slider";
 
-const MobileFragrances = () => {
-  const [dotIndex, setDotIndex] = useState("");
+const MobileFragrances = (props) => {
+  const [dotIndex, setDotIndex] = useState(0);
+
+  const ref = useRef(0);
+  console.log(ref.current);
+  const settings = {
+    dots: true,
+    color: "white",
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendDots: (dots) => {
+      return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
+    },
+  };
 
   const perfumes = [
     {
@@ -54,19 +75,9 @@ const MobileFragrances = () => {
       color: "black",
     },
   ];
-  const settings = {
-    dots: true,
-    arrows: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    appendDots: (dots) => {
-      return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
-    },
-  };
+
   let reactSwipeEl;
-  const dotArr = [1, 2, 3, 4, 5, 6, 7];
+  const dotArr = [0, 1, 2, 3, 4];
 
   return (
     <Box
@@ -98,19 +109,20 @@ const MobileFragrances = () => {
           <Image display="inline-block" w="100px" src="/images/perfume1.png" />
         </Box>
       </Box>
-      <ReactSwipe
+      {/* <ReactSwipe
         className="carousel"
         swipeOptions={{ continuous: false }}
         ref={(el) => (reactSwipeEl = el)}
+        // ref={(el) => console.log(el.containerEl)}
+        // ref={(el) => console.log(el)}
       >
         {perfumes.map((item, index) => {
           // console.log(item.id);
           return (
             <Box
               as={motion.div}
-              whileInView={() => setDotIndex(item.id)}
-              // whileInView={() => console.log(item.id)}
               key={index}
+              ref={ref}
               marginTop="100px"
               display="flex"
               flexDir="column"
@@ -119,6 +131,9 @@ const MobileFragrances = () => {
               color="white"
               // border="1px solid white"
               position="relative"
+              whileInView={() => {
+                setDotIndex(item.id);
+              }}
             >
               <Heading
                 // as={Link}
@@ -152,32 +167,94 @@ const MobileFragrances = () => {
             </Box>
           );
         })}
-      </ReactSwipe>
-      <Box
+      </ReactSwipe> */}
+      (
+      <Slider {...settings}>
+        {perfumes.map((item, index) => {
+          // console.log(item.id);
+          return (
+            <Box
+              as={motion.a}
+              href={`/product/${item.id}`}
+              key={index}
+              ref={ref}
+              marginTop="100px"
+              display="flex"
+              flexDir="column"
+              alignItems="center"
+              w="300px"
+              color="white"
+              // border="1px solid white"
+              position="relative"
+            >
+              <Heading
+                as={motion.p}
+                position="absolute"
+                top="40%"
+                left="50px"
+                mixBlendMode=" exclusion"
+                fontFamily="novara"
+                fontSize="3rem"
+                w="300px"
+                textAlign="center"
+                textShadow="2px 5px solid black"
+                fontWeight="400"
+                // whileInView={() => {
+                //   setDotIndex(item.id);
+                // }}
+                // whileInView={() => {
+                //   setDotIndex(item.id);
+                // }}
+                // color={item.color}
+              >
+                {item.productName}
+              </Heading>
+              <Image
+                margin="auto"
+                // href={`/product/${item.id}`}
+                display="inline"
+                borderRadius="300px"
+                w="300px"
+                h="450px"
+                // sx={{
+                //   filter: "saturate(60%)",
+                //   backdgroundFilter: "brightness(0.5)",
+                // }}
+                src={item.src}
+              />
+            </Box>
+          );
+        })}
+      </Slider>
+      {/* <div className="container-dots">
+        {Array.from({ length: 5 }).map((item, index) => (
+          <div
+            onClick={() => moveDot(index + 1)}
+            className={slideIndex === index + 1 ? "dot active" : "dot"}
+          ></div>
+        ))}
+      </div> */}
+      {/* <Box
+        onClick={() => reactSwipeEl.next()}
         display="flex"
         justifyContent="center"
         gap="10px"
         alignItems="center"
       >
-        {dotIndex &&
-          dotArr.map((item, index) => {
-            if (index == dotIndex) {
-              console.log(index, dotIndex);
-            }
-            return (
-              <Box
-                marginTop="20px"
-                w={index == dotIndex ? "20px" : "10px"}
-                h={index == dotIndex ? "20px" : "10px"}
-                bg={index == dotIndex ? "black" : "white"}
-                borderRadius="50%"
-              />
-            );
-          })}
-      </Box>
-
-      {/* <button onClick={() => reactSwipeEl.next()}>Next</button>
-      <button onClick={() => reactSwipeEl.prev()}>Previous</button> */}
+        {dotArr.map((item, index) => {
+          return (
+            <Box
+              marginTop="20px"
+              w={index == dotIndex ? "20px" : "10px"}
+              h={index == dotIndex ? "25px" : "10px"}
+              bg={index == dotIndex ? "black" : "white"}
+              borderRadius="50%"
+              border="1px solid white"
+            />
+          );
+        })}
+      </Box> */}
+      ){/* <button onClick={() => reactSwipeEl.prev()}>Previous</button> */}
     </Box>
   );
 };

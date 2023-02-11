@@ -5719,6 +5719,11 @@ react-router@6.8.1:
   dependencies:
     "@remix-run/router" "1.3.2"
 
+react-simple-image-slider@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/react-simple-image-slider/-/react-simple-image-slider-2.4.1.tgz#ba80e5741b32a531110cb3811ed9f76e3eee88f8"
+  integrity sha512-9T/WjsRThJup43QxzH202rLVNqaUK9P8izTiWOfLcc5w3QygU44a9IQUuIwGYiXtWvw2spRRGLRc5Xd62/vfDg==
+
 react-slick@^0.29.0:
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.29.0.tgz#0bed5ea42bf75a23d40c0259b828ed27627b51bb"
@@ -6111,6 +6116,11 @@ slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
+
+slick-carousel@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
+  integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
 
 source-list-map@^2.0.0:
   version "2.0.1"

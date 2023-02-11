@@ -175,7 +175,7 @@ const Brands = () => {
       >
         <Marquee
           pauseOnHover={true}
-          speed={15}
+          speed={30}
           pauseOnClick={true}
           gradient={false}
         >
@@ -207,7 +207,7 @@ const Brands = () => {
         </Marquee>
         <Marquee
           pauseOnHover={true}
-          speed={15}
+          speed={50}
           gradient={false}
           direction="right"
         >
@@ -278,7 +278,7 @@ const Brands = () => {
       >
         <Marquee
           pauseOnHover={true}
-          speed={15}
+          speed={500}
           pauseOnClick={true}
           gradient={false}
         >
