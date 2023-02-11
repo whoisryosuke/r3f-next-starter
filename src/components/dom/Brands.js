@@ -147,7 +147,7 @@ const Brands = () => {
   return (
     // <Box  borderRadius='500px' border='5px solid yellow' ></Box>
     <Center
-    id='brands'
+      id="brands"
       as={motion.div}
       ref={ref}
       animate={controls}
@@ -160,8 +160,6 @@ const Brands = () => {
       py={{ base: "1.5rem", sm: "4.5rem" }}
       gap={"5rem"}
       boxSizing="border-box"
-       
-      
     >
       {/* For Tablets and Desktops */}
 
@@ -171,9 +169,9 @@ const Brands = () => {
         flexDir={"column"}
         bg="black"
         rounded={"2rem"}
-        borderRadius='20px'
-        h='400px'
-      
+        p="0.75rem"
+        borderRadius="25px"
+        // h='400px'
       >
         <Marquee
           pauseOnHover={true}
@@ -184,7 +182,6 @@ const Brands = () => {
           <Flex
             bg={"#000"}
             px={"2.5rem"}
-            marginTop='1.5rem'
             gap={{ base: "2.25rem", lg: "3rem" }}
             justifyContent={"center"}
             alignItems={"center"}
@@ -197,8 +194,8 @@ const Brands = () => {
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  // lineHeight={"8.62rem"}
-                  lineHeight={"6.62rem"}
+                  lineHeight={"8.62rem"}
+                  // lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >
@@ -258,8 +255,8 @@ const Brands = () => {
                   letterSpacing={"0.5rem"}
                   fontFamily={"Novara"}
                   textTransform={"uppercase"}
-                  // lineHeight={"8.62rem"}
-                  lineHeight={"6.62rem"}
+                  lineHeight={"8.62rem"}
+                  // lineHeight={"6.62rem"}
                   color={"#FFF"}
                   overflow={"hidden"}
                 >
@@ -276,7 +273,8 @@ const Brands = () => {
         w={"97%"}
         flexDir={"column"}
         bg={"black"}
-        rounded={"2rem"}
+        rounded={"7px"}
+        p="0.25rem"
       >
         <Marquee
           pauseOnHover={true}

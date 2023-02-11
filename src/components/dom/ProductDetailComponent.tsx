@@ -1,5 +1,6 @@
 import {
   Box,
+  FormControl,
   Heading,
   Image,
   Radio,
@@ -14,15 +15,17 @@ const ProductDetailComponent = ({ productData }) => {
 
   return (
     <Box w="100vw" h="100vh" display="flex">
-      <Box
-        w="40%"
-        py="4rem"
-        px="2rem"
-        display={{ lg: "inline-block", base: "none" }}
-      >
-        <Image boxSize="840px" src={productData?.src} />
+      <Box w="40%" py="4rem" px="2rem" display={{ lg: "flex", base: "none" }}>
+        {/* <Image boxSize="840px" src={productData?.src} /> */}
+        <Image w="600px" src={productData?.src} />
       </Box>
-      <Box w={{ lg: "50vw", base: "100vw" }}>
+      <Box
+        w={{ lg: "50vw", base: "100vw" }}
+        h="95vh"
+        display="flex"
+        flexDir="column"
+        justifyContent="space-between"
+      >
         <Heading
           fontSize={{ lg: "5rem", base: "2rem" }}
           py={{ lg: "4rem", base: "1rem" }}
@@ -32,6 +35,7 @@ const ProductDetailComponent = ({ productData }) => {
         >
           {productData?.productName}
         </Heading>
+        {/* for mobile screen */}
         <Box
           py={{ lg: "4rem", base: "1rem" }}
           px={{ lg: "2rem", base: "1rem" }}
@@ -47,17 +51,25 @@ const ProductDetailComponent = ({ productData }) => {
         >
           {productData?.productDiscription}
         </Text>
-        <RadioGroup
-          defaultValue="2"
-          marginTop={{ lg: "2rem", base: "10px" }}
-          marginBottom={{ lg: "2rem", base: "10px" }}
-        >
-          <Stack direction="row">
-            <Radio value="1">50 ml/1.7 oz</Radio>
-            <Radio value="2">100 ml/3.38 oz</Radio>
-          </Stack>
-        </RadioGroup>
 
+        {/* <div>
+          <input type="radio" id="50ml" name="drone" value="huey" checked />
+          <label htmlFor="50ml">50 ml/1.7 oz</label>
+          <input type="radio" id="100ml" name="drone" value="huey" checked />
+          <label htmlFor="100ml">100 ml/3.38 oz</label>
+        </div> */}
+        <Box display="flex" gap="2rem">
+          <label className="container">
+            50 ml/1.7 oz
+            <input type="radio" checked name="radio" />
+            <span className="checkmark"></span>
+          </label>
+          <label className="container">
+            100 ml/3.4 oz
+            <input type="radio" name="radio" />
+            <span className="checkmark"></span>
+          </label>
+        </Box>
         <Heading fontFamily="gilroy" px={{ lg: "0", base: "1rem" }}>
           Available notes
         </Heading>

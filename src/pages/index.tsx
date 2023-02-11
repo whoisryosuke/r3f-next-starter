@@ -42,9 +42,9 @@ const DOM = () => {
 
   let activeBg = "";
   let fontColor = "";
-  let imgInvert = ''
-  let webkitFilter = ''
-  let filter = ''
+  let imgInvert = "";
+
+  let filter = "";
   if (blueActive) {
     activeBg = "#122333";
     fontColor = "#fff";
@@ -54,15 +54,12 @@ const DOM = () => {
     fontColor = "#fff";
   }
 
-
   if (whiteActive) {
     activeBg = "#fff";
     fontColor = "black";
-    imgInvert = ' webkitFilter: "invert(1)"'  
-    
-    filter= "invert(100%)"
- 
-    
+    imgInvert = ' webkitFilter: "invert(1)"';
+
+    filter = "invert(100%)";
   }
 
   return (
@@ -73,7 +70,6 @@ const DOM = () => {
         activeBg={activeBg}
         fontColor={fontColor}
         imgInvert={imgInvert}
-      
         filter={filter}
         setBlueActive={setBlueActive}
         setRedActive={setRedActive}
@@ -81,19 +77,14 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
-        <Brands />
       <Truely activeBg={activeBg} fontColor={fontColor} />
       <MobileTruely activeBg={activeBg} fontColor={fontColor} />
-      <Fragrances />
-      <FragrancesZed />
+      <Brands />
+      {/* <Fragrances /> */}
+      {/* <FragrancesZed /> */}
       <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
       <Footer />
-      
-     
-      {/* <Truely /> */}
-    
-   
     </>
   );
 };
