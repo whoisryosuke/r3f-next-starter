@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Heading, Image, Link } from "@chakra-ui/react";
 import ReactDOM from "react-dom";
 import ReactSwipe from "react-swipe";
+import { motion } from "framer-motion";
 
 const MobileFragrances = () => {
+  const [dotIndex, setDotIndex] = useState("");
+
   const perfumes = [
     {
-      id: "0",
+      id: 0,
       productName: "Chanel No",
       src: "/images/one.jpg",
       productDiscription:
@@ -15,7 +18,7 @@ const MobileFragrances = () => {
       color: "white",
     },
     {
-      id: "1",
+      id: 1,
       productName: "Le Labo Santal ",
       src: "/images/two.jpg",
       productDiscription:
@@ -24,7 +27,7 @@ const MobileFragrances = () => {
       color: "white",
     },
     {
-      id: "2",
+      id: 2,
       productName: "Thierry Mugler Angel.",
       src: "/images/three.jpg",
       productDiscription:
@@ -33,7 +36,7 @@ const MobileFragrances = () => {
       color: "black",
     },
     {
-      id: "3",
+      id: 3,
       productName: "Engage L'amante Aqua",
       src: "/images/four.jpg",
       productDiscription:
@@ -42,7 +45,7 @@ const MobileFragrances = () => {
       color: "black",
     },
     {
-      id: "4",
+      id: 4,
       productName: "Zed",
       src: "/images/four.jpg",
       productDiscription:
@@ -63,19 +66,21 @@ const MobileFragrances = () => {
     },
   };
   let reactSwipeEl;
+  const dotArr = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <Box
       w="100vw"
       h="100vh"
       bg=" #122333"
-      display={{ base: "felx", lg: "none" }}
+      // display={{ base: "felx", lg: "none" }}
+      // h="100vh"
       flexDir="colunm"
       alignItems="center"
       justifyContent="center"
     >
       <Box
-        display="felx"
+        display="flex"
         flexDir="colunm"
         alignItems="center"
         justifyContent="center"
@@ -94,16 +99,17 @@ const MobileFragrances = () => {
         </Box>
       </Box>
       <ReactSwipe
-        {...settings}
         className="carousel"
         swipeOptions={{ continuous: false }}
         ref={(el) => (reactSwipeEl = el)}
       >
         {perfumes.map((item, index) => {
+          // console.log(item.id);
           return (
             <Box
-              as={Link}
-              href={`/product/${item.id}`}
+              as={motion.div}
+              whileInView={() => setDotIndex(item.id)}
+              // whileInView={() => console.log(item.id)}
               key={index}
               marginTop="100px"
               display="flex"
@@ -115,7 +121,9 @@ const MobileFragrances = () => {
               position="relative"
             >
               <Heading
+                // as={Link}
                 position="absolute"
+                // href={`/product/${item.id}`}
                 top="40%"
                 mixBlendMode=" exclusion"
                 fontFamily="novara"
@@ -130,6 +138,7 @@ const MobileFragrances = () => {
               </Heading>
               <Image
                 margin="auto"
+                // href={`/product/${item.id}`}
                 display="inline"
                 borderRadius="300px"
                 w="300px"
@@ -144,18 +153,31 @@ const MobileFragrances = () => {
           );
         })}
       </ReactSwipe>
-      <Box display="flex" justifyContent="center">
-        <Box
-          marginTop="20px"
-          w="20px "
-          h="20px"
-          bg="white"
-          borderRadius="50%"
-        />
+      <Box
+        display="flex"
+        justifyContent="center"
+        gap="10px"
+        alignItems="center"
+      >
+        {dotIndex &&
+          dotArr.map((item, index) => {
+            if (index == dotIndex) {
+              console.log(index, dotIndex);
+            }
+            return (
+              <Box
+                marginTop="20px"
+                w={index == dotIndex ? "20px" : "10px"}
+                h={index == dotIndex ? "20px" : "10px"}
+                bg={index == dotIndex ? "black" : "white"}
+                borderRadius="50%"
+              />
+            );
+          })}
       </Box>
 
-      <button onClick={() => reactSwipeEl.next()}>Next</button>
-      <button onClick={() => reactSwipeEl.prev()}>Previous</button>
+      {/* <button onClick={() => reactSwipeEl.next()}>Next</button>
+      <button onClick={() => reactSwipeEl.prev()}>Previous</button> */}
     </Box>
   );
 };
