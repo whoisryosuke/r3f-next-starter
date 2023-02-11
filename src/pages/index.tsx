@@ -18,12 +18,17 @@ import Fragrances from "../components/dom/Fragrances";
 import FragrancesZed from "../components/dom/FragrancesZed";
 import GetinTouch from "../components/dom/GetinTouch";
 import Footer from "../components/dom/Footer";
-import { useRouter } from "next/router";
+
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
+import { useRouter } from "next/router";
+import Qualities from "@/components/dom/Qualities";
+import MobileQualities from "@/components/dom/modilequalities";
+import Testimonials from "@/components/dom/Testimonials";
+import Mobiletestimonial from "@/components/dom/Mobiletestimonials";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -82,11 +87,17 @@ const DOM = () => {
       <Brands />
       {/* <Fragrances /> */}
       {/* <FragrancesZed /> */}
+       {/* <Loader />
+      <Navbar /> */}
+      {/* <Qualities />
+      <MobileQualities /> */}
+      <Testimonials />
+      {/* <Mobiletestimonial /> */}
       <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
       <Footer />
-    </>
-  );
+      </>
+  )
 };
 
 // Canvas/R3F components here

@@ -42,6 +42,7 @@
 		"next": "^12.1.6",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
+<<<<<<< HEAD
 		"react-fast-marquee": "^1.3.5",
 		"react-intersection-observer": "^9.4.1",
 		"react-is": "^18.1.0",
@@ -50,6 +51,12 @@
 		"react-simple-image-slider": "^2.4.1",
 		"react-slick": "^0.29.0",
 		"react-swipe": "^6.0.4",
+=======
+		"react-easy-marquee": "^1.2.4",
+		"react-fast-marquee": "^1.3.5",
+		"react-is": "^18.1.0",
+		"react-marquee-master": "^1.4.5",
+>>>>>>> f32470ac7f0a2c18fd6d0160c2eec272263b812f
 		"react-three-fiber": "^6.0.13",
 		"scroller-motion": "^1.2.2",
 		"slick-carousel": "^1.8.1",
