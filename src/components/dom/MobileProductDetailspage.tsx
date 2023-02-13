@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
-export default function ProductDetailpage() {
+export default function ProductDetailpage({ productData }) {
   return (
     <Box
       display={{ base: "flex", md: "none" }}
@@ -13,19 +13,20 @@ export default function ProductDetailpage() {
         display={"flex"}
         flexDir={"row"}
         justifyContent={"space-between"}
-        paddingTop={"60px"}
+        paddingTop={"20px"}
       >
         <Text
+          w="full"
           fontFamily={"novara"}
           fontStyle={"normal"}
           fontWeight={"400"}
           fontSize={{ base: "24px", sm: "30px" }}
           lineHeight={"27px"}
           letterSpacing={"0.07em"}
-          width={{ base: "200px", sm: "230px" }}
+          width={{ base: "200px", sm: "250px" }}
           justifyItems={"start"}
         >
-          Engage L'amante Aqua
+          {productData?.productName}
         </Text>
         <Text
           // border="1px solid black"
@@ -37,10 +38,17 @@ export default function ProductDetailpage() {
           lineHeight={"0.04em"}
           justifyItems={"flex-end"}
         >
-          $300
+          {productData?.price}
         </Text>
       </Box>
-      <Image src={"unsplash.png"} w="400px" paddingTop={"10px"}></Image>
+      <Image
+        src={productData?.src}
+        margin="auto"
+        w="95%"
+        maxH="450px"
+        objectFit="cover"
+        paddingTop={"10px"}
+      ></Image>
       <Text
         // width={"306px"}
         fontFamily={"gilroy"}
@@ -50,12 +58,10 @@ export default function ProductDetailpage() {
         letterSpacing={"7%"}
         paddingTop={"10px"}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus
-        risus, porta vitae est vitae, finibus vulputate turpis. Nam lectus urna,
-        dictum id nisi quis, convallis feugiat urna.
+        {productData?.productDiscription}
       </Text>
       <Box display="flex" paddingTop={"35px"} gap="2rem" alignItems="center">
-        <label className="container">
+        <label style={{ fontSize: "18px" }} className="container">
           50 ml/1.7 oz
           <input
             style={{ border: "5px solid black" }}
@@ -65,7 +71,7 @@ export default function ProductDetailpage() {
           />
           <span className="checkmark"></span>
         </label>
-        <label className="container">
+        <label style={{ fontSize: "18px" }} className="container">
           100 ml/3.4 oz
           <input type="radio" name="radio" />
           <span className="checkmark"></span>
@@ -142,15 +148,18 @@ export default function ProductDetailpage() {
           lineHeight={"12px"}
           letterSpacing={"0.185em"}
           textDecorationLine={"underline"}
+          margin="auto"
+          paddingRight="2rem"
         >
           CONTACT STORE
+          <Image
+            marginLeft="2rem"
+            src={"/images/ArrowIcon.png"}
+            width={"23px"}
+            height={"11px"}
+            margin="auto"
+          />
         </Button>
-        <Image
-          src={"arrowicon.png"}
-          width={"23px"}
-          height={"11px"}
-          margin="auto"
-        />
       </Flex>
     </Box>
   );
