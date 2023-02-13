@@ -21,7 +21,7 @@ import Footer from "../components/dom/Footer";
 
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
-import ProductDetailpage from "@/components/dom/ProductDetailspage";
+import MobileProductDetailpage from "@/components/dom/MobileProductDetailspage";
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
@@ -96,7 +96,7 @@ const DOM = () => {
       <Mobiletestimonial />
       <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
-      <ProductDetailpage />
+      <MobileProductDetailpage />
       <Footer />
     </>
   );
