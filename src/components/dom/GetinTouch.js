@@ -50,7 +50,7 @@ const childVariant = {
     },
   },
 };
-const Inputt = ({fontColor}) => {
+const Inputt = ({ fontColor }) => {
   return (
     <Input
       // as={motion.input}
@@ -61,10 +61,8 @@ const Inputt = ({fontColor}) => {
       // }}
       variant="unstyled"
       // borderBottom ={` 1px solid ${fontColor}`}
-      borderBottom ='2px solid '
+      borderBottom="2px solid "
       borderBottomColor={fontColor}
-
-      
       borderRadius="2px"
       w={{ lg: "430px", base: "200px" }}
       marginTop={{ lg: "5px", base: "00" }}
@@ -123,9 +121,13 @@ const Btn = ({ children }) => {
 };
 const GetinTouch = (props) => {
   return (
-    <Box id='contact' bg={props.activeBg} h={{ lg: "auto", base: "auto" }} w="100vw">
+    <Box
+      id="contact"
+      bg={props.activeBg}
+      h={{ lg: "auto", base: "auto" }}
+      w="100vw"
+    >
       <Box
-      
         maxW="2000px"
         color={props.fontColor}
         p="3rem"
@@ -141,6 +143,7 @@ const GetinTouch = (props) => {
           fontWeight="300"
           letterSpacing="1.6px"
           fontSize={{ lg: "60px", base: "2rem" }}
+          textAlign="center"
         >
           Get in touch! we’d love to hear from you
         </Heading>
@@ -188,7 +191,7 @@ const GetinTouch = (props) => {
               transition: { duration: "0.8" },
             }}
             viewport={{ once: true }}
-            display={{ lg: "inline-block", base: "none" }}
+            display={{ xl: "inline-block", base: "none" }}
             marginTop="160px"
             w="750px"
             h="400px"
