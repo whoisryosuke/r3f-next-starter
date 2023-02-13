@@ -28,11 +28,11 @@ const DOM = () => {
     <>
       {/* <Loader />
       <Navbar /> */}
-      {/* <Qualities />
-      <MobileQualities /> */}
+      <Qualities />
+      <MobileQualities />
       {/* <Testimonials /> */}
       {/* <Mobiletestimonial /> */}
-      <ProductDetailpage />
+      {/* <ProductDetailpage /> */}
     </>
   );
 };
