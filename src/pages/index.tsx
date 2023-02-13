@@ -21,7 +21,6 @@ import Footer from "../components/dom/Footer"
 
 import { ChakraProvider, Flex } from "@chakra-ui/react"
 import { useState } from "react"
-import MobileProductDetailpage from "@/components/dom/MobileProductDetailspage"
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
@@ -108,7 +107,6 @@ const DOM = () => {
 				activeBg={activeBg}
 				fontColor={fontColor}
 			/>
-			<MobileProductDetailpage />
 			<Footer />
 		</>
 	)
