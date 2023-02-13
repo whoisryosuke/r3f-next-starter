@@ -40,10 +40,21 @@ const TwoPerfumeImages = () => {
         whileInView={"visible"}
         viewport={{ once: true }}
         sx={{
-          position: { lg: "absolute", base: "absolute" },
+          position: { md: "absolute", base: "absolute" },
           top: 0,
-          right: { lg: 100, base: 0 },
-          w: { lg: "250px", base: "120px" },
+          right: {
+            "2xl": "6rem ",
+            md: "6vw",
+
+            base: 0,
+          },
+          w: {
+            "3xl": "270px",
+
+            md: "14.5vw",
+            // sm: "3vw",
+            base: "30vw",
+          },
         }}
       >
         <Image src="/images/perfume5.png" />
@@ -56,15 +67,25 @@ const TwoPerfumeImages = () => {
         whileInView={"visible"}
         viewport={{ once: true }}
         sx={{
-          position: { lg: "absolute", base: "relative" },
+          position: { md: "absolute", base: "relative" },
 
-          bottom: { lg: 0, base: "0" },
-          left: { lg: 0, base: 0 },
-          // boxSize: { lg: "200px" },
-          w: { lg: "250px", base: "120px" },
+          bottom: { md: 0, base: "0" },
+          left: {
+            "2xl": "6rem ",
+            md: "6vw",
+
+            base: 0,
+          },
+          // boxSize: { md: "200px" },
+          w: {
+            "3xl": "270px",
+            md: "14.5vw",
+            // sm: "3vw",
+            base: "30vw",
+          },
           // h: "100px",
           display: {
-            lg: "inline-block",
+            md: "inline-block",
           },
         }}
       >

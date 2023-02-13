@@ -66,7 +66,7 @@ const Brands = () => {
     },
     {
       id: 2,
-      brand: "Tom Ford",
+      brand: "Moschino",
     },
     {
       id: 3,
@@ -173,12 +173,7 @@ const Brands = () => {
         borderRadius="25px"
         // h='400px'
       >
-        <Marquee
-          pauseOnHover={true}
-          speed={30}
-          pauseOnClick={true}
-          gradient={false}
-        >
+        <Marquee speed={30} gradient={false}>
           <Flex
             bg={"#000"}
             px={"2.5rem"}
@@ -205,12 +200,7 @@ const Brands = () => {
             })}
           </Flex>
         </Marquee>
-        <Marquee
-          pauseOnHover={true}
-          speed={45}
-          gradient={false}
-          direction="right"
-        >
+        <Marquee speed={45} gradient={false} direction="right">
           <Flex
             bg={"#000"}
             px={"2.5rem"}
@@ -238,7 +228,7 @@ const Brands = () => {
             })}
           </Flex>
         </Marquee>
-        <Marquee pauseOnHover={true} speed={15} gradient={false}>
+        <Marquee speed={37.5} gradient={false}>
           <Flex
             bg={"#000"}
             px={"2.5rem"}
@@ -276,12 +266,7 @@ const Brands = () => {
         rounded={"7px"}
         p="0.25rem"
       >
-        <Marquee
-          pauseOnHover={true}
-          speed={20}
-          pauseOnClick={true}
-          gradient={false}
-        >
+        <Marquee speed={20} gradient={false}>
           <Flex
             bg={"#000"}
             px={"0.5rem"}
@@ -308,13 +293,7 @@ const Brands = () => {
             })}
           </Flex>
         </Marquee>
-        <Marquee
-          pauseOnHover={true}
-          speed={15}
-          pauseOnClick={true}
-          gradient={false}
-          direction={"right"}
-        >
+        <Marquee speed={15} gradient={false} direction={"right"}>
           <Flex
             bg={"#000"}
             px={"0.5rem"}
@@ -341,12 +320,7 @@ const Brands = () => {
             })}
           </Flex>
         </Marquee>
-        <Marquee
-          pauseOnHover={true}
-          speed={25}
-          pauseOnClick={true}
-          gradient={false}
-        >
+        <Marquee speed={25} gradient={false}>
           <Flex
             bg={"#000"}
             px={"0.5rem"}

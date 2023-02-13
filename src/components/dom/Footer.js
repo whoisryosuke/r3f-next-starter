@@ -36,7 +36,7 @@ const Footer = () => {
           // padding={{ md: "20px 0 0 75px", base: "0" }}
           flexDir={{ md: "row", base: "column" }}
           justifyContent={{ md: "space-between" }}
-          gap={{ md: "0", lg: "1rem", base: "5rem" }}
+          gap={{ md: "0", lg: "1rem", base: "4rem" }}
           marginTop={{ md: "5rem", base: "4rem" }}
           fontWeight={"300"}
         >
@@ -59,7 +59,7 @@ const Footer = () => {
               }}
             />
             <Text
-              maxW={{ base: "15ch", lg: "25ch" }}
+              maxW={{ base: "20ch", lg: "25ch" }}
               marginTop={{ md: "2rem", base: "10px" }}
               fontFamily="gilroy"
               lineHeight={{ md: "25px", base: "20px" }}
@@ -118,7 +118,7 @@ const Footer = () => {
               }}
             />
             <Text
-              maxW={{ base: "15ch", lg: "25ch" }}
+              maxW={{ base: "20ch", lg: "25ch" }}
               marginTop={{ md: "2rem", base: "10px" }}
               fontFamily="gilroy"
               lineHeight={{ md: "25px", base: "20px" }}

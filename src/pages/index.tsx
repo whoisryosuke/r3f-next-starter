@@ -89,8 +89,8 @@ const DOM = () => {
       {/* <FragrancesZed /> */}
       {/* <Loader />
       <Navbar /> */}
-      {/* <Qualities />
-      <MobileQualities /> */}
+      <Qualities />
+      <MobileQualities />
       <Testimonials />
       <Mobiletestimonial />
       <MobileFragrances />

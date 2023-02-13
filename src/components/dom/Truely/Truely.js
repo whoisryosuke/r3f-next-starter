@@ -1,4 +1,13 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import { useInView } from "@react-spring/three";
 import { motion, useAnimation } from "framer-motion";
 import React, { useRef, useEffect } from "react";
@@ -20,6 +29,8 @@ const Truely = (props) => {
       mobileControls.start("visible");
     }
   }, [mobileControls, mobileinView]);
+
+  // const [greaterthan2xl] = () => useMediaQuery("(min-width: 1536px)");
 
   const mobileheadingVariant = {
     start: {
@@ -43,7 +54,7 @@ const Truely = (props) => {
       opacity: 0,
     },
     visible: {
-      lineHeight: "5rem",
+      lineHeight: "4.25vw",
       opacity: 1,
       transition: {
         duration: 0.8,
@@ -60,11 +71,11 @@ const Truely = (props) => {
       color={props.fontColor}
       sx={{
         w: "100%",
-        h: "100vh",
+        // h: "100vh",
 
         fontFamily: "novara",
 
-        display: { lg: "flex", base: "none" },
+        display: { md: "flex", base: "none" },
         flexDir: "column",
         alignItems: "center",
         justifyContent: "center",
@@ -74,11 +85,24 @@ const Truely = (props) => {
     >
       <Box
         // maxW="00px"
-        w="100vw"
-        h="100%"
-        marginLeft={{ lg: "7rem ", base: "2rem" }}
-        paddingTop={{ lg: "3rem", base: "0.5rem" }}
-        maxW="2000px"
+        w="100%"
+        px={{
+          "2xl": "6rem ",
+          md: "6vw",
+          base: "2rem",
+        }}
+        pt={{
+          "2xl": "5.5rem ",
+          md: "5.5vw",
+          base: "1rem",
+        }}
+        // paddingTop={{ md: "3rem", base: "0.5rem" }}
+        pb={{
+          "2xl": "4.5rem ",
+          md: "4.5vw",
+          base: "1rem",
+        }}
+        maxW="1920px"
         position="relative"
         // border="1px solid white"
       >
@@ -90,18 +114,47 @@ const Truely = (props) => {
             initial="start"
             whileInView="visible"
             fontFamily="novara"
-            fontSize={{ lg: "3.3vw", xl: "4rem" }}
-            maxW={{ lg: "1400px", md: "400" }}
+            fontSize={{
+              md: "3.5vw",
+              xl: "3.6vw",
+              // "2xl": "3.5rem",
+              "3xl": "4.5rem",
+            }}
+            maxW={{ md: "35ch" }}
             fontWeight="400"
+            pb={"3.5rem"}
           >
             a truly timeless eau de parfum became one of the most beloved
             perfumes.
           </Text>
 
           <Box>
-            <Perfume1 />
-            <Perfume2 />
-            <Perfume3 />
+            <Grid
+              maxW={"1650px"}
+              templateRows={"repeat(450px, 250px)"}
+              templateColumns={"repeat(2, 1fr)"}
+              gap={5}
+            >
+              <GridItem
+                // pr={20}
+                rowSpan={1}
+                colSpan={1}
+              >
+                <Perfume1 />
+              </GridItem>
+              <GridItem
+                // pl={15}
+                rowSpan={1}
+                colSpan={1}
+                justifySelf={"center"}
+                alignSelf={"start"}
+              >
+                <Perfume2 />
+              </GridItem>
+              <GridItem justifySelf={"end"} alignSelf={"center"} colSpan={2}>
+                <Perfume3 />
+              </GridItem>
+            </Grid>
 
             <TwoPerfumeImages />
           </Box>

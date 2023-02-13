@@ -100,6 +100,8 @@ export default function Testimonials() {
             display={"flex"}
             flexDir={"column"}
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
+            position={"relative"}
+            top={"-225px"}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
@@ -110,7 +112,8 @@ export default function Testimonials() {
             display={"flex"}
             flexDir={"column"}
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
-            pb={"250px"}
+            position={"relative"}
+            top={"-150px"}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
@@ -121,6 +124,8 @@ export default function Testimonials() {
             display={"flex"}
             flexDir={"column"}
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
+            position={"relative"}
+            top={"-50px"}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;

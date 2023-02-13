@@ -62,23 +62,23 @@ export default function QualitiesGrid({
         fontFamily={"novara"}
         fontStyle={{ base: "normal" }}
         fontSize={{
-          "2xl": "31.5px",
-          xl: "1.6rem",
-          lg: "1.3rem",
-          md: "1rem",
+          "3xl": "31.5px",
+          md: "1.6vw",
+          // xl: "1.6rem",
+          // lg: "1.3rem",
           // "2xl": "2rem",
         }}
         lineHeight={{
-          "2xl": "65px",
+          "3xl": "70px",
+          md: "2.5vw",
           // xl: "70px",
-          lg: "55px",
+          // lg: "55px",
 
-          md: "50px",
           // "2xl": "80px",
         }}
         letterSpacing={"2.4px"}
         fontWeight={"400"}
-        paddingTop={"10px"}
+        // paddingTop={"10px"}
       >
         {firsttext}
       </Box>
@@ -90,20 +90,19 @@ export default function QualitiesGrid({
         fontFamily={"gilroy"}
         color={"white"}
         fontSize={{
-          "2xl": "22px",
-          xl: "18px",
-          lg: "14px",
-
-          md: "12px",
+          "3xl": "22px",
+          md: "1.15vw",
+          // xl: "18px",
+          // lg: "14px",
         }}
         lineHeight={{
-          "2xl": "37.5px",
-          xl: "30px",
-          lg: "30px",
-          md: "17px",
+          "3xl": "37.5px",
+          md: "1.9vw",
+          // xl: "30px",
+          // lg: "30px",
         }}
-        fontWeight={"hairline"}
-        maxH={"150px"}
+        fontWeight={"300"}
+        // maxH={"150px"}
         // maxW={"500px"}
 
         letterSpacing={{ xl: "0.01em", md: "0.02em" }}
@@ -121,23 +120,27 @@ export default function QualitiesGrid({
           fontFamily={"novara"}
           fontStyle={{ base: "normal" }}
           fontSize={{
-            "2xl": "31.5px",
-            xl: "1.6rem",
-            lg: "1.3rem",
-            md: "1rem",
+            "3xl": "31.5px",
+            md: "1.6vw",
+            // "2xl": "31.5px",
+            // xl: "1.6rem",
+            // lg: "1.3rem",
+            // md: "1rem",
             // "2xl": "2rem",
           }}
           lineHeight={{
-            "2xl": "65px",
-            // xl: "70px",
-            lg: "55px",
+            "3xl": "70px",
+            md: "3vw",
+            // "2xl": "65px",
 
-            md: "50px",
+            // xl: "70px",
+            // lg: "55px",
+
+            // md: "50px",
             // "2xl": "80px",
           }}
           letterSpacing={"2.4px"}
           fontWeight={"400"}
-          paddingTop={"10px"}
         >
           {textY}
         </Box>
@@ -149,20 +152,24 @@ export default function QualitiesGrid({
           fontFamily={"gilroy"}
           color={"white"}
           fontSize={{
-            "2xl": "22px",
-            xl: "18px",
-            lg: "14px",
+            "3xl": "22px",
+            md: "1.15vw",
+            // "2xl": "22px",
+            // xl: "18px",
+            // lg: "14px",
 
-            md: "12px",
+            // md: "12px",
           }}
           lineHeight={{
-            "2xl": "37.5px",
-            xl: "30px",
-            lg: "30px",
-            md: "17px",
+            "3xl": "37.5px",
+            md: "1.9vw",
+            // "2xl": "37.5px",
+            // xl: "30px",
+            // lg: "30px",
+            // md: "17px",
           }}
           fontWeight={"hairline"}
-          maxH={"150px"}
+          // maxH={"150px"}
           // maxW={"500px"}
 
           letterSpacing={{ xl: "0.01em", md: "0.02em" }}

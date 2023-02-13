@@ -82,35 +82,34 @@ export default function MobileQualities() {
     <Box
       display={{ md: "none", base: "flex" }}
       bgColor={{ md: "#122333", base: "#FFFFFF" }}
-      height={"100vh"}
+      // height={"100vh"}
     >
-      <Box>
+      <Box py={"9vw"}>
         <Center
           width={"100vw"}
           display={"flex"}
-          flexDir={{ md: "row", base: "column-reverse" }}
-          gap={{ sm: "0.5rem", base: "0.5rem" }}
-          padding={{ base: "20px" }}
+          flexDir={{ base: "column-reverse" }}
+          gap={{ sm: "1rem", base: "0.5rem" }}
+          padding={{ base: "6vw" }}
 
           // marginTop={"30px"}
         >
           <Image
             src="Rectangle 37.png"
             w={{
-              base: "47px",
-              sm: "55px",
+              // base: "47px",
+              base: "12vw",
             }}
-            h={{
-              base: "22px",
-              height: "20px",
-            }}
+            // h={{
+            //   base: "22px",
+            //   height: "20px",
+            // }}
           ></Image>
           <Box
             fontFamily={"novara"}
             fontWeight={{ xl: "400", base: "400" }}
             fontSize={{
-              base: "1rem",
-              sm: "1.4rem",
+              base: "6.5vw",
             }}
             lineHeight={{ sm: "35px", base: "30px" }}
             letterSpacing={{ base: "0.07em" }}
@@ -123,12 +122,12 @@ export default function MobileQualities() {
           // width={"100vw"}
 
           align={"center"}
-          padding={{ sm: "30px", base: "20px" }}
+          padding={{ base: "6vw" }}
         >
           <Box
             display={{ md: "none", base: "flex" }}
             flexDir={{ base: "column" }}
-            rowGap={{ base: "3rem", sm: "4rem" }}
+            rowGap={{ base: "6vw" }}
             color={"black"}
           >
             {/* flex item 1 */}
@@ -142,11 +141,10 @@ export default function MobileQualities() {
                 fontFamily={"novara"}
                 fontStyle={{ base: "normal" }}
                 fontSize={{
-                  base: "1rem",
-                  sm: "1.4rem",
+                  base: "5vw",
                 }}
                 lineHeight={{
-                  base: "40px",
+                  base: "7.5vw",
                 }}
                 letterSpacing={"0.08em"}
                 fontWeight={"400"}
@@ -161,10 +159,9 @@ export default function MobileQualities() {
                 fontFamily={"gilroy"}
                 color={{ base: "black" }}
                 fontSize={{
-                  base: "9px",
-                  sm: "13px",
+                  base: "3vw",
                 }}
-                lineHeight={{ base: "15px", sm: "15px" }}
+                lineHeight={{ base: "4.5vw" }}
                 fontWeight={"300"}
                 letterSpacing={{ base: "0.02em" }}
                 maxW={{ base: "30ch" }}
@@ -197,11 +194,10 @@ export default function MobileQualities() {
                   fontFamily={"novara"}
                   fontStyle={{ base: "normal" }}
                   fontSize={{
-                    base: "1rem",
-                    sm: "1.4rem",
+                    base: "5vw",
                   }}
                   lineHeight={{
-                    base: "40px",
+                    base: "7.5vw",
                   }}
                   letterSpacing={"0.08em"}
                   fontWeight={"400"}
@@ -216,10 +212,9 @@ export default function MobileQualities() {
                   fontFamily={"gilroy"}
                   color={{ base: "black" }}
                   fontSize={{
-                    base: "9px",
-                    sm: "13px",
+                    base: "3vw",
                   }}
-                  lineHeight={{ base: "15px", sm: "15px" }}
+                  lineHeight={{ base: "4.5vw" }}
                   fontWeight={"300"}
                   letterSpacing={{ base: "0.02em" }}
                   maxW={"30ch"}
@@ -240,34 +235,32 @@ export default function MobileQualities() {
                     variants={Ringrotate}
                     initial="initial"
                     animate="animate"
-                    src="group 19.png"
+                    src="bgQuality.png"
                     width={{
-                      base: "200px",
-                      sm: "280px",
+                      base: "65vw",
                     }}
-                    height={{
-                      base: "200px",
-                      sm: "280px",
-                    }}
-                    position={"absolute"}
+                    // height={{
+                    //   base: "200px",
+                    //   sm: "280px",
+                    // }}
+                    position={"relative"}
                   ></Image>
                   <Box
                     as={motion.div}
                     variants={imageanimate}
                     initial={"initial"}
                     animate={"animate"}
-                    position={"relative"}
+                    position={"absolute"}
                   >
                     <Image
                       src="Ellipse 44.png"
                       width={{
-                        base: "165px",
-                        sm: "220px",
+                        base: "55vw",
                       }}
-                      height={{
-                        base: "165px",
-                        sm: "220px",
-                      }}
+                      // height={{
+                      //   base: "165px",
+                      //   sm: "220px",
+                      // }}
                       display={"flex"}
                       justifyContent={"center"}
                       alignItems={"center"}
@@ -291,11 +284,10 @@ export default function MobileQualities() {
                 fontFamily={"novara"}
                 fontStyle={{ base: "normal" }}
                 fontSize={{
-                  base: "1rem",
-                  sm: "1.4rem",
+                  base: "5vw",
                 }}
                 lineHeight={{
-                  base: "40px",
+                  base: "7.5vw",
                 }}
                 letterSpacing={"0.08em"}
                 fontWeight={"400"}
@@ -310,10 +302,9 @@ export default function MobileQualities() {
                 fontFamily={"gilroy"}
                 color={{ base: "black" }}
                 fontSize={{
-                  base: "9px",
-                  sm: "13px",
+                  base: "3vw",
                 }}
-                lineHeight={{ base: "15px", sm: "15px" }}
+                lineHeight={{ base: "4.5vw" }}
                 fontWeight={"300"}
                 letterSpacing={{ base: "0.02em" }}
                 maxW={{ base: "30ch" }}
@@ -339,11 +330,10 @@ export default function MobileQualities() {
                 fontFamily={"novara"}
                 fontStyle={{ base: "normal" }}
                 fontSize={{
-                  base: "1rem",
-                  sm: "1.4rem",
+                  base: "5vw",
                 }}
                 lineHeight={{
-                  base: "40px",
+                  base: "7.5vw",
                 }}
                 letterSpacing={"0.08em"}
                 fontWeight={"400"}
@@ -358,10 +348,9 @@ export default function MobileQualities() {
                 fontFamily={"gilroy"}
                 color={{ base: "black" }}
                 fontSize={{
-                  base: "9px",
-                  sm: "13px",
+                  base: "3vw",
                 }}
-                lineHeight={{ base: "15px", sm: "15px" }}
+                lineHeight={{ base: "4.5vw" }}
                 fontWeight={"300"}
                 letterSpacing={{ base: "0.02em" }}
                 maxW={"30ch"}

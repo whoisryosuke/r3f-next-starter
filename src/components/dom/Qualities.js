@@ -95,35 +95,30 @@ export default function Qualities() {
   return (
     <Box
       bgColor={{ md: "#122333", base: "#FFFFFF" }}
-      height={"100vh"}
+      // height={"100vh"}
       display={{ md: "flex", base: "none" }}
     >
-      <Box>
+      <Box py={{ md: "6.5vw", "3xl": "130px" }} pb={{ md: "10vw" }}>
         <Center
           width={"100vw"}
           display={{ md: "flex" }}
           flexDir={{ md: "row" }}
           gap={{ lg: "2.1rem", md: "1.5rem" }}
-          paddingTop={{
-            md: "84px",
-
-            // "2xl": "85px"
-          }}
+          px={{ md: "7vw", "3xl": "145px" }}
         >
           <Image
             src="Rectangle 37.png"
             w={{
-              xl: "146px",
-              lg: "130px",
+              "3xl": "145px",
+              // lg: "130px",
               // "2xl": "150px",
-              md: "110px",
+              md: "8.5vw",
             }}
-            h={{
-              xl: "67px",
-              lg: "50px",
-
-              md: "40px",
-            }}
+            // h={{
+            //   xl: "67px",
+            //   lg: "50px",
+            //   md: "40px",
+            // }}
           ></Image>
           <Box
             as={motion.p}
@@ -133,10 +128,10 @@ export default function Qualities() {
             fontFamily={"novara"}
             fontWeight={{ md: "400", base: "" }}
             fontSize={{
-              xl: "65px",
-              lg: "45px",
+              "3xl": "65px",
+              // lg: "40px",
               // "2xl": "4.1rem",
-              md: "2.5rem",
+              md: "3.25vw",
               // sm: "1.2rem",
             }}
             lineHeight={{
@@ -154,13 +149,13 @@ export default function Qualities() {
             OUR DISTINCTIVE QUALITIES
           </Box>
         </Center>
-        <Center align={"center"}>
+        <Center align={"center"} px={{ md: "7vw", "3xl": "145px" }}>
           <Grid
-            marginTop={{ "2xl": "115px", xl: "100", lg: "85", md: "70" }}
+            marginTop={{ "3xl": "115px", md: "5vw" }}
             display={{ md: "grid", base: "none" }}
             templateRows={{ md: "repeat(2,1fr)" }}
             templateColumns={{ md: "repeat(4,1fr)" }}
-            gridGap={{ xl: "10px", md: "20px" }}
+            // gridGap={{ xl: "10px", md: "20px" }}
             rowGap={{
               "2xl": "135px",
               xl: "3.5rem",
@@ -169,15 +164,13 @@ export default function Qualities() {
             }}
             alignItems={"center"}
             maxW={"1560px"}
-            paddingLeft={"30px"}
-            paddingRight={"30px"}
           >
             {/* grid item 1 */}
             <GridItem
-              rowSpan={{ lg: 1, md: 1 }}
-              colSpan={{ lg: 1, md: 1 }}
+              rowSpan={1}
+              colSpan={1}
               textAlign={{ md: "right", base: "left" }}
-              maxW={"400px"}
+              maxW={"440px"}
             >
               <QualitiesGrid
                 firsttext={"long-lasting wear"}
@@ -197,19 +190,16 @@ export default function Qualities() {
                     animate="animate"
                     src="group 190.png"
                     width={{
-                      lg: "480px",
-                      xl: "600px",
-                      "2xl": "645px",
-
-                      md: "350px",
+                      md: "33.5vw",
+                      "3xl": "645px",
                     }}
-                    height={{
-                      lg: "470px",
-                      xl: "600px",
+                    // height={{
+                    //   lg: "470px",
+                    //   xl: "600px",
 
-                      md: "350px",
-                      "2xl": "645px",
-                    }}
+                    //   md: "350px",
+                    //   "2xl": "645px",
+                    // }}
                     position={"absolute"}
 
                     // left={"60px"}
@@ -224,19 +214,16 @@ export default function Qualities() {
                     <Image
                       src="Ellipse 44.png"
                       width={{
-                        lg: "380px",
-                        xl: "500px",
-
-                        md: "300px",
-                        "2xl": "550px",
+                        md: "28vw",
+                        "3xl": "550px",
                       }}
-                      height={{
-                        lg: "380px",
-                        xl: "500px",
-                        "2xl": "550px",
+                      // height={{
+                      //   lg: "380px",
+                      //   xl: "500px",
+                      //   "2xl": "550px",
 
-                        md: "300px",
-                      }}
+                      //   md: "300px",
+                      // }}
                     ></Image>
                   </Box>
                 </Center>
@@ -253,7 +240,7 @@ export default function Qualities() {
             >
               <Box>
                 <QualitiesGrid
-                  textY={" Unique secents"}
+                  textY={" Unique scents"}
                   secondtextY={
                     " because smelling like a million bucks just isn't good enough for the elite. Our perfumes are made with the finest ingredients."
                   }

@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { useInView } from "@react-spring/three";
 import { motion, useAnimation } from "framer-motion";
 import React, { useRef, useEffect } from "react";
@@ -31,36 +31,36 @@ const Perfume2 = () => {
       variants={parentVariant}
       initial="start"
       animate={controls}
-      display={{ xl: "flex", lg: "none" }}
-      gap="10"
-      marginTop="5rem"
-      position="absolute"
-      right="20%"
-      top="20%"
+      display={{ md: "flex", base: "none" }}
+      gap={{ md: "3vw", "2xl": "3rem" }}
     >
       <Box>
-        <Image maxH="20.22vw" src="/images/perfume2.png" />
+        <Image
+          w={{ md: "16vw", "2xl": "250px", "3xl": "280px" }}
+          src="/images/perfume2.png"
+        />
       </Box>
-      <Box>
+      <Flex flexDir={"column"} gap={{ md: "0.85vw", "2xl": "1rem" }}>
         <Heading
           fontFamily="novara"
-          fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
-          fontWeight={{ base: "500", md: "1000px", lg: "600px" }}
-          maxW="14vw"
+          fontSize={{ md: "3.25vw", "2xl": "3.5rem" }}
+          fontWeight="400"
+          lineHeight={{ md: "3.8vw", "2xl": "3.8rem" }}
+          maxWidth={{ md: "15vw", "2xl": "250px" }}
         >
           Eau de parfum spray
         </Heading>
         <Text
-          maxW="15.5vw"
           fontFamily="gilroy"
-          fontSize={{ lg: "0.8vw ", base: "16px" }}
-          lineHeight={{ lg: "1vw", base: "17px" }}
-          letterSpacing={{ lg: "2.5px", base: "6%" }}
+          maxW="30ch"
+          fontSize={{ md: "0.85vw ", "2xl": "1.025rem" }}
+          lineHeight={{ md: "1.46vw", "2xl": "1.75rem" }}
+          letterSpacing={{ md: "2.5px" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.
         </Text>
-      </Box>
+      </Flex>
     </Box>
   );
 };

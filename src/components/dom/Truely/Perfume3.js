@@ -32,50 +32,62 @@ const Perfume3 = () => {
       initial="start"
       animate={controls}
       display="flex"
-      flexDir={{ lg: "row", base: "column" }}
-      gap={{ lg: "10", base: "0" }}
-      position={{ lg: "absolute", base: "relative" }}
-      // marginTop={{ lg: "5rem", base: "10rem" }}
-      bottom={{ lg: "100", base: "0" }}
-      right={{ lg: "100", base: "0" }}
+      flexDir={{ md: "row", base: "column" }}
+      gap={{ md: "3.25vw", "3xl": "3.25rem", base: "3vw" }}
+      pt={{ base: "1rem", sm: "1.3rem" }}
+      pr={{ md: 0, base: "7vw" }}
+      // position={{ md: "absolute", base: "relative" }}
+      // marginTop={{ md: "5rem", base: "10rem" }}
+      // bottom={{ md: "100", base: "0" }}
+      // right={{ md: "100", base: "0" }}
+      // w={{ base: "80%", md: "none" }}
     >
-      <Box
-        display="flex"
-        justifyContent="flex-end"
-        marginRight={{ lg: 0, base: "2rem" }}
-      >
+      <Box display="flex" justifyContent="flex-end">
         <Image
-          maxW={{ lg: "600px", base: "250px" }}
-          h={{ lg: "250px", base: "inherit" }}
+          maxW={{ md: "30vw", "3xl": "500px", base: "60%" }}
+          maxH={{ base: "190px", md: "230px" }}
           src="/images/perfume3.png"
         />
       </Box>
       <Box
-        display={{ lg: "block", base: "flex" }}
-        justifyContent={"flex-end"}
+        display={{ md: "block", base: "flex" }}
+        w="full"
+        justifyContent="flex-end"
         alignItems="flex-start"
-        marginTop="20px"
+        gap={{ base: "1.5vw", md: "" }}
       >
         <Heading
           fontFamily="novara"
-          fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
-          fontWeight="500"
-          maxW={{ lg: "600px", base: "150px" }}
+          // fontSize={{ base: "34px", md: "2.5vw", xl: "3.5rem" }}
+          // fontWeight="500"
+          // maxW={{ md: "600px", base: "150px" }}
+          pb={{ md: "1.15vh", "3xl": "1.25rem" }}
+          fontSize={{ base: "6.15vw", md: "3.15vw", "3xl": "3.5rem" }}
+          fontWeight="400"
+          lineHeight={{ base: "6.5vw", md: "3.5vw", "3xl": "3.8rem" }}
+          letterSpacing={"2px"}
+          maxWidth={{
+            base: "26.5%",
+            md: "32vw",
+            "2xl": "450px",
+            "3xl": "565px",
+          }}
+          // maxWidth={{ base: "80%", md: "32vw",  }}
         >
           Eau de parfum spray
         </Heading>
         <Text
-          maxW={{ lg: "350px", base: "200px" }}
-          alignSelf="flex-end"
-          fontWeight="300"
+          fontWeight="400"
           fontFamily="gilroy"
-          fontSize={{ lg: "0.8vw", base: "14px" }}
-          lineHeight={{ lg: "1vw", base: "17px" }}
-          letterSpacing={{ lg: "2.5px", base: "6%" }}
-          h={{ base: "150px", lg: "inherit" }}
+          // maxW="30ch"
+          maxWidth={{ base: "47%", md: "32vw", "3xl": "565px" }}
+          fontSize={{ base: "3vw", md: "0.8vw ", "3xl": "1rem" }}
+          lineHeight={{ base: "3.5vw", md: "1.46vw", "3xl": "1.7rem" }}
+          letterSpacing={{ md: "2.5px", base: "6%" }}
         >
-          Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
-          temp incididunt ut labore et dolore magna aliqua.
+          "Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
+          temp incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostru exercitation.
         </Text>
       </Box>
     </Box>
