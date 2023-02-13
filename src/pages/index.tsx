@@ -11,6 +11,7 @@ import Qualities from "@/components/dom/Qualities";
 import MobileQualities from "@/components/dom/modilequalities";
 import Testimonials from "@/components/dom/Testimonials";
 import Mobiletestimonial from "@/components/dom/Mobiletestimonials";
+import ProductDetailpage from "@/components/dom/ProductDetailspage";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -29,8 +30,9 @@ const DOM = () => {
       <Navbar /> */}
       {/* <Qualities />
       <MobileQualities /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* <Mobiletestimonial /> */}
+      <ProductDetailpage />
     </>
   );
 };
