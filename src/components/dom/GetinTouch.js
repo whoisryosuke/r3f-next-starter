@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Flex,
   FormControl,
   FormLabel,
   Heading,
@@ -64,9 +65,9 @@ const Inputt = ({ fontColor }) => {
       borderBottom="2px solid "
       borderBottomColor={fontColor}
       borderRadius="2px"
-      w={{ lg: "430px", base: "200px" }}
+      w={{ lg: "430px", base: "90vw", md: "430px" }}
       marginTop={{ lg: "5px", base: "00" }}
-      fontSize="1.5rem"
+      fontSize="1.2rem"
       marginBottom={{ lg: "49px", base: "0.5rem" }}
     />
   );
@@ -80,8 +81,10 @@ const Label = ({ children }) => {
       variants={childVariant}
       initial="hidden"
       whileInView="visible"
-      color="#585757"
-      fontSize={{ lg: "1.8rem", base: "18px" }}
+      // color="#585757"
+      // color={"whiteAlpha.500"}
+      filter={"invert(100%)"}
+      fontSize={{ lg: "1.5rem", base: "18px" }}
       margin="0"
       fontFamily="gilroy"
       lineHeight="1.5rem"
@@ -106,14 +109,23 @@ const Btn = ({ children }) => {
       bg=" #D9D9D9"
       borderRadius="0"
       fontFamily="novara"
-      w={{ lg: "360px", base: "200px" }}
+      w={{ lg: "430px", base: "90vw", md: "430px" }}
       h={{ lg: "70px", base: "40px" }}
       marginTop="30px"
-      marginLeft={{ base: "0", lg: "36px" }}
-      fontSize="2rem"
+      // marginLeft={{ base: "0", lg: "36px" }}
+      fontSize={{ md: "2rem", base: "20px" }}
       letterSpacing="3px"
       color="#0F0D0E"
       fontWeight="500"
+      // _hover={{ backgroundColor: "black", color: "white" }}
+      background="linear-gradient(to right, black 50%, white 50%)"
+      backgroundSize="200% 100%"
+      backgroundPosition="right"
+      _hover={{
+        backgroundPosition: "left",
+        color: "white",
+      }}
+      transition="all 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
     >
       {children}
     </Button>
@@ -124,11 +136,13 @@ const GetinTouch = (props) => {
     <Box
       id="contact"
       bg={props.activeBg}
+      // bgColor={"black"}
       h={{ lg: "auto", base: "auto" }}
       w="100vw"
     >
       <Box
-        maxW="2000px"
+        // maxW="2000px"
+        maxW={"1500px"}
         color={props.fontColor}
         p="3rem"
         display="flex"
@@ -138,21 +152,42 @@ const GetinTouch = (props) => {
         alignItems="center"
         margin="auto"
       >
-        <Heading
-          fontFamily="novara"
-          fontWeight="300"
-          letterSpacing="1.6px"
-          fontSize={{ lg: "60px", base: "2rem" }}
-          textAlign="center"
-        >
-          Get in touch! we’d love to hear from you
-        </Heading>
+        <Box display={{ base: "flex" }} flexDir={"row"}>
+          <Image
+            src={"rectangle 87.png"}
+            justifyContent={"flex-start"}
+            position={"absolute"}
+            left={"0px"}
+            width={{ base: "50px", sm: "70px" }}
+            bottom={"690px"}
+            display={{ lg: "none" }}
+          ></Image>
+          <Heading
+            fontFamily="novara"
+            fontWeight="300"
+            letterSpacing="1.6px"
+            fontSize={{ lg: "60px", base: "30px", md: "40px" }}
+            textAlign="center"
+            maxW={{ base: "200px", sm: "fit-content" }}
+          >
+            Get in touch! we’d love to hear from you
+          </Heading>
+          <Image
+            src={"rectangle.png"}
+            position={"absolute"}
+            right={"0"}
+            bottom={"690px"}
+            width={{ base: "50px", sm: "70px" }}
+            display={{ lg: "none" }}
+          ></Image>
+        </Box>
         <Text
           fontFamily="gilroy"
           fontSize={{ lg: "32px", base: "18px" }}
-          fontWeight="300"
-          marginTop={{ lg: "22px", base: "0" }}
+          fontWeight="400"
+          marginTop={{ lg: "25px", base: "28px" }}
           letterSpacing={{ lg: "2px", base: "inherit" }}
+          textAlign={{ base: "center" }}
         >
           Fill out the quick form and we will be in touch with lightening speed.{" "}
         </Text>
@@ -160,6 +195,7 @@ const GetinTouch = (props) => {
           display="flex"
           minW={{ lg: "82vw", base: "inherit" }}
           justifyContent="space-around"
+          gap={"2rem"}
         >
           <FormControl
             as={motion.div}
@@ -193,7 +229,7 @@ const GetinTouch = (props) => {
             viewport={{ once: true }}
             display={{ xl: "inline-block", base: "none" }}
             marginTop="160px"
-            w="750px"
+            maxW={"700px"}
             h="400px"
             src="/images/perfume6.png"
           />

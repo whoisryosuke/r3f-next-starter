@@ -47,6 +47,7 @@ const Perfume2 = () => {
           fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
           fontWeight={{ base: "500", md: "1000px", lg: "600px" }}
           maxW="14vw"
+          // letterSpacing={"2px"}
         >
           Eau de parfum spray
         </Heading>
@@ -54,8 +55,8 @@ const Perfume2 = () => {
           maxW="15.5vw"
           fontFamily="gilroy"
           fontSize={{ lg: "0.8vw ", base: "16px" }}
-          lineHeight={{ lg: "1vw", base: "17px" }}
-          letterSpacing={{ lg: "2.5px", base: "6%" }}
+          lineHeight={{ lg: "27px", base: "17px" }}
+          letterSpacing={{ lg: "2px", base: "6%" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.

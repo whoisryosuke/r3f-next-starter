@@ -55,7 +55,7 @@ const Truely = (props) => {
 
   return (
     <Box
-    id='truely'
+      id="truely"
       bg={props.activeBg}
       color={props.fontColor}
       sx={{
@@ -63,7 +63,7 @@ const Truely = (props) => {
         h: { lg: "120vh", base: "100vh" },
 
         fontFamily: "novara",
-      
+
         display: { lg: "flex", base: "none" },
         flexDir: "column",
         alignItems: "center",
@@ -93,6 +93,8 @@ const Truely = (props) => {
             fontSize={{ lg: "3.3vw", xl: "4rem" }}
             maxW={{ lg: "1400px", md: "400" }}
             fontWeight="400"
+            // letterSpacing={"0.04em"}
+            // lineHeight={"87px"}
           >
             a truly timeless eau de parfum became one of the most beloved
             perfumes.
