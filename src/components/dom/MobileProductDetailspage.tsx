@@ -37,17 +37,28 @@ export default function ProductDetailpage({ productData }) {
           fontSize={{ base: "18px", sm: "20px" }}
           lineHeight={"0.04em"}
           justifyItems={"flex-end"}
+          // position={"absolute"}
+          // left={"356px"}
         >
           {productData?.price}
         </Text>
       </Box>
       <Image
+<<<<<<< HEAD:src/components/dom/MobileProductDetailspage.tsx
         src={productData?.src}
         margin="auto"
         w="95%"
         maxH="450px"
         objectFit="cover"
         paddingTop={"10px"}
+=======
+        src={"unsplash.png"}
+        // w="400px"
+        // height={"500px"}
+        paddingTop={"10px"}
+
+        // width={"90%"}
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71:src/components/dom/ProductDetailspage.tsx
       ></Image>
       <Text
         // width={"306px"}
@@ -160,6 +171,17 @@ export default function ProductDetailpage({ productData }) {
             margin="auto"
           />
         </Button>
+<<<<<<< HEAD:src/components/dom/MobileProductDetailspage.tsx
+=======
+        <Image
+          src={"arrowicon.png"}
+          width={"23px"}
+          height={"11px"}
+          // position={"absolute"}
+          // left={"280px"}
+          marginTop={"12px"}
+        />
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71:src/components/dom/ProductDetailspage.tsx
       </Flex>
     </Box>
   );

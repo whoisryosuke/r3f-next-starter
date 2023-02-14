@@ -43,19 +43,32 @@ const Perfume2 = () => {
       <Flex flexDir={"column"} gap={{ md: "0.85vw", "2xl": "1rem" }}>
         <Heading
           fontFamily="novara"
+<<<<<<< HEAD
           fontSize={{ md: "3.25vw", "2xl": "3.5rem" }}
           fontWeight="400"
           lineHeight={{ md: "3.8vw", "2xl": "3.8rem" }}
           maxWidth={{ md: "15vw", "2xl": "250px" }}
+=======
+          fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
+          fontWeight={{ base: "500", md: "1000px", lg: "600px" }}
+          maxW="14vw"
+          // letterSpacing={"2px"}
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
         >
           Eau de parfum spray
         </Heading>
         <Text
           fontFamily="gilroy"
+<<<<<<< HEAD
           maxW="30ch"
           fontSize={{ md: "0.85vw ", "2xl": "1.025rem" }}
           lineHeight={{ md: "1.46vw", "2xl": "1.75rem" }}
           letterSpacing={{ md: "2.5px" }}
+=======
+          fontSize={{ lg: "0.8vw ", base: "16px" }}
+          lineHeight={{ lg: "27px", base: "17px" }}
+          letterSpacing={{ lg: "2px", base: "6%" }}
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua.

@@ -17,9 +17,14 @@ export default function TestimonialsComponent(props) {
       // maxW={"440px"}
       padding={{ md: "20px", base: "10px" }}
       color={"white"}
+<<<<<<< HEAD
       borderRadius={{ base: "12px", md: "30px" }}
       borderColor={"#FFF"}
       // verticalAlign={"bottom"}
+=======
+      borderRadius={{ base: "15px" }}
+
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
       // bg="gray"
       // border={"1px ##89A2B8"}
     >
@@ -28,6 +33,7 @@ export default function TestimonialsComponent(props) {
         flexDir={"column"}
         gap={{ md: "0.9rem", lg: "1.2rem", xl: "1.5rem", base: "1rem" }}
         // bg="red"
+
         // maxW="500px"
       >
         <Box display={"flex"} gap={{ md: "1rem", base: "10px" }}>

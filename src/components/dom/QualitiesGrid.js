@@ -4,7 +4,7 @@ import React from "react";
 
 const textvariantX = {
   first: {
-    x: -600,
+    x: -70,
   },
   second: {
     x: 0,
@@ -19,7 +19,7 @@ const textvariantX = {
 // right side
 const textvariantY = {
   first: {
-    x: 600,
+    x: 70,
   },
   second: {
     x: 0,
@@ -57,15 +57,22 @@ export default function QualitiesGrid({
         as={motion.div}
         variants={textvariantX}
         initial={"first"}
-        animate={"second"}
+        whileInView={"second"}
         color="white"
         fontFamily={"novara"}
         fontStyle={{ base: "normal" }}
         fontSize={{
+<<<<<<< HEAD
           "3xl": "31.5px",
           md: "1.6vw",
           // xl: "1.6rem",
           // lg: "1.3rem",
+=======
+          "2xl": "31.5px",
+          xl: "1.6rem",
+          lg: "1.3rem",
+          md: "0.95rem",
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
           // "2xl": "2rem",
         }}
         lineHeight={{
@@ -86,7 +93,7 @@ export default function QualitiesGrid({
         as={motion.div}
         variants={lineheight}
         initial={"initial"}
-        animate={"animate"}
+        whileInView={"animate"}
         fontFamily={"gilroy"}
         color={"white"}
         fontSize={{
@@ -115,7 +122,7 @@ export default function QualitiesGrid({
           as={motion.div}
           variants={textvariantY}
           initial={"first"}
-          animate={"second"}
+          whileInView={"second"}
           color="white"
           fontFamily={"novara"}
           fontStyle={{ base: "normal" }}
@@ -148,7 +155,7 @@ export default function QualitiesGrid({
           as={motion.div}
           variants={lineheight}
           initial={"initial"}
-          animate={"animate"}
+          whileInView={"animate"}
           fontFamily={"gilroy"}
           color={"white"}
           fontSize={{
