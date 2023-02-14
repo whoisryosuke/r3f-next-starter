@@ -4,51 +4,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import { easeInOut, motion } from "framer-motion";
 import { SlowBuffer } from "buffer";
 import QualitiesGrid from "../dom/QualitiesGrid";
-// import { rotate } from "maath/dist/declarations/src/buffer";
-// left side
-// const textvariantX = {
-//   first: {
-//     x: -600,
-//   },
-//   second: {
-//     x: 0,
-//     transitionDelay: 1,
-//     transition: {
-//       delay: 0.2,
-//       duration: 1.3,
-//       ease: easeInOut,
-//     },
-//   },
-// };
-// // right side
-// const textvariantY = {
-//   first: {
-//     x: 600,
-//   },
-//   second: {
-//     x: 0,
-//     transitionDelay: 1,
-//     transition: {
-//       delay: 0.2,
-//       duration: 1.3,
-//     },
-//   },
-// };
 
-// // line height
-// const lineheight = {
-//   initial: {
-//     scale: 1.2,
-//   },
-//   animate: {
-//     scale: 1,
-//     transition: {
-//       delay: 0.2,
-//       duration: 1.3,
-//       ease: easeInOut,
-//     },
-//   },
-// };
 // image opacity
 const imageanimate = {
   initial: {

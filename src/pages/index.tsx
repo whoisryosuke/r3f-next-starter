@@ -22,6 +22,7 @@ import { useRouter } from "next/router";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import ProductDetailpage from "@/components/dom/ProductDetailspage";
+
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
@@ -67,11 +68,11 @@ const DOM = () => {
     <>
       {/* <Loader />
       <Navbar /> */}
-      {/* <Qualities />
-      <MobileQualities /> */}
+      <Qualities />
+      {/* <MobileQualities /> */}
       {/* <Testimonials /> */}
       {/* <Mobiletestimonial /> */}
-      <ProductDetailpage />
+      {/* <ProductDetailpage /> */}
     </>
   );
 };
