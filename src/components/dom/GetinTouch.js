@@ -50,7 +50,7 @@ const childVariant = {
     },
   },
 };
-const Inputt = ({fontColor}) => {
+const Inputt = ({ fontColor }) => {
   return (
     <Input
       // as={motion.input}
@@ -61,15 +61,13 @@ const Inputt = ({fontColor}) => {
       // }}
       variant="unstyled"
       // borderBottom ={` 1px solid ${fontColor}`}
-      borderBottom ='2px solid '
+      borderBottom="2px solid "
       borderBottomColor={fontColor}
-
-      
       borderRadius="2px"
-      w={{ lg: "430px", base: "200px" }}
-      marginTop={{ lg: "5px", base: "00" }}
-      fontSize="1.5rem"
-      marginBottom={{ lg: "49px", base: "0.5rem" }}
+      w={{ md: "24vw", base: "200px" }}
+      marginTop={{ md: "5px", base: "00" }}
+      fontSize={{ md: "1.25vw", "3xl": "1.5rem" }}
+      marginBottom={{ md: "2vw", "3xl": "3rem", base: "0.5rem" }}
     />
   );
 };
@@ -83,13 +81,12 @@ const Label = ({ children }) => {
       initial="hidden"
       whileInView="visible"
       color="#585757"
-      fontSize={{ lg: "1.8rem", base: "18px" }}
+      fontSize={{ md: "1.5vw", "3xl": "1.8rem", base: "18px" }}
       margin="0"
       fontFamily="gilroy"
-      lineHeight="1.5rem"
+      lineHeight={"1.5rem"}
       fontWeight="400"
-      marginTop={{ lg: "2rem", base: "10px" }}
-      marginBottom={{ lg: "0px", base: "0" }}
+      marginTop={{ md: "1.5vw", "3xl": "2rem", base: "10px" }}
     >
       {children}
     </FormLabel>
@@ -108,11 +105,11 @@ const Btn = ({ children }) => {
       bg=" #D9D9D9"
       borderRadius="0"
       fontFamily="novara"
-      w={{ lg: "360px", base: "200px" }}
-      h={{ lg: "70px", base: "40px" }}
-      marginTop="30px"
-      marginLeft={{ base: "0", lg: "36px" }}
-      fontSize="2rem"
+      w={{ md: "18vw", "3xl": "22.5rem", base: "200px" }}
+      h={{ md: "3.5vw", "3xl": "", base: "40px" }}
+      marginTop={{ md: "1.5vw", "3xl": "30px" }}
+      marginLeft={{ base: "0", md: "2.75vw", "3xl": "3rem" }}
+      fontSize={{ md: "1.7vw", "3xl": "2rem" }}
       letterSpacing="3px"
       color="#0F0D0E"
       fontWeight="500"
@@ -123,12 +120,16 @@ const Btn = ({ children }) => {
 };
 const GetinTouch = (props) => {
   return (
-    <Box id='contact' bg={props.activeBg} h={{ lg: "auto", base: "auto" }} w="100vw">
+    <Box
+      id="contact"
+      bg={props.activeBg}
+      // h={{ md: "auto", base: "auto" }}
+      w="100%"
+    >
       <Box
-      
-        maxW="2000px"
+        maxW="1920px"
         color={props.fontColor}
-        p="3rem"
+        p={{ md: "7vw", "3xl": "100px" }}
         display="flex"
         flexDir="column"
         fontWeight="300"
@@ -140,23 +141,25 @@ const GetinTouch = (props) => {
           fontFamily="novara"
           fontWeight="300"
           letterSpacing="1.6px"
-          fontSize={{ lg: "60px", base: "2rem" }}
+          fontSize={{ "3xl": "4rem", md: "3.35vw", base: "2rem" }}
         >
           Get in touch! we’d love to hear from you
         </Heading>
         <Text
           fontFamily="gilroy"
-          fontSize={{ lg: "32px", base: "18px" }}
+          fontSize={{ md: "1.75vw", "3xl": "2rem", base: "18px" }}
           fontWeight="300"
-          marginTop={{ lg: "22px", base: "0" }}
-          letterSpacing={{ lg: "2px", base: "inherit" }}
+          marginTop={{ md: "1.25vw", "3xl": "22px", base: "0" }}
+          letterSpacing={{ md: "2px", base: "inherit" }}
         >
           Fill out the quick form and we will be in touch with lightening speed.{" "}
         </Text>
         <Box
           display="flex"
-          minW={{ lg: "82vw", base: "inherit" }}
-          justifyContent="space-around"
+          w={"full"}
+          maxW={{ md: "1600px", base: "inherit" }}
+          marginTop={{ md: "4.5vw", "3xl": "100px", base: "2rem" }}
+          justifyContent="space-between"
         >
           <FormControl
             as={motion.div}
@@ -164,7 +167,6 @@ const GetinTouch = (props) => {
             variants={formControlVariant}
             initial="hidden"
             whileInView="visible"
-            marginTop={{ lg: "48px", base: "2rem" }}
           >
             <Label>Name</Label>
             <Inputt fontColor={props.fontColor} />
@@ -182,16 +184,19 @@ const GetinTouch = (props) => {
           <Image
             as={motion.img}
             initial={{ opacity: 0, x: "300px" }}
+            alignSelf={"center"}
             whileInView={{
               opacity: 1,
               x: "0",
               transition: { duration: "0.8" },
             }}
             viewport={{ once: true }}
-            display={{ lg: "inline-block", base: "none" }}
-            marginTop="160px"
-            w="750px"
-            h="400px"
+            display={{ md: "inline-block", base: "none" }}
+            // marginTop="160px"
+            w={{ md: "39vw", "3xl": "750px" }}
+            // h="auto"
+            // h={{ md: "32vh", "3xl": "400px" }}
+            maxH="400px"
             src="/images/perfume6.png"
           />
         </Box>
