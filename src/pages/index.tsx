@@ -17,23 +17,13 @@ import MobileFragrances from "../components/dom/MobileFragrances";
 import Fragrances from "../components/dom/Fragrances";
 import FragrancesZed from "../components/dom/FragrancesZed";
 import GetinTouch from "../components/dom/GetinTouch";
-import Testimonials from "../components/dom/Testimonials";
 import Footer from "../components/dom/Footer";
-
+import { useRouter } from "next/router";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
-import ProductDetailpage from "@/components/dom/ProductDetailspage";
-import Qualities from "../components/dom/Qualities";
-import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
-
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
-import { useRouter } from "next/router";
-// import Qualities from "@/components/dom/Qualities";
-// import Testimonials from "@/components/dom/Testimonials";
-import MobileQualities from "@/components/dom/modilequalities";
-import Mobiletestimonial from "@/components/dom/Mobiletestimonials";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -52,9 +42,9 @@ const DOM = () => {
 
   let activeBg = "";
   let fontColor = "";
-  let imgInvert = "";
-
-  let filter = "";
+  let imgInvert = ''
+  let webkitFilter = ''
+  let filter = ''
   if (blueActive) {
     activeBg = "#122333";
     fontColor = "#fff";
@@ -64,12 +54,15 @@ const DOM = () => {
     fontColor = "#fff";
   }
 
+
   if (whiteActive) {
     activeBg = "#fff";
     fontColor = "black";
-    imgInvert = ' webkitFilter: "invert(1)"';
-
-    filter = "invert(100%)";
+    imgInvert = ' webkitFilter: "invert(1)"'  
+    
+    filter= "invert(100%)"
+ 
+    
   }
 
   return (
@@ -80,6 +73,7 @@ const DOM = () => {
         activeBg={activeBg}
         fontColor={fontColor}
         imgInvert={imgInvert}
+      
         filter={filter}
         setBlueActive={setBlueActive}
         setRedActive={setRedActive}
@@ -87,31 +81,19 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
+        <Brands />
       <Truely activeBg={activeBg} fontColor={fontColor} />
       <MobileTruely activeBg={activeBg} fontColor={fontColor} />
-      <Brands />
-      {/* <Fragrances /> */}
-      {/* <FragrancesZed /> */}
-      {/* <Loader />
-      <Navbar /> */}
-      <Qualities />
-      <MobileQualities />
-      <Testimonials />
-      <Mobiletestimonial />
+      <Fragrances />
+      <FragrancesZed />
       <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
-      {/* <ProductDetailComponent /> */}
       <Footer />
-      {/* <Loader /> */}
-      {/* <Navbar /> */}
-      {/* <Qualities /> */}
-      {/* <MobileQualities /> */}
-      {/* <Testimonials /> */}
-      {/* <Mobiletestimonial /> */}
-      {/* <ProductDetailpage /> */}
-      {/* <GetinTouch /> */}
+      
+     
       {/* <Truely /> */}
-      {/* <MobileTruely /> */}
+    
+   
     </>
   );
 };

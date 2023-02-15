@@ -397,72 +397,6 @@ body,
   scrollbar-width: none;
 }
 
-.container {
-  display: block;
-  position: relative;
-  padding-left: 27px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 18px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-family: "gilroy";
-}
-
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border-radius: 50%;
-  border: 1px solid black;
-  /* border: 3px solid rgb(83, 83, 83); */
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: white;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
-  top: 1px;
-  left: 1px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: black;
-}
-
 /* testimonials card section back-ground color*/
 .testimonials {
   background: linear-gradient(
@@ -517,72 +451,70 @@ body,
   }
 } */
 /* product details page radion buttons */
+
+/* Hide the browser's default radio button */
+@media only screen and(max-width:2000px) {
+}
 .container {
   display: block;
   position: relative;
-  padding-left: 20px;
+  padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: gilroy;
-  font-weight: 400;
-  line-height: 12px;
-  letter-spacing: 9.5%;
-  /* gap: 10px; */
 }
 
-/* Hide the browser's default radio button / */
 .container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-/* / Create a custom radio button / */
+/* Create a custom radio button */
 .checkmark {
+  border: 1px solid black;
   position: absolute;
   top: 0;
   left: 0;
-  height: 13px;
-  width: 13px;
-  /* background-color: #eee; */
-  border: 1px solid black;
-  background-color: white;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
   border-radius: 50%;
 }
 
-/* / On mouse-over, add a grey background color / */
+/* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-/* / When the radio button is checked, add a blue background / */
+/* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: white;
 }
 
-/* / Create the indicator (the dot/circle - hidden when not checked) / */
+/* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* / Show the indicator (dot/circle) when checked / */
+/* Show the indicator (dot/circle) when checked */
 .container input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* / Style the indicator (dot/circle) */
+/* Style the indicator (dot/circle) */
 .container .checkmark:after {
-  top: 2px;
-  left: 1.5px;
-  width: 7px;
-  height: 7px;
+  top: 1px;
+  left: 1px;
+  width: 21px;
+  height: 21px;
   border-radius: 50%;
+
   background: black;
 }

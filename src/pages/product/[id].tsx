@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import ProductDetailCom from "../../components/dom/ProductDetailComponent";
+import MobileProductDetailCom from "../../components/dom/MobileProductDetailspage";
 
 const DOM = ({ productData }) => {
   const data = productData;
@@ -12,6 +13,7 @@ const DOM = ({ productData }) => {
       {/* <ProductDetail /> */}
       <ChakraBaseProvider>
         <ProductDetailCom productData={data} />
+        <MobileProductDetailCom productData={data} />
       </ChakraBaseProvider>
     </>
   );
