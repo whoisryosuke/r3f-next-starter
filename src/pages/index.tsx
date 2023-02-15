@@ -17,17 +17,22 @@ import MobileFragrances from "../components/dom/MobileFragrances";
 import Fragrances from "../components/dom/Fragrances";
 import FragrancesZed from "../components/dom/FragrancesZed";
 import GetinTouch from "../components/dom/GetinTouch";
+import Testimonials from "../components/dom/Testimonials";
 import Footer from "../components/dom/Footer";
 
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
+import ProductDetailpage from "@/components/dom/ProductDetailspage";
+import Qualities from "../components/dom/Qualities";
+import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
+
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
 import { useRouter } from "next/router";
-import Qualities from "@/components/dom/Qualities";
+// import Qualities from "@/components/dom/Qualities";
+// import Testimonials from "@/components/dom/Testimonials";
 import MobileQualities from "@/components/dom/modilequalities";
-import Testimonials from "@/components/dom/Testimonials";
 import Mobiletestimonial from "@/components/dom/Mobiletestimonials";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
@@ -95,7 +100,18 @@ const DOM = () => {
       <Mobiletestimonial />
       <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
+      {/* <ProductDetailComponent /> */}
       <Footer />
+      {/* <Loader /> */}
+      {/* <Navbar /> */}
+      {/* <Qualities /> */}
+      {/* <MobileQualities /> */}
+      {/* <Testimonials /> */}
+      {/* <Mobiletestimonial /> */}
+      {/* <ProductDetailpage /> */}
+      {/* <GetinTouch /> */}
+      {/* <Truely /> */}
+      {/* <MobileTruely /> */}
     </>
   );
 };

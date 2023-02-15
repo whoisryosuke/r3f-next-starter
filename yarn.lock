@@ -2984,14 +2984,26 @@ ast-types-flow@^0.0.7:
   resolved "https://registry.yarnpkg.com/ast-types-flow/-/ast-types-flow-0.0.7.tgz#f70b735c6bca1a5c9c22d982c3e39e7feba3bdad"
   integrity sha512-eBvWn1lvIApYMhzQMsu9ciLfkBY499mFZlNqG+/9WR7PVlroQw0vG30cOQQbaKz3sCEc44TAOu2ykzqXSNnwag==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 async-exit-hook@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/async-exit-hook/-/async-exit-hook-2.0.1.tgz#8bd8b024b0ec9b1c01cccb9af9db29bd717dfaf3"
   integrity sha512-NW2cX8m1Q7KPA7a5M2ULQeZ2wR5qI5PAbw5L0UOMxdioVk9PMZ0h1TmyZEkPYrCvYjDlFICusOu1dlEKAAeXBw==
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 attr-accept@^2.2.2:
   version "2.2.2"
@@ -3347,10 +3359,18 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 classnames@^2.2.5:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 ci-info@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
@@ -3409,6 +3429,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha512-RpAVKQA5T63xEj6/giIbUEtZwJ4UFIc3ZtvEkiaUERylqe8xb5IvqcgOurZLahv93CLKfxcw5YI+DZcUBRyLXA==
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -3625,16 +3649,28 @@ damerau-levenshtein@^1.0.8:
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 debounce-fn@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/debounce-fn/-/debounce-fn-4.0.0.tgz#ed76d206d8a50e60de0dd66d494d82835ffe61c7"
   integrity sha512-8pYCQiL9Xdcg0UPSD3d+0KMlOjp+KGU5EPwYddgzQ7DATsg4fuUDjQtsYLmWjnk2obnNHgV3vE2Y4jejSOJVBQ==
   dependencies:
     mimic-fn "^3.0.0"
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 date-fns@^1.27.2:
   version "1.30.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 debounce@^1.2.1:
   version "1.2.1"
@@ -3733,10 +3769,18 @@ define-properties@^1.1.3, define-properties@^1.1.4:
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 del@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/del/-/del-4.1.1.tgz#9e8f117222ea44a31ff3a156c049b99052a9f0b4"
@@ -3749,6 +3793,10 @@ del@^4.1.0:
     p-map "^2.0.0"
     pify "^4.0.1"
     rimraf "^2.6.3"
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 dequal@^2.0.2:
   version "2.0.3"
@@ -6053,10 +6101,18 @@ mime-types@^2.1.12, mime-types@^2.1.27:
   dependencies:
     mime-db "1.52.0"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 mimic-fn@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-3.1.0.tgz#65755145bbf3e36954b949c16450427451d5ca74"
   integrity sha512-Ysbi9uYW9hFyfrThdDEQuykN4Ey6BuwPD2kpI5ES/nFTDn/98yxYNLZJcgUAKPT/mcrLLKaGzJR9YVxJrIdASQ==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
@@ -6081,6 +6137,10 @@ min-indent@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
@@ -6945,16 +7005,28 @@ react-is@^18.1.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 react-magic-slider-dots@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-magic-slider-dots/-/react-magic-slider-dots-1.2.2.tgz#9e37b424ca0058374dc97b56e4064da48a5244da"
   integrity sha512-I2ZhKcQLJ4QG11AyJwRhKprl4lWa1I1FkJzvMDr26dypqIoe4WwqH/stWyROetgqw5jqslb1ocePp8STfQ0tPQ==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 react-marquee-master@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/react-marquee-master/-/react-marquee-master-1.4.5.tgz#42a525c26614a1d4a983e98b2920022763b64625"
   integrity sha512-zo6kkmB5CHh9Y+Hx2Mu0S3ExQb8i2twWzc+mU3Xu16fGJOFBXWZGFJJKPVYr9TiI3V76Hu5P1U9IhNWb4v0Aew==
   dependencies:
     np "^6.5.0"
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 react-merge-refs@^1.1.0:
   version "1.1.0"
@@ -7413,6 +7485,10 @@ screen-space-reflections@2.5.0:
   resolved "https://registry.yarnpkg.com/screen-space-reflections/-/screen-space-reflections-2.5.0.tgz#2a6ea982da96f9c35f34a361b2555439f9fbb1f6"
   integrity sha512-fWSDMhJS0xwD3LTxRRch7Lb9NzxsR66sCmtDmAA7i+OGnghUrBBsrha85ng7StnCBaLq/BKmZ97dLxWd1XgWdQ==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 scroller-motion@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/scroller-motion/-/scroller-motion-1.2.2.tgz#b8a6a4a6601ecf0225decd2dc47e805add52ed91"
@@ -7421,6 +7497,10 @@ scroller-motion@^1.2.2:
     debounce-fn "^4.0.0"
 
 semver@^5.6.0:
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 semver-diff@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-3.1.1.tgz#05f77ce59f325e00e2706afd67bb506ddb1ca32b"
@@ -7429,6 +7509,10 @@ semver-diff@^3.1.1:
     semver "^6.3.0"
 
 "semver@2 || 3 || 4 || 5", semver@^5.6.0:
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
@@ -7512,14 +7596,26 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 slick-carousel@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
   integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
   integrity sha512-up04hB2hR92PgjpyU3y/eg91yIBILyjVY26NvvciY3EVVPjybkMszMpXQ9QAkcS3I5rtJBDLoTxxg+qvW8c7rw==
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 source-list-map@^2.0.0:
   version "2.0.1"
@@ -7648,10 +7744,18 @@ stream-shift@^1.0.0:
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 string-convert@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/string-convert/-/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
   integrity sha512-u/1tdPl4yQnPBjnVrmdLo9gtuLvELKsAoRapekWggdiQNvvvum+jYF329d84NAa660KQw7pB2n36KrIKVoXa3A==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 string-width@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -7677,6 +7781,10 @@ string-width@^4.0.0, string-width@^4.1.0:
     emoji-regex "^8.0.0"
     is-fullwidth-code-point "^3.0.0"
     strip-ansi "^6.0.1"
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 string.prototype.codepointat@^0.2.1:
   version "0.2.1"
@@ -7853,14 +7961,26 @@ suspend-react@^0.0.8:
   resolved "https://registry.yarnpkg.com/suspend-react/-/suspend-react-0.0.8.tgz#b0740c1386b4eb652f17affe4339915ee268bd31"
   integrity sha512-ZC3r8Hu1y0dIThzsGw0RLZplnX9yXwfItcvaIzJc2VQVi8TGyGDlu92syMB5ulybfvGLHAI5Ghzlk23UBPF8xg==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 swipe-js-iso@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/swipe-js-iso/-/swipe-js-iso-2.1.5.tgz#9b0eea8b9740487e6169d655184fc6440b6a2e34"
   integrity sha512-yTTU5tDYEvtKfCD8PN+Rva25acJwogUCd6wPT1n1im/MOJlg6PtHiPKaaNK7HDBiIrWThA/WRbJZbox2letghg==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 symbol-observable@^1.1.0, symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+<<<<<<< HEAD
+=======
+>>>>>>> 4c091bf505ad70bc0f6658a5a55a625f8a2d023c
+>>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
 
 temp-dir@^1.0.0:
   version "1.0.0"

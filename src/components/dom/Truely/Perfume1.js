@@ -65,6 +65,9 @@ const Perfume1 = () => {
           maxWidth={{ base: "150px", md: "13vw", "2xl": "200px" }}
           // justifySelf={"flex-end"}
           // alignSelf={"flex-end"}
+          // maxWidth={{ base: "150px", lg: "250px" }}
+          // changes
+          // letterSpacing={"2px"}
         >
           Eau de parfum spray
         </Heading>
@@ -77,6 +80,10 @@ const Perfume1 = () => {
           fontSize={{ "2xl": "1rem", md: "0.925vw", base: "3vw" }}
           lineHeight={{ "2xl": "1.85rem", md: "1.6vw", base: "3.5vw" }}
           letterSpacing={{ md: "2px", base: "6%" }}
+          // marginTop={{ lg: "1rem", base: "0" }}
+          // fontSize={{ lg: "1rem", base: "14px" }}
+          // lineHeight={{ lg: "27px", base: "17px" }}
+          // letterSpacing={{ lg: "2px", base: "6%" }}
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiubaseod
           temp incididunt ut labore et dolore magna aliqua.

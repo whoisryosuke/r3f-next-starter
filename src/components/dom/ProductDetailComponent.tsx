@@ -1,127 +1,138 @@
 import {
   Box,
+  chakra,
   FormControl,
   Heading,
   Image,
+  Link,
   Radio,
   RadioGroup,
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { link } from "fs";
+import { button } from "leva";
 import React from "react";
 
 const ProductDetailComponent = ({ productData }) => {
   console.log(productData);
 
   return (
-    <Box w="100vw" h="100vh" display="flex">
-      <Box w="40%" py="4rem" px="2rem" display={{ lg: "flex", base: "none" }}>
-        {/* <Image boxSize="840px" src={productData?.src} /> */}
-        <Image w="600px" src={productData?.src} />
+    <Box
+      w="100vw"
+      // h="100vh"
+      position="relative"
+      display={{ lg: "flex", base: "none" }}
+    >
+      <Box w="45%" px="2rem" py="2rem" display={{ lg: "flex", base: "none" }}>
+        <Image
+          w="800px"
+          maxH="850px"
+          objectFit="cover"
+          src={productData?.src}
+        />
       </Box>
       <Box
-        w={{ lg: "50vw", base: "100vw" }}
+        // maxW="800px"
+        maxW="45vw"
         h="95vh"
         display="flex"
         flexDir="column"
         justifyContent="space-between"
       >
         <Heading
-          fontSize={{ lg: "5rem", base: "2rem" }}
-          py={{ lg: "4rem", base: "1rem" }}
+          fontSize="4.1vw"
+          py="2rem"
           px="2rem"
           fontFamily="novara"
-          w="600px"
+          w="41vw"
         >
           {productData?.productName}
         </Heading>
-        {/* for mobile screen */}
-        <Box
-          py={{ lg: "4rem", base: "1rem" }}
-          px={{ lg: "2rem", base: "1rem" }}
-          display={{ lg: "none", base: "inline-block" }}
-        >
-          <Image w="300px" h="400px" src={productData?.src} />
-        </Box>
-        <Text
-          fontSize={{ lg: "1.2rem", base: "0.8rem" }}
-          fontFamily="gilroy"
-          px={{ lg: "0", base: "1rem" }}
-          lineHeight={{ lg: "1.8rem", base: "1rem" }}
-        >
+
+        <Text fontSize="18px" fontFamily="gilroy" lineHeight="30px">
           {productData?.productDiscription}
         </Text>
 
-        {/* <div>
-          <input type="radio" id="50ml" name="drone" value="huey" checked />
-          <label htmlFor="50ml">50 ml/1.7 oz</label>
-          <input type="radio" id="100ml" name="drone" value="huey" checked />
-          <label htmlFor="100ml">100 ml/3.38 oz</label>
-        </div> */}
-        <Box display="flex" gap="2rem">
+        <Box display="flex" marginTop="1rem" gap="2rem" alignItems="center">
           <label className="container">
             50 ml/1.7 oz
             <input type="radio" checked name="radio" />
-            <span className="checkmark"></span>
+            <span style={{ marginTop: "2px" }} className="checkmark"></span>
           </label>
           <label className="container">
             100 ml/3.4 oz
             <input type="radio" name="radio" />
-            <span className="checkmark"></span>
+            <span style={{ marginTop: "2px" }} className="checkmark"></span>
           </label>
         </Box>
-        <Heading fontFamily="gilroy" px={{ lg: "0", base: "1rem" }}>
-          Available notes
+        <Heading fontFamily="gilroy" fontSize="32px" fontWeight="600">
+          Available Notes
         </Heading>
         <Box
-          marginTop="1rem"
+          // marginTop="1rem"
           display="flex"
           fontFamily="gilroy"
-          fontSize={{ lg: "16px", base: "10px" }}
-          w={{ lg: "300px", base: "100%" }}
+          fontSize="16px"
+          w="300px"
           flexWrap="wrap"
-          gap={{ lg: "5", base: "2" }}
-          px={{ lg: "0", base: "1rem" }}
+          gap="4"
+          cursor="pointer"
         >
           <Text
+            _hover={{
+              bg: "black",
+              color: "white",
+            }}
             border="1px solid black"
-            p={{ lg: "1rem 1.5rem", base: "0.7rem 0.7rem" }}
-            h={{ lg: "inherit", base: "40px" }}
+            p="1rem 1.5rem"
             borderRadius="50px"
           >
             Top Note
-          </Text>{" "}
+          </Text>
           <Text
+            _hover={{
+              bg: "white",
+              color: "black",
+            }}
             border="1px solid black"
-            p={{ lg: "1rem 1.5rem", base: "0.7rem 0.7rem" }}
-            h={{ lg: "inherit", base: "40px" }}
+            bg="black"
+            color="white"
+            p="1rem 1.5rem"
             borderRadius="50px"
           >
             Medium Note
           </Text>{" "}
           <Text
+            _hover={{
+              bg: "white",
+              color: "black",
+            }}
             bg="black"
+            border="1px solid black"
             color="white"
-            p={{ lg: "1rem 1.5rem", base: "0.7rem 0.7rem" }}
-            h={{ lg: "inherit", base: "40px" }}
+            p="1rem 1.5rem"
             borderRadius="50px"
           >
             Base Note
           </Text>
         </Box>
         <Box
-          marginTop="2rem"
+          as={Link}
+          href="/#contact"
+          // marginTop="2rem"
           w="100%"
-          h={{ lg: "6rem", base: "2rem" }}
-          bg={{ lg: "black", base: "white" }}
-          color={{ lg: "white", base: "black" }}
+          h="5vw"
+          bg="black"
+          color="white"
           textAlign="center"
           display="flex"
           justifyContent="space-around"
           alignItems="center"
-          fontSize={{ lg: "3.5rem", base: "2rem" }}
+          fontSize="3.2vw"
           fontFamily="novara"
           p="1rem"
+          cursor="pointer"
         >
           Contact store
           <Image
@@ -137,11 +148,19 @@ const ProductDetailComponent = ({ productData }) => {
           />
         </Box>
       </Box>
-      <Box display={{ lg: "inline-block", base: "none" }}>
-        <Text fontFamily="gilroy" fontSize="36px" py="4rem">
-          {productData?.price}
-        </Text>
-      </Box>
+
+      <Text
+        position="absolute"
+        top="0"
+        right={{ xl: "100", lg: "-50" }}
+        fontFamily="gilroy"
+        fontSize="36px"
+        py="4rem"
+        paddingRight="5rem"
+        fontWeight="500"
+      >
+        {productData?.price}
+      </Text>
     </Box>
   );
 };

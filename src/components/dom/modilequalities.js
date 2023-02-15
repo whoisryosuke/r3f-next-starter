@@ -4,6 +4,19 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import { easeInOut, motion } from "framer-motion";
 import { SlowBuffer } from "buffer";
 // import { rotate } from "maath/dist/declarations/src/buffer";
+// heading
+const heading = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+      type: "tween",
+    },
+  },
+};
 // left side
 const textvariantX = {
   first: {
@@ -114,6 +127,10 @@ export default function MobileQualities() {
             lineHeight={{ sm: "35px", base: "30px" }}
             letterSpacing={{ base: "0.07em" }}
             color={{ base: "black" }}
+            as={motion.as}
+            variants={heading}
+            initial={"initial"}
+            animate={"animate"}
           >
             OUR DISTINCTIVE QUALITIES
           </Box>

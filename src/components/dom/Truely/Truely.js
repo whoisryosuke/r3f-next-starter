@@ -76,6 +76,7 @@ const Truely = (props) => {
         fontFamily: "novara",
 
         display: { md: "flex", base: "none" },
+        // display: { lg: "flex", base: "none" },
         flexDir: "column",
         alignItems: "center",
         justifyContent: "center",
@@ -122,7 +123,9 @@ const Truely = (props) => {
             }}
             maxW={{ md: "35ch" }}
             fontWeight="400"
-            pb={"3.5rem"}
+            // pb={"3.5rem"}
+            // letterSpacing={"0.04em"}
+            // lineHeight={"87px"}
           >
             a truly timeless eau de parfum became one of the most beloved
             perfumes.
