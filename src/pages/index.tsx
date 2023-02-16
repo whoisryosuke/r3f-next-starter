@@ -11,8 +11,13 @@ import Scene1 from "../components/dom/Scene1";
 import FirstPage from "../components/dom/FirstPage";
 import Scene2 from "../components/dom/Scene2";
 import Brands from "../components/dom/Brands";
+import Testimonials from "../components/dom/Testimonials";
+import Qualities from "../components/dom/Qualities";
+import MobileQualities from "../components/dom/modilequalities";
 import Truely from "../components/dom/Truely/Truely";
 import MobileTruely from "../components/dom/Truely/MobileTruely";
+import MobileTestimonials from "../components/dom/Mobiletestimonials";
+
 import MobileFragrances from "../components/dom/MobileFragrances";
 import Fragrances from "../components/dom/Fragrances";
 import FragrancesZed from "../components/dom/FragrancesZed";
@@ -26,10 +31,10 @@ import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
 import { useRouter } from "next/router";
-import Qualities from "@/components/dom/Qualities";
-import MobileQualities from "@/components/dom/modilequalities";
-import Testimonials from "@/components/dom/Testimonials";
-import Mobiletestimonial from "@/components/dom/Mobiletestimonials";
+// import Qualities from "@/components/dom/Qualities";
+// import MobileQualities from "@/components/dom/modilequalities";
+// import Testimonials from "@/components/dom/Testimonials";
+// import Mobiletestimonial from "@/components/dom/Mobiletestimonials";
 // import Shader from '@/components/canvas/ShaderExample/ShaderExample'
 
 // Prefer dynamic import for production builds
@@ -49,7 +54,7 @@ const DOM = () => {
   let activeBg = "";
   let fontColor = "";
   let imgInvert = "";
-
+  let webkitFilter = "";
   let filter = "";
   if (blueActive) {
     activeBg = "#122333";
@@ -83,6 +88,7 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
+      <Brands />
       <Truely activeBg={activeBg} fontColor={fontColor} />
       <MobileTruely activeBg={activeBg} fontColor={fontColor} />
       <Brands />

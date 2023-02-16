@@ -95,7 +95,6 @@ export default function MobileQualities() {
     <Box
       display={{ md: "none", base: "flex" }}
       bgColor={{ md: "#122333", base: "#FFFFFF" }}
-      // height={"100vh"}
     >
       <Box py={"9vw"}>
         <Center

@@ -14,19 +14,22 @@ import Marquee from "react-easy-marquee";
 // import TestimonialsCompnent from "../dom/TestimonialComponent";
 import Testimonialcontent from "../dom/Testimonialcontent";
 export default function Testimonials() {
-  // const marquee = useRef(null);
+  const marquee = useRef(null);
 
-  // useEffect(() => {
-  //   if (marquee.current) {
-  //     console.log(marquee);
-  //   }
-  // }, [marquee]);
+  useEffect(() => {
+    if (marquee.current) {
+      console.log(marquee);
+    }
+  }, [marquee]);
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
     <Box
       width={"100vw"}
-      height={"100vw"}
+      height={"100vh"}
       display={{ base: "none", md: "flex" }}
       // filter={"blur(1px)"}
       bgColor={"#203244"}
@@ -36,6 +39,7 @@ export default function Testimonials() {
       overflow={"hidden"}
     >
       {/* <Box marginTop={"100px"}>kjqrk; wher;kh</Box> */}
+<<<<<<< HEAD
 =======
     <Box height={"100vh"}>
       <Box
@@ -52,11 +56,28 @@ export default function Testimonials() {
       >
         {/* <Box marginTop={"100px"}>kjqrk; wher;kh</Box> */}
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
 
-        <Center
+      <Center position={"absolute"} display={"flex"} zIndex={"1"} w={"100%"}>
+        <Image
+          src="ellipse 43.png"
+          width={"100%"}
+          // height={"500px"}
+          // height={"100%"}
+          // transform={"rotate(360deg)"}
           position={"absolute"}
+          filter={"blur(100px)"}
+          top={"0"}
+        ></Image>
+        <Box
+          // position={""}
+          paddingTop={{ lg: "90px", md: "80px", xl: "100px" }}
           display={"flex"}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           flexDir={"column"}
           alignItems={"center"}
           fontStyle={"normal"}
@@ -100,26 +121,19 @@ export default function Testimonials() {
           width={"90%"}
           maxW={"1150px"}
           position={"relative"}
+<<<<<<< HEAD
 =======
           zIndex={"10000"}
           w={"100%"}
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
         >
-          <Image
-            src="ellipse 43.png"
-            width={"100%"}
-            // height={"500px"}
-            // height={"100vh"}
-            // transform={"rotate(360deg)"}
-            position={"absolute"}
-            filter={"blur(100px)"}
-            top={"0"}
-          ></Image>
           <Box
-            // position={""}
-            paddingTop={{ lg: "90px", md: "80px", xl: "100px" }}
+            className="content"
             display={"flex"}
             flexDir={"column"}
+<<<<<<< HEAD
 <<<<<<< HEAD
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
             position={"relative"}
@@ -135,35 +149,28 @@ export default function Testimonials() {
             w={"90%"}
             textShadow={"1px 1px white"}
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+            gap={{ md: "20px", lg: "30px", xl: "35px" }}
+            position={"relative"}
+            top={"-225px"}
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           >
-            <Heading
-              fontFamily={"novara"}
-              fontSize={{ xl: "64px", lg: "60px", md: "55px" }}
-              fontWeight={"400"}
-              zIndex={"100"}
-              // maxW={"1000px"}
-            >
-              don&apos;t take our word for it.
-            </Heading>
-            <Heading
-              fontFamily={"novara"}
-              fontSize={{ xl: "64px", lg: "55px", md: "50px" }}
-              fontWeight={"400"}
-              zIndex={"100"}
-            >
-              trust our customers
-            </Heading>
+            {Testimonialcontent.map((item, index) => {
+              return <TestimonialsComponent key={index} {...item} />;
+            })}
           </Box>
-        </Center>
-        <Center w={"full"}>
           <Box
-            className="track"
+            className="content"
             display={"flex"}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
             flexDir={"column"}
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
             position={"relative"}
             top={"-150px"}
+<<<<<<< HEAD
 =======
             flexDir={"row"}
             alignItems={"center"}
@@ -174,39 +181,17 @@ export default function Testimonials() {
             height={"fit-content"}
             // maxHeight={"100vh"}
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           >
-            <Box
-              className="content"
-              display={"flex"}
-              flexDir={"column"}
-              gap={"20px"}
-            >
-              {Testimonialcontent.map((item, index) => {
-                return <TestimonialsComponent key={index} {...item} />;
-              })}
-            </Box>
-            <Box
-              className="content"
-              display={"flex"}
-              flexDir={"column"}
-              gap={"20px"}
-            >
-              {Testimonialcontent.map((item, index) => {
-                return <TestimonialsComponent key={index} {...item} />;
-              })}
-            </Box>
-            <Box
-              className="content"
-              display={"flex"}
-              flexDir={"column"}
-              gap={"20px"}
-            >
-              {Testimonialcontent.map((item, index) => {
-                return <TestimonialsComponent key={index} {...item} />;
-              })}
-            </Box>
+            {Testimonialcontent.map((item, index) => {
+              return <TestimonialsComponent key={index} {...item} />;
+            })}
           </Box>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           <Box
             className="content"
             display={"flex"}
@@ -222,12 +207,15 @@ export default function Testimonials() {
         </Box>
       </Center>
       {/* </Box> */}
+<<<<<<< HEAD
 =======
         </Center>
         {/* </Box> */}
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
 
-        {/* <Box
+      {/* <Box
         display={"flex"}
         justifyContent={"center"}
         gap={"20px"}
@@ -254,7 +242,7 @@ export default function Testimonials() {
               })}
             </Box>
           </Box> */}
-        {/* <marquee
+      {/* <marquee
         ref={marquee}
         direction="down"
         maxW="400px"
@@ -284,9 +272,8 @@ export default function Testimonials() {
           })}
         </Box>
       </marquee> */}
-        {/* </Box> */}
-        {/* </Box> */}
-      </Box>
+      {/* </Box> */}
+      {/* </Box> */}
     </Box>
   );
 }

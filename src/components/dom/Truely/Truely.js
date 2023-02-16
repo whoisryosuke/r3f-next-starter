@@ -73,7 +73,6 @@ const Truely = (props) => {
       color={props.fontColor}
       sx={{
         w: "100%",
-        // h: "100vh",
 
         fontFamily: "novara",
 

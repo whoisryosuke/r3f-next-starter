@@ -63,16 +63,22 @@ export default function QualitiesGrid({
         fontStyle={{ base: "normal" }}
         fontSize={{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           "3xl": "31.5px",
           md: "1.6vw",
           // xl: "1.6rem",
           // lg: "1.3rem",
+<<<<<<< HEAD
 =======
           "2xl": "31.5px",
           xl: "1.6rem",
           lg: "1.3rem",
           md: "0.95rem",
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           // "2xl": "2rem",
         }}
         lineHeight={{

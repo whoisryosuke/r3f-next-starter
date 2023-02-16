@@ -65,10 +65,10 @@ const Inputt = ({ fontColor }) => {
       borderBottom="2px solid "
       borderBottomColor={fontColor}
       borderRadius="2px"
-      w={{ lg: "430px", base: "90vw", md: "430px" }}
-      marginTop={{ lg: "5px", base: "00" }}
+      w={{ md: "430px", base: "90vw", md: "430px" }}
+      marginTop={{ md: "5px", base: "00" }}
       fontSize="1.2rem"
-      marginBottom={{ lg: "49px", base: "0.5rem" }}
+      marginBottom={{ md: "49px", base: "0.5rem" }}
     />
   );
 };
@@ -84,13 +84,12 @@ const Label = ({ children }) => {
       // color="#585757"
       // color={"whiteAlpha.500"}
       filter={"invert(100%)"}
-      fontSize={{ lg: "1.5rem", base: "18px" }}
+      fontSize={{ md: "1.5rem", base: "18px" }}
       margin="0"
       fontFamily="gilroy"
-      lineHeight="1.5rem"
+      lineHeight={"1.5rem"}
       fontWeight="400"
-      marginTop={{ lg: "2rem", base: "10px" }}
-      marginBottom={{ lg: "0px", base: "0" }}
+      marginTop={{ md: "1.5vw", "3xl": "2rem", base: "10px" }}
     >
       {children}
     </FormLabel>
@@ -109,10 +108,10 @@ const Btn = ({ children }) => {
       bg=" #D9D9D9"
       borderRadius="0"
       fontFamily="novara"
-      w={{ lg: "430px", base: "90vw", md: "430px" }}
-      h={{ lg: "70px", base: "40px" }}
+      w={{ md: "430px", base: "90vw", md: "430px" }}
+      h={{ md: "70px", base: "40px" }}
       marginTop="30px"
-      // marginLeft={{ base: "0", lg: "36px" }}
+      // marginLeft={{ base: "0", md: "36px" }}
       fontSize={{ md: "2rem", base: "20px" }}
       letterSpacing="3px"
       color="#0F0D0E"
@@ -137,14 +136,14 @@ const GetinTouch = (props) => {
       id="contact"
       bg={props.activeBg}
       // bgColor={"black"}
-      h={{ lg: "auto", base: "auto" }}
+      h={{ md: "auto", base: "auto" }}
       w="100vw"
     >
       <Box
         // maxW="2000px"
         maxW={"1500px"}
         color={props.fontColor}
-        p="3rem"
+        p={{ md: "7vw", "3xl": "100px" }}
         display="flex"
         flexDir="column"
         fontWeight="300"
@@ -160,13 +159,13 @@ const GetinTouch = (props) => {
             left={"0px"}
             width={{ base: "50px", sm: "70px" }}
             bottom={"690px"}
-            display={{ lg: "none" }}
+            display={{ md: "none" }}
           ></Image>
           <Heading
             fontFamily="novara"
             fontWeight="300"
             letterSpacing="1.6px"
-            fontSize={{ lg: "60px", base: "30px", md: "40px" }}
+            fontSize={{ md: "60px", base: "30px", md: "40px" }}
             textAlign="center"
             maxW={{ base: "200px", sm: "fit-content" }}
           >
@@ -178,22 +177,22 @@ const GetinTouch = (props) => {
             right={"0"}
             bottom={"690px"}
             width={{ base: "50px", sm: "70px" }}
-            display={{ lg: "none" }}
+            display={{ md: "none" }}
           ></Image>
         </Box>
         <Text
           fontFamily="gilroy"
-          fontSize={{ lg: "32px", base: "18px" }}
+          fontSize={{ md: "32px", base: "18px" }}
           fontWeight="400"
-          marginTop={{ lg: "25px", base: "28px" }}
-          letterSpacing={{ lg: "2px", base: "inherit" }}
+          marginTop={{ md: "25px", base: "28px" }}
+          letterSpacing={{ md: "2px", base: "inherit" }}
           textAlign={{ base: "center" }}
         >
           Fill out the quick form and we will be in touch with lightening speed.{" "}
         </Text>
         <Box
           display="flex"
-          minW={{ lg: "82vw", base: "inherit" }}
+          minW={{ md: "82vw", base: "inherit" }}
           justifyContent="space-around"
           gap={"2rem"}
         >
@@ -203,7 +202,6 @@ const GetinTouch = (props) => {
             variants={formControlVariant}
             initial="hidden"
             whileInView="visible"
-            marginTop={{ lg: "48px", base: "2rem" }}
           >
             <Label>Name</Label>
             <Inputt fontColor={props.fontColor} />
@@ -221,6 +219,7 @@ const GetinTouch = (props) => {
           <Image
             as={motion.img}
             initial={{ opacity: 0, x: "300px" }}
+            alignSelf={"center"}
             whileInView={{
               opacity: 1,
               x: "0",

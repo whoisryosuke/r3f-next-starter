@@ -18,6 +18,7 @@ export default function TestimonialsComponent(props) {
       padding={{ md: "20px", base: "10px" }}
       color={"white"}
 <<<<<<< HEAD
+<<<<<<< HEAD
       borderRadius={{ base: "12px", md: "30px" }}
       borderColor={"#FFF"}
       // verticalAlign={"bottom"}
@@ -25,6 +26,13 @@ export default function TestimonialsComponent(props) {
       borderRadius={{ base: "15px" }}
 
 >>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
+=======
+      // {Omair}
+      // borderRadius={{ base: "12px", md: "30px" }}
+      // borderColor={"#FFF"}
+      borderRadius={{ base: "15px" }}
+
+>>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
       // bg="gray"
       // border={"1px ##89A2B8"}
     >
