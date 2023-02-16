@@ -11,8 +11,13 @@ import Scene1 from "../components/dom/Scene1";
 import FirstPage from "../components/dom/FirstPage";
 import Scene2 from "../components/dom/Scene2";
 import Brands from "../components/dom/Brands";
+import Testimonials from "../components/dom/Testimonials";
+import Qualities from "../components/dom/Qualities";
+import MobileQualities from "../components/dom/modilequalities";
 import Truely from "../components/dom/Truely/Truely";
 import MobileTruely from "../components/dom/Truely/MobileTruely";
+import MobileTestimonials from "../components/dom/Mobiletestimonials";
+
 import MobileFragrances from "../components/dom/MobileFragrances";
 import Fragrances from "../components/dom/Fragrances";
 import FragrancesZed from "../components/dom/FragrancesZed";
@@ -42,9 +47,9 @@ const DOM = () => {
 
   let activeBg = "";
   let fontColor = "";
-  let imgInvert = ''
-  let webkitFilter = ''
-  let filter = ''
+  let imgInvert = "";
+  let webkitFilter = "";
+  let filter = "";
   if (blueActive) {
     activeBg = "#122333";
     fontColor = "#fff";
@@ -54,15 +59,12 @@ const DOM = () => {
     fontColor = "#fff";
   }
 
-
   if (whiteActive) {
     activeBg = "#fff";
     fontColor = "black";
-    imgInvert = ' webkitFilter: "invert(1)"'  
-    
-    filter= "invert(100%)"
- 
-    
+    imgInvert = ' webkitFilter: "invert(1)"';
+
+    filter = "invert(100%)";
   }
 
   return (
@@ -73,7 +75,6 @@ const DOM = () => {
         activeBg={activeBg}
         fontColor={fontColor}
         imgInvert={imgInvert}
-      
         filter={filter}
         setBlueActive={setBlueActive}
         setRedActive={setRedActive}
@@ -81,19 +82,21 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
-        <Brands />
+      <Brands />
       <Truely activeBg={activeBg} fontColor={fontColor} />
       <MobileTruely activeBg={activeBg} fontColor={fontColor} />
-      <Fragrances />
-      <FragrancesZed />
-      <MobileFragrances />
+      {/* <Fragrances />
+      <FragrancesZed /> */}
+      <Qualities />
+      <MobileQualities />
+      {/* <MobileFragrances /> */}
+      <Testimonials />
+      <MobileTestimonials />
+
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
       <Footer />
-      
-     
+
       {/* <Truely /> */}
-    
-   
     </>
   );
 };

@@ -25,7 +25,7 @@ export default function Testimonials() {
   return (
     <Box
       width={"100vw"}
-      height={"100vw"}
+      height={"100vh"}
       display={{ base: "none", md: "flex" }}
       // filter={"blur(1px)"}
       bgColor={"#203244"}

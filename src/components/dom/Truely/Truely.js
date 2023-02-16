@@ -71,7 +71,6 @@ const Truely = (props) => {
       color={props.fontColor}
       sx={{
         w: "100%",
-        // h: "100vh",
 
         fontFamily: "novara",
 
@@ -123,7 +122,7 @@ const Truely = (props) => {
             }}
             maxW={{ md: "35ch" }}
             fontWeight="400"
-            // pb={"3.5rem"}
+            pb={"3.5rem"}
             // letterSpacing={"0.04em"}
             // lineHeight={"87px"}
           >
