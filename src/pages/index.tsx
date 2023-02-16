@@ -31,6 +31,7 @@ import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetail from "./product/[id]";
 
 import { useRouter } from "next/router";
+// import ProductDetailpage from "@/components/dom/MobileProductDetailspage";
 // import Qualities from "@/components/dom/Qualities";
 // import MobileQualities from "@/components/dom/modilequalities";
 // import Testimonials from "@/components/dom/Testimonials";
@@ -88,10 +89,14 @@ const DOM = () => {
       />
       <Scene1 />
       <Scene2 />
-      <Brands />
+
       <Truely activeBg={activeBg} fontColor={fontColor} />
       <MobileTruely activeBg={activeBg} fontColor={fontColor} />
       <Brands />
+      <Qualities />
+      <MobileQualities />
+      <Testimonials />
+      <MobileTestimonials />
       {/* <Fragrances /> */}
       {/* <FragrancesZed /> */}
       <MobileFragrances />

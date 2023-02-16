@@ -7,26 +7,31 @@ import React, { useEffect } from "react";
 const TwoPerfumeImages = () => {
   const variant1 = {
     start: {
-      y: -100,
-      opacity: 0,
+      y: "-100px",
+      opacity: 0.25,
     },
     visible: {
       y: 0,
       opacity: 1,
+      type: "tween",
       transition: {
+        delay: 0.25,
         duration: 1,
       },
     },
   };
   const variant2 = {
     start: {
-      y: 50,
-      opacity: 0,
+      y: 100,
+      opacity: 0.25,
     },
     visible: {
       y: 0,
       opacity: 1,
+      type: "tween",
+
       transition: {
+        delay: 0.25,
         duration: 1,
       },
     },
@@ -36,9 +41,10 @@ const TwoPerfumeImages = () => {
       <Box
         as={motion.div}
         variants={variant1}
+        viewport={{ once: true }}
         initial="start"
         whileInView={"visible"}
-        viewport={{ once: true }}
+        // viewport={{ once: true }}
         sx={{
           position: { md: "absolute", base: "absolute" },
           top: 0,
@@ -61,11 +67,12 @@ const TwoPerfumeImages = () => {
       </Box>
       <Box
         as={motion.div}
+        viewport={{ once: true }}
         variants={variant2}
         initial="start"
         // animate={controls}
         whileInView={"visible"}
-        viewport={{ once: true }}
+        // viewport={{ once: true }}
         sx={{
           position: { md: "absolute", base: "relative" },
 

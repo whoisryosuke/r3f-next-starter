@@ -4,14 +4,16 @@ import React from "react";
 
 const textvariantX = {
   first: {
-    x: -70,
+    x: -40,
+    opacity: 0.8,
   },
   second: {
     x: 0,
-    transitionDelay: 1,
+    opacity: 1,
+    // transitionDelay: 1,
     transition: {
       delay: 0.2,
-      duration: 1.3,
+      duration: 1,
       // ease: easeInOut,
     },
   },
@@ -19,31 +21,53 @@ const textvariantX = {
 // right side
 const textvariantY = {
   first: {
-    x: 70,
+    x: 40,
+    opacity: 0.8,
   },
   second: {
     x: 0,
-    transitionDelay: 1,
+    opacity: 1,
+    type: "sprin",
+
+    // transitionDelay: 1,
     transition: {
       delay: 0.2,
-      duration: 1.3,
+      duration: 1,
     },
   },
 };
 // line height
 const lineheight = {
   initial: {
-    scale: 1.2,
+    lineHeight: "40px",
+    opacity: 0.7,
   },
   animate: {
-    scale: 1,
+    lineHeight: "36px",
+    opacity: 1,
     transition: {
       delay: 0.2,
-      duration: 1.3,
-      // ease: easeInOut,
+      duration: 0.5,
+      type: "tween",
+      ease: [0.45, 0, 0.55, 1],
+      // ease: [50, 0.2],
     },
   },
 };
+// const staggerVariants = {
+//   inital: {
+//     opacity: 0,
+//   },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       // delay: 2,
+//       // duration: 2,
+//       staggerChildren: 0.8,
+//     },
+//   },
+// };
+
 export default function QualitiesGrid({
   firsttext,
   secondtext,
@@ -51,10 +75,17 @@ export default function QualitiesGrid({
   secondtextY,
 }) {
   return (
-    <Box>
+    <Box
+      // border="1px solid white"
+      as={motion.div}
+      // variants={staggerVariants}
+      inital="intial"
+      whileInView="visible"
+    >
       {/* grid item 1 and 3 */}
       <Box
         as={motion.div}
+        viewport={{ once: true }}
         variants={textvariantX}
         initial={"first"}
         whileInView={"second"}
@@ -62,23 +93,11 @@ export default function QualitiesGrid({
         fontFamily={"novara"}
         fontStyle={{ base: "normal" }}
         fontSize={{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           "3xl": "31.5px",
           md: "1.6vw",
           // xl: "1.6rem",
           // lg: "1.3rem",
-<<<<<<< HEAD
-=======
-          "2xl": "31.5px",
-          xl: "1.6rem",
-          lg: "1.3rem",
-          md: "0.95rem",
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
+
           // "2xl": "2rem",
         }}
         lineHeight={{
@@ -97,6 +116,7 @@ export default function QualitiesGrid({
       </Box>
       <Text
         as={motion.div}
+        viewport={{ once: true }}
         variants={lineheight}
         initial={"initial"}
         whileInView={"animate"}
@@ -126,6 +146,7 @@ export default function QualitiesGrid({
         {/* grid item 4 and 5 */}
         <Box
           as={motion.div}
+          viewport={{ once: true }}
           variants={textvariantY}
           initial={"first"}
           whileInView={"second"}

@@ -20,7 +20,7 @@ const heading = {
 // left side
 const textvariantX = {
   first: {
-    x: -600,
+    x: -100,
   },
   second: {
     x: 0,
@@ -35,7 +35,7 @@ const textvariantX = {
 // right side
 const textvariantY = {
   first: {
-    x: 600,
+    x: 100,
   },
   second: {
     x: 0,
@@ -43,6 +43,7 @@ const textvariantY = {
     transition: {
       delay: 0.2,
       duration: 1.3,
+      type: "spring",
     },
   },
 };
@@ -50,10 +51,11 @@ const textvariantY = {
 // line height
 const lineheight = {
   initial: {
-    scale: 1.1,
+    lineHeight: "30px",
   },
   animate: {
-    scale: 1,
+    lineHeight: "24px",
+
     transition: {
       delay: 0.2,
       duration: 1.3,
@@ -70,7 +72,7 @@ const imageanimate = {
     opacity: 1,
     transition: {
       delay: 0.2,
-      duration: 1.3,
+      duration: 2,
     },
   },
 };
@@ -80,7 +82,7 @@ const Ringrotate = {
     rotate: 0,
   },
   animate: {
-    rotate: 180,
+    // rotate: 180,
     transition: {
       duration: 2,
       // repeat: Infinity,
@@ -107,6 +109,10 @@ export default function MobileQualities() {
           // marginTop={"30px"}
         >
           <Image
+            variants={heading}
+            initial={"initial"}
+            whileInView={"animate"}
+            viewport={{ once: true }}
             src="Rectangle 37.png"
             w={{
               // base: "47px",
@@ -123,13 +129,14 @@ export default function MobileQualities() {
             fontSize={{
               base: "6.5vw",
             }}
+            viewport={{ once: true }}
             lineHeight={{ sm: "35px", base: "30px" }}
             letterSpacing={{ base: "0.07em" }}
             color={{ base: "black" }}
             as={motion.as}
             variants={heading}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
           >
             OUR DISTINCTIVE QUALITIES
           </Box>
@@ -152,7 +159,7 @@ export default function MobileQualities() {
                 as={motion.div}
                 variants={textvariantX}
                 initial={"first"}
-                animate={"second"}
+                whileInView={"second"}
                 color={{ base: "black" }}
                 fontFamily={"novara"}
                 fontStyle={{ base: "normal" }}
@@ -171,13 +178,13 @@ export default function MobileQualities() {
                 as={motion.div}
                 variants={lineheight}
                 initial={"initial"}
-                animate={"animate"}
+                whileInView={"animate"}
                 fontFamily={"gilroy"}
                 color={{ base: "black" }}
                 fontSize={{
                   base: "3vw",
                 }}
-                lineHeight={{ base: "4.5vw" }}
+                // lineHeight={{ base: "4.5vw" }}
                 fontWeight={"300"}
                 letterSpacing={{ base: "0.02em" }}
                 maxW={{ base: "30ch" }}
@@ -205,7 +212,7 @@ export default function MobileQualities() {
                   as={motion.div}
                   variants={textvariantY}
                   initial={"first"}
-                  animate={"second"}
+                  whileInView={"second"}
                   color={{ base: "black" }}
                   fontFamily={"novara"}
                   fontStyle={{ base: "normal" }}
@@ -224,7 +231,7 @@ export default function MobileQualities() {
                   as={motion.div}
                   variants={lineheight}
                   initial={"initial"}
-                  animate={"animate"}
+                  whileInView={"animate"}
                   fontFamily={"gilroy"}
                   color={{ base: "black" }}
                   fontSize={{
@@ -250,7 +257,7 @@ export default function MobileQualities() {
                     as={motion.img}
                     variants={Ringrotate}
                     initial="initial"
-                    animate="animate"
+                    whileInView="animate"
                     src="bgQuality.png"
                     width={{
                       base: "65vw",
@@ -265,7 +272,7 @@ export default function MobileQualities() {
                     as={motion.div}
                     variants={imageanimate}
                     initial={"initial"}
-                    animate={"animate"}
+                    whileInView={"animate"}
                     position={"absolute"}
                   >
                     <Image
@@ -295,7 +302,7 @@ export default function MobileQualities() {
                 as={motion.div}
                 variants={textvariantX}
                 initial={"first"}
-                animate={"second"}
+                whileInView={"second"}
                 color={{ base: "black" }}
                 fontFamily={"novara"}
                 fontStyle={{ base: "normal" }}
@@ -314,7 +321,7 @@ export default function MobileQualities() {
                 as={motion.div}
                 variants={lineheight}
                 initial={"initial"}
-                animate={"animate"}
+                whileInView={"animate"}
                 fontFamily={"gilroy"}
                 color={{ base: "black" }}
                 fontSize={{
@@ -341,7 +348,7 @@ export default function MobileQualities() {
                 as={motion.div}
                 variants={textvariantY}
                 initial={"first"}
-                animate={"second"}
+                whileInView={"second"}
                 color={{ base: "black" }}
                 fontFamily={"novara"}
                 fontStyle={{ base: "normal" }}

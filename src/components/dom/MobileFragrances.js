@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Box, Button, Heading, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 import MagicSliderDots from "react-magic-slider-dots";
 import ReactDOM from "react-dom";
@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-magic-slider-dots/dist/magic-dots.css";
 import SimpleImageSlider from "react-simple-image-slider";
+
+import NextLink from "next/link";
 
 const MobileFragrances = (props) => {
   const [dotIndex, setDotIndex] = useState(0);
@@ -173,56 +175,57 @@ const MobileFragrances = (props) => {
         {perfumes.map((item, index) => {
           // console.log(item.id);
           return (
-            <Box
-              as={motion.a}
-              href={`/product/${item.id}`}
-              key={index}
-              ref={ref}
-              marginTop="100px"
-              display="flex"
-              flexDir="column"
-              alignItems="center"
-              w="300px"
-              color="white"
-              // border="1px solid white"
-              position="relative"
-            >
-              <Heading
-                as={motion.p}
-                position="absolute"
-                top="40%"
-                left="50px"
-                mixBlendMode=" exclusion"
-                fontFamily="novara"
-                fontSize="3rem"
+            <NextLink href={`/product/${item.id}`} passHref>
+              <Box
+                as={motion.div}
+                key={index}
+                ref={ref}
+                marginTop="100px"
+                display="flex"
+                flexDir="column"
+                alignItems="center"
                 w="300px"
-                textAlign="center"
-                textShadow="2px 5px solid black"
-                fontWeight="400"
-                // whileInView={() => {
-                //   setDotIndex(item.id);
-                // }}
-                // whileInView={() => {
-                //   setDotIndex(item.id);
-                // }}
-                // color={item.color}
+                color="white"
+                // border="1px solid white"
+                position="relative"
               >
-                {item.productName}
-              </Heading>
-              <Image
-                margin="auto"
-                // href={`/product/${item.id}`}
-                display="inline"
-                borderRadius="300px"
-                w="300px"
-                h="450px"
-                // sx={{
-                //   filter: "saturate(60%)",
-                //   backdgroundFilter: "brightness(0.5)",
-                // }}
-                src={item.src}
-              />
-            </Box>
+                <Heading
+                  as={motion.p}
+                  position="absolute"
+                  top="40%"
+                  left="50px"
+                  mixBlendMode=" exclusion"
+                  fontFamily="novara"
+                  fontSize="3rem"
+                  w="300px"
+                  textAlign="center"
+                  textShadow="2px 5px solid black"
+                  fontWeight="400"
+                  // whileInView={() => {
+                  //   setDotIndex(item.id);
+                  // }}
+                  // whileInView={() => {
+                  //   setDotIndex(item.id);
+                  // }}
+                  // color={item.color}
+                >
+                  {item.productName}
+                </Heading>
+                <Image
+                  margin="auto"
+                  // href={`/product/${item.id}`}
+                  display="inline"
+                  borderRadius="300px"
+                  w="300px"
+                  h="450px"
+                  // sx={{
+                  //   filter: "saturate(60%)",
+                  //   backdgroundFilter: "brightness(0.5)",
+                  // }}
+                  src={item.src}
+                />
+              </Box>
+            </NextLink>
           );
         })}
       </Slider>

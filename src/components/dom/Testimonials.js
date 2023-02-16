@@ -23,10 +23,6 @@ export default function Testimonials() {
   }, [marquee]);
 
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
     <Box
       width={"100vw"}
       height={"100vh"}
@@ -39,25 +35,6 @@ export default function Testimonials() {
       overflow={"hidden"}
     >
       {/* <Box marginTop={"100px"}>kjqrk; wher;kh</Box> */}
-<<<<<<< HEAD
-=======
-    <Box height={"100vh"}>
-      <Box
-        width={"100vw"}
-        // height={"100vw"}
-        maxHeight={"100%"}
-        display={{ base: "none", md: "flex" }}
-        // filter={"blur(1px)"}
-        bgColor={"#203244"}
-        position={"relative"}
-        overflow={"hidden"}
-        // paddingLeft={"80px"}
-        // paddingRight={"80px"}
-      >
-        {/* <Box marginTop={"100px"}>kjqrk; wher;kh</Box> */}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
 
       <Center position={"absolute"} display={"flex"} zIndex={"1"} w={"100%"}>
         <Image
@@ -74,10 +51,6 @@ export default function Testimonials() {
           // position={""}
           paddingTop={{ lg: "90px", md: "80px", xl: "100px" }}
           display={"flex"}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           flexDir={"column"}
           alignItems={"center"}
           fontStyle={"normal"}
@@ -121,39 +94,26 @@ export default function Testimonials() {
           width={"90%"}
           maxW={"1150px"}
           position={"relative"}
-<<<<<<< HEAD
-=======
-          zIndex={"10000"}
-          w={"100%"}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
         >
           <Box
             className="content"
             display={"flex"}
             flexDir={"column"}
-<<<<<<< HEAD
-<<<<<<< HEAD
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
             position={"relative"}
             top={"-225px"}
-=======
-            alignItems={"center"}
-            fontStyle={"normal"}
-            color={"white"}
-            lineHeight={"60px"}
-            textAlign={"center"}
-            letterSpacing={"0.1em"}
-            height={"147px"}
-            w={"90%"}
-            textShadow={"1px 1px white"}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
-=======
-            gap={{ md: "20px", lg: "30px", xl: "35px" }}
-            position={"relative"}
-            top={"-225px"}
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
+            // alignItems={"center"}
+            // fontStyle={"normal"}
+            // color={"white"}
+            // lineHeight={"60px"}
+            // textAlign={"center"}
+            // letterSpacing={"0.1em"}
+            // height={"147px"}
+            // w={"90%"}
+            // textShadow={"1px 1px white"}
+            // gap={{ md: "20px", lg: "30px", xl: "35px" }}
+            // position={"relative"}
+            // top={"-225px"}
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
@@ -162,36 +122,16 @@ export default function Testimonials() {
           <Box
             className="content"
             display={"flex"}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
             flexDir={"column"}
             gap={{ md: "20px", lg: "30px", xl: "35px" }}
             position={"relative"}
             top={"-150px"}
-<<<<<<< HEAD
-=======
-            flexDir={"row"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={"20px"}
-            width={"90%"}
-            maxW={"1200px"}
-            height={"fit-content"}
-            // maxHeight={"100vh"}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
           >
             {Testimonialcontent.map((item, index) => {
               return <TestimonialsComponent key={index} {...item} />;
             })}
           </Box>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
+
           <Box
             className="content"
             display={"flex"}
@@ -207,13 +147,6 @@ export default function Testimonials() {
         </Box>
       </Center>
       {/* </Box> */}
-<<<<<<< HEAD
-=======
-        </Center>
-        {/* </Box> */}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
-=======
->>>>>>> b24d62b8a864500a78d8dfa65f480abaca036f64
 
       {/* <Box
         display={"flex"}

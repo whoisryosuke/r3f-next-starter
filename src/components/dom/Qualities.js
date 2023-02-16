@@ -57,8 +57,8 @@ const imageanimate = {
   animate: {
     opacity: 1,
     transition: {
-      delay: 0.2,
-      duration: 1.3,
+      delay: 0.15,
+      duration: 2,
     },
   },
 };
@@ -68,7 +68,7 @@ const Ringrotate = {
     rotate: 0,
   },
   animate: {
-    rotate: 180,
+    // rotate: 180,
     transition: {
       duration: 2,
       // repeat: Infinity,
@@ -85,7 +85,7 @@ const heading = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 2,
+      duration: 1.25,
       type: "tween",
     },
   },
@@ -107,6 +107,11 @@ export default function Qualities() {
           px={{ md: "7vw", "3xl": "145px" }}
         >
           <Image
+            as={motion.img}
+            variants={heading}
+            viewport={{ once: true }}
+            initial="initial"
+            whileInView="animate"
             src="Rectangle 37.png"
             w={{
               "3xl": "145px",
@@ -122,9 +127,10 @@ export default function Qualities() {
           ></Image>
           <Box
             as={motion.p}
+            viewport={{ once: true }}
             variants={heading}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
             fontFamily={"novara"}
             fontWeight={{ md: "400", base: "" }}
             fontSize={{
@@ -187,7 +193,7 @@ export default function Qualities() {
                     as={motion.img}
                     variants={Ringrotate}
                     initial="initial"
-                    animate="animate"
+                    whileInView="animate"
                     src="group 190.png"
                     width={{
                       md: "33.5vw",
@@ -208,7 +214,7 @@ export default function Qualities() {
                     as={motion.div}
                     variants={imageanimate}
                     initial={"initial"}
-                    animate={"animate"}
+                    whileInView={"animate"}
                     position={"relative"}
                   >
                     <Image

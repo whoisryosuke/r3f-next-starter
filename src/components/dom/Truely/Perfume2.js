@@ -1,19 +1,11 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import { useInView } from "@react-spring/three";
-import { motion, useAnimation } from "framer-motion";
-import React, { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 
 const Perfume2 = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
   const parentVariant = {
     start: {
-      x: "100",
+      x: "100px",
       opacity: 0,
     },
     visible: {
@@ -21,16 +13,18 @@ const Perfume2 = () => {
       opacity: 1,
       transition: {
         duration: 1,
+        delay: "0.15",
+        ease: [0.45, 0, 0.55, 1],
       },
     },
   };
   return (
     <Box
-      ref={ref}
       as={motion.div}
+      viewport={{ once: true }}
       variants={parentVariant}
       initial="start"
-      animate={controls}
+      whileInView="visible"
       display={{ md: "flex", base: "none" }}
       gap={{ md: "3vw", "2xl": "3rem" }}
     >
