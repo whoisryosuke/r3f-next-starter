@@ -58,7 +58,6 @@ const Perfume3 = () => {
       >
         <Heading
           fontFamily="novara"
-<<<<<<< HEAD
           // fontSize={{ base: "34px", md: "2.5vw", xl: "3.5rem" }}
           // fontWeight="500"
           // maxW={{ md: "600px", base: "150px" }}
@@ -74,30 +73,17 @@ const Perfume3 = () => {
             "3xl": "565px",
           }}
           // maxWidth={{ base: "80%", md: "32vw",  }}
-=======
-          fontSize={{ base: "34px", lg: "3vw", xl: "4rem" }}
-          fontWeight="500"
-          maxW={{ lg: "600px", base: "150px" }}
-          letterSpacing={"2px"}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
         >
           Eau de parfum spray
         </Heading>
         <Text
           fontWeight="400"
           fontFamily="gilroy"
-<<<<<<< HEAD
           // maxW="30ch"
           maxWidth={{ base: "47%", md: "32vw", "3xl": "565px" }}
           fontSize={{ base: "3vw", md: "0.8vw ", "3xl": "1rem" }}
           lineHeight={{ base: "3.5vw", md: "1.46vw", "3xl": "1.7rem" }}
           letterSpacing={{ md: "2.5px", base: "6%" }}
-=======
-          fontSize={{ lg: "0.8vw", base: "14px" }}
-          lineHeight={{ lg: "27px", base: "17px" }}
-          // letterSpacing={{ lg: "2.5px", base: "6%" }}
-          h={{ base: "150px", lg: "inherit" }}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
         >
           "Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod
           temp incididunt ut labore et dolore magna aliqua. Ut enim ad minim

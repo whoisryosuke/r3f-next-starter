@@ -44,21 +44,12 @@ export default function ProductDetailpage({ productData }) {
         </Text>
       </Box>
       <Image
-<<<<<<< HEAD:src/components/dom/MobileProductDetailspage.tsx
         src={productData?.src}
         margin="auto"
         w="95%"
         maxH="450px"
         objectFit="cover"
         paddingTop={"10px"}
-=======
-        src={"unsplash.png"}
-        // w="400px"
-        // height={"500px"}
-        paddingTop={"10px"}
-
-        // width={"90%"}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71:src/components/dom/ProductDetailspage.tsx
       ></Image>
       <Text
         // width={"306px"}
@@ -171,8 +162,6 @@ export default function ProductDetailpage({ productData }) {
             margin="auto"
           />
         </Button>
-<<<<<<< HEAD:src/components/dom/MobileProductDetailspage.tsx
-=======
         <Image
           src={"arrowicon.png"}
           width={"23px"}
@@ -181,7 +170,6 @@ export default function ProductDetailpage({ productData }) {
           // left={"280px"}
           marginTop={"12px"}
         />
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71:src/components/dom/ProductDetailspage.tsx
       </Flex>
     </Box>
   );

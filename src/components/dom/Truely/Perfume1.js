@@ -61,16 +61,10 @@ const Perfume1 = () => {
           display={"flex"}
           fontSize={{ base: "6.15vw", md: "3.35vw", "2xl": "3.35rem" }}
           fontWeight="400"
-<<<<<<< HEAD
           lineHeight={{ base: "6.5vw", md: "3.8vw", "2xl": "3.8rem" }}
           maxWidth={{ base: "150px", md: "13vw", "2xl": "200px" }}
           // justifySelf={"flex-end"}
           // alignSelf={"flex-end"}
-=======
-          maxWidth={{ base: "150px", lg: "250px" }}
-          // changes
-          // letterSpacing={"2px"}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
         >
           Eau de parfum spray
         </Heading>
@@ -79,17 +73,10 @@ const Perfume1 = () => {
           maxW={{ md: "30ch", base: "75%" }}
           fontFamily="gilroy"
           fontWeight="400"
-<<<<<<< HEAD
           // marginTop={{ md: "0.7rem", base: "0" }}
           fontSize={{ "2xl": "1rem", md: "0.925vw", base: "3vw" }}
           lineHeight={{ "2xl": "1.85rem", md: "1.6vw", base: "3.5vw" }}
           letterSpacing={{ md: "2px", base: "6%" }}
-=======
-          marginTop={{ lg: "1rem", base: "0" }}
-          fontSize={{ lg: "1rem", base: "14px" }}
-          lineHeight={{ lg: "27px", base: "17px" }}
-          letterSpacing={{ lg: "2px", base: "6%" }}
->>>>>>> 1b7ab967813b32e16af9824494d55498c6a7ac71
         >
           Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiubaseod
           temp incididunt ut labore et dolore magna aliqua.
