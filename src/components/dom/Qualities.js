@@ -192,6 +192,7 @@ export default function Qualities() {
                   <Image
                     as={motion.img}
                     variants={Ringrotate}
+                    viewport={{ once: true }}
                     initial="initial"
                     whileInView="animate"
                     src="group 190.png"
@@ -213,6 +214,7 @@ export default function Qualities() {
                   <Box
                     as={motion.div}
                     variants={imageanimate}
+                    viewport={{ once: true }}
                     initial={"initial"}
                     whileInView={"animate"}
                     position={"relative"}

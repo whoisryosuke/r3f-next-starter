@@ -13,18 +13,67 @@ import {
 import { link } from "fs";
 import { button } from "leva";
 import React from "react";
+import { motion } from "framer-motion";
 
 const ProductDetailComponent = ({ productData }) => {
   console.log(productData);
 
+  const easing = [0.6, -0.05, 0.01, 0.99];
+  const fadeInUp = {
+    initial: {
+      y: 60,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        duration: 0.6,
+        ease: easing,
+      },
+    },
+  };
+  const stagger = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 2,
+        delay: 1,
+        delayChildren: 2,
+        duration: 1,
+        // when: "beforeChildren", //use this instead of delay
+      },
+    },
+  };
   return (
     <Box
+      // as={motion.div}
+      // variants={stagger}
+      // initial="initial"
+      // animate="animate"
       w="100vw"
+      maxW={"1920px"}
+      mx={"auto"}
       h="100vh"
       position="relative"
       display={{ md: "flex", base: "none" }}
+      gap={"2rem"}
     >
       <Box
+        as={motion.div}
+        initial={{ x: -200, opacity: 0 }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          transition: {
+            delay: 0.2,
+            duration: 0.5,
+          },
+        }}
         w="45%"
         h="100%"
         px="2rem"
@@ -34,49 +83,85 @@ const ProductDetailComponent = ({ productData }) => {
         <Image w="800px" maxH="100%" objectFit="cover" src={productData?.src} />
       </Box>
       <Box
+        as={motion.div}
+        variants={fadeInUp}
+        initial="initial"
+        animate="animate"
         // maxW="800px"
         maxW="45vw"
         h="95vh"
         display="flex"
         flexDir="column"
-        justifyContent="space-between"
+        justifyContent={{ xl: "space-around", md: "space-around" }}
       >
-        <Heading
-          fontSize="4.1vw"
-          py="2rem"
-          px="2rem"
-          fontFamily="novara"
-          w="41vw"
-        >
-          {productData?.productName}
-        </Heading>
+        <Box display="flex" w={"full"} justifyContent="space-between">
+          <Heading
+            as={motion.h1}
+            variants={fadeInUp}
+            fontSize={{ md: "5vw", "2xl": "96px" }}
+            py="2rem"
+            // px="2rem"
+            fontFamily="novara"
+            // w="41vw"
+          >
+            {productData?.productName}
+          </Heading>
+          <Text
+            // position="absolute"
+            // top="0"
+            // right={{ xl: "100", md: "-50" }}
+            fontFamily="gilroy"
+            fontSize={{ md: "1.85vw", "2xl": "36px" }}
+            py="2.5rem"
+            // paddingRight="5rem"
+            fontWeight="500"
+          >
+            {productData?.price}
+          </Text>
+        </Box>
 
-        <Text fontSize="18px" fontFamily="gilroy" lineHeight="30px">
+        <Text
+          as={motion.p}
+          // variants={fadeInUp}
+          fontSize={{ md: "1.8vw", "2xl ": "18px" }}
+          fontFamily="gilroy"
+          lineHeight="30px"
+        >
           {productData?.productDiscription}
         </Text>
 
         <Box
+          as={motion.p}
+          variants={fadeInUp}
           display="flex"
-          fontSize="24px"
           marginTop="1rem"
+          fontSize={{ md: "1.8vw", "2xl ": "18px" }}
           gap="2rem"
           alignItems="center"
         >
-          <label className="container">
+          <Text as={"label"} className="container">
             50 ml/1.7 oz
             <input type="radio" checked name="radio" />
             <span style={{ marginTop: "2px" }} className="checkmark"></span>
-          </label>
+          </Text>
           <label className="container">
             100 ml/3.4 oz
             <input type="radio" name="radio" />
             <span style={{ marginTop: "2px" }} className="checkmark"></span>
           </label>
         </Box>
-        <Heading fontFamily="gilroy" fontSize="32px" fontWeight="600">
+        <Heading
+          as={motion.p}
+          variants={fadeInUp}
+          fontFamily="gilroy"
+          fontSize={{ md: "2vw", "2xl": "32px" }}
+          fontWeight="600"
+        >
           Available Notes
         </Heading>
         <Box
+          as={motion.div}
+          // variants={fadeInUp}
           // marginTop="1rem"
           display="flex"
           fontFamily="gilroy"
@@ -125,7 +210,9 @@ const ProductDetailComponent = ({ productData }) => {
           </Text>
         </Box>
         <Box
-          as={Link}
+          // as={Link}
+          as={motion.a}
+          variants={fadeInUp}
           href="/#contact"
           // marginTop="2rem"
           w="100%"
@@ -140,6 +227,14 @@ const ProductDetailComponent = ({ productData }) => {
           fontFamily="novara"
           p="1rem"
           cursor="pointer"
+          background="linear-gradient(to right, white 50%, black 50%)"
+          backgroundSize="200% 100%"
+          backgroundPosition="right"
+          _hover={{
+            backgroundPosition: "left",
+            color: "black",
+          }}
+          transition="all 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
         >
           Contact store
           <Image
@@ -155,19 +250,6 @@ const ProductDetailComponent = ({ productData }) => {
           />
         </Box>
       </Box>
-
-      <Text
-        position="absolute"
-        top="0"
-        right={{ xl: "100", md: "-50" }}
-        fontFamily="gilroy"
-        fontSize="36px"
-        py="4rem"
-        paddingRight="5rem"
-        fontWeight="500"
-      >
-        {productData?.price}
-      </Text>
     </Box>
   );
 };

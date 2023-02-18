@@ -30,7 +30,7 @@ const R3F = () => {
 export default function ProductDetail() {
   const { query } = useRouter();
 
-  const [productData, setProductData] = useState(null);
+  const [productData, setProductData] = useState();
 
   useEffect(() => {
     if (query.id) {

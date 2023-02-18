@@ -16,6 +16,7 @@ import Loader from "@/components/canvas/Loader";
 import Navbar from "@/components/dom/Navbar";
 
 import theme from "@/lib/theme";
+import { AnimatePresence } from "framer-motion";
 
 const Canvas = dynamic(() => import("@/components/layout/canvas"), {
   ssr: false,
@@ -27,7 +28,9 @@ const AppLayout = ({ children }) => {
   const newChildren = React.Children.map(children, (child, index) =>
     index % 2 === 0 ? (
       <ChakraProvider theme={theme}>
-        <Dom>{child}</Dom>
+        <AnimatePresence exitBeforeEnter>
+          <Dom key={index}>{child}</Dom>
+        </AnimatePresence>
       </ChakraProvider>
     ) : (
       <Canvas>{child}</Canvas>
@@ -52,7 +55,9 @@ function App({ Component, pageProps = { title: "index" } }: AppProps) {
   return (
     <>
       {/* @ts-ignore */}
+
       <Header title={pageProps.title} />
+
       <AppLayout>{children}</AppLayout>
     </>
   );
