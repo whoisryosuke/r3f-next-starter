@@ -25,6 +25,7 @@ import GetinTouch from "../components/dom/GetinTouch";
 import Footer from "../components/dom/Footer";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 // import ProductDetailpage from "@/components/dom/ProductDetailspage";
 import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
 // import ProductDetailComponent from "@/components/dom/ProductDetailComponent";
@@ -76,8 +77,9 @@ const DOM = () => {
 
   return (
     <>
-      <Loader />
-      <Navbar />
+      {/* <motion.div exit={{ opacity: 0 }}> */}
+      {/* <Loader />
+      <Navbar /> */}
       <FirstPage
         activeBg={activeBg}
         fontColor={fontColor}
@@ -96,14 +98,15 @@ const DOM = () => {
       <Qualities />
       <MobileQualities />
       <Testimonials />
+      <MobileFragrances />
       <MobileTestimonials />
       {/* <Fragrances /> */}
       {/* <FragrancesZed /> */}
-      <MobileFragrances />
       <GetinTouch activeBg={activeBg} fontColor={fontColor} />
       {/* <ProductDetailComponent /> */}
       {/* <ProductDetailpage /> */}
       <Footer />
+      {/* </motion.div> */}
     </>
   );
 };

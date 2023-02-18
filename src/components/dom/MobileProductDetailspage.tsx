@@ -13,7 +13,7 @@ export default function ProductDetailpage({ productData }) {
         display={"flex"}
         flexDir={"row"}
         justifyContent={"space-between"}
-        paddingTop={"20px"}
+        // paddingTop={"20px"}
       >
         <Text
           w="full"
@@ -44,9 +44,10 @@ export default function ProductDetailpage({ productData }) {
         </Text>
       </Box>
       <Image
+        alignSelf={"center"}
         src={productData?.src}
-        margin="auto"
-        w="95%"
+        // margin="auto"
+        w="100%"
         maxH="450px"
         objectFit="cover"
         paddingTop={"10px"}
